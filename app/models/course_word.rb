@@ -1,0 +1,2 @@
+class CourseWord < ApplicationRecord
+end
