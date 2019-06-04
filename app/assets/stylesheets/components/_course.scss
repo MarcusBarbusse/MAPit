@@ -38,3 +38,9 @@
   top: -20px;
   width: 40px;
 }
+
+.cards-all-courses {
+  display: flex;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}

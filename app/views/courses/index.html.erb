@@ -19,10 +19,9 @@
           <h2><%= course.category %></h2>
           <h2><%= course.language %></h2>
         </div>
-        <h2 class="card-trip-pricing">$9.99</h2>
-      <% if policy(Course).create? %>
-        <%=  link_to "join course", subscription_path(course), method: :post %>
-      <% end %>
+        <% if policy(Course).create? %>
+          <%=  link_to "join course", subscription_path(course), method: :post %>
+        <% end %>
       </div>
     <% end %>
   </div>
@@ -68,16 +67,25 @@
     </div>
   </div>
 
-  <div>
-    <% @courses.each do |course| %>
-    <h1><%= course.name %></h1>
-    <p><%= course.category %></p>
-    <p><%= course.language %></p>
-      <% if policy(Course).create? %>
-        <%=  link_to "join course", subscription_path(course), method: :post %>
+  <div class="cards-all-courses">
+    <div class="card-trip" >
+      <% @courses.each do |course| %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= course.name %></h2>
+            <h2><%= course.category %></h2>
+            <h2><%= course.language %></h2>
+          </div>
+          <h2 class="card-trip-pricing">$9.99</h2>
+        <% if policy(Course).create? %>
+          <%=  link_to "join course", subscription_path(course), method: :post %>
+        <% end %>
+        </div>
       <% end %>
-    <% end %>
+    </div>
   </div>
+
 </div>
 
 
