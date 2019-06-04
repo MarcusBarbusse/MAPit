@@ -42,8 +42,10 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.6.0)
+      public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
-    autoprefixer-rails (9.5.1.1)
+    autoprefixer-rails (9.6.0)
       execjs
     aws_cf_signer (0.1.3)
     bcrypt (3.1.13)
@@ -78,17 +80,26 @@ GEM
     execjs (2.7.0)
     faker (1.9.3)
       i18n (>= 0.7)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
     font-awesome-sass (5.6.1)
       sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    google_custom_search_api (2.0.0)
+      addressable
+      httparty
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    httparty (0.16.4)
+      mime-types (~> 3.0)
+      multi_xml (>= 0.5.2)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
+    jwt (2.2.1)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -108,10 +119,19 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     msgpack (1.2.10)
+    multi_json (1.13.1)
+    multi_xml (0.6.0)
+    multipart-post (2.1.1)
     netrc (0.11.0)
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
+    oauth2 (1.4.1)
+      faraday (>= 0.8, < 0.16.0)
+      jwt (>= 1.0, < 3.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
     orm_adapter (0.5.0)
     pg (0.21.0)
     pry (0.12.2)
@@ -122,6 +142,7 @@ GEM
       pry (~> 0.10)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
+    public_suffix (3.1.0)
     puma (3.12.1)
     rack (2.0.7)
     rack-proxy (0.6.5)
@@ -198,6 +219,9 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.6)
+    unsplash (2.0.0)
+      httparty (~> 0.16.4)
+      oauth2 (~> 1)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.7.0)
@@ -205,7 +229,7 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webpacker (4.0.6)
+    webpacker (4.0.7)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
@@ -225,6 +249,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   font-awesome-sass (~> 5.6.1)
+  google_custom_search_api
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
   pg (~> 0.21)
@@ -238,6 +263,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier
+  unsplash
   web-console (>= 3.3.0)
   webpacker
 
