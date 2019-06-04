@@ -27,9 +27,9 @@ end
 
 150.times do
     course_word = CourseWord.new(
-      word: Faker::Lorem.word,
+      word: Faker::Lorem.words,
       translation: Faker::Lorem.word,
-      course_id: rand(1..10)
+      course_id: "#{rand(1..10)}"
       )
     course_word.save
 end
