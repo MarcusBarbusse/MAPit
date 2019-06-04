@@ -6,7 +6,10 @@
 .everything-explanations {
   background: $light-gray;
   width: 100%;
-  padding: 45px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .everything-explanations h1 {
@@ -26,11 +29,10 @@
 }
 
 .explanation {
-  width: 400px;
   border-radius: 3px;
   text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 35px;
+  padding-right: 35px;
   flex-grow: 10;
 }
 
@@ -38,31 +40,10 @@
   background-color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
   justify-content: space-between;
-  margin: 0px auto;
   padding: 10px;
 }
 
 .explanations-button {
   text-align: center;
-}
-
-.explanations-how-it-works-button {
-  text-align: center;
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: $button;
-  transition: background 0.3s ease;
-}
-
-.explanations-how-it-works-button:hover {
-  background: $button-hover;
-  color: white;
-}
-
-.explanations-how-it-works-button a {
-  display: block;
-  text-decoration: none;
 }
