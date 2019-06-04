@@ -4,5 +4,4 @@ class Course < ApplicationRecord
   validates :name, presence: true
   validates :category, presence: true
   validates :language, presence: true
-
 end

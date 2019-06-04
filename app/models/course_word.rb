@@ -1,5 +1,6 @@
 class CourseWord < ApplicationRecord
   belongs_to :course
+  belongs_to :subscription_word
 
   validates :course_id, presence: true
   validates :language, presence: true
