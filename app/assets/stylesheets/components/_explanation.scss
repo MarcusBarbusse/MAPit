@@ -1,0 +1,68 @@
+.img {
+  // width: 10px;
+  height: 70px;
+}
+
+.everything-explanations {
+  background: $light-gray;
+  width: 100%;
+  padding: 45px;
+}
+
+.everything-explanations h1 {
+  text-align: center;
+  font-family: 'Mukta', sans-serif;
+  font-size: 35px;
+  padding: 10px;
+}
+
+.explanation p {
+  opacity: .5;
+}
+
+.explanation h4 {
+  color: #3b9ce2;
+  margin-top: 20px;
+}
+
+.explanation {
+  width: 400px;
+  border-radius: 3px;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  flex-grow: 10;
+}
+
+.explanations {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: space-between;
+  margin: 0px auto;
+  padding: 10px;
+}
+
+.explanations-button {
+  text-align: center;
+}
+
+.explanations-how-it-works-button {
+  text-align: center;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $button;
+  transition: background 0.3s ease;
+}
+
+.explanations-how-it-works-button:hover {
+  background: $button-hover;
+  color: white;
+}
+
+.explanations-how-it-works-button a {
+  display: block;
+  text-decoration: none;
+}
