@@ -29,7 +29,7 @@ end
     course_word = CourseWord.new(
       word: Faker::Lorem.word,
       translation: Faker::Lorem.word,
-      course_id: rand(1..10)
+      course_id: "#{rand(1..10)}"
       )
     course_word.save
 end
