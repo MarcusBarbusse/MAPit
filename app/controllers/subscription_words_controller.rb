@@ -1,5 +1,9 @@
 class SubscriptionWordsController < ApplicationController
 
+  def show
+
+  end
+
   def create
     @subscription = Subscription.find(params[:subscription_id])
     @words_id = @subscription.course_words.ids
