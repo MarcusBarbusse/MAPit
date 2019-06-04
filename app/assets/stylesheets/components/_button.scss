@@ -2,15 +2,16 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: $button;
   transition: background 0.3s ease;
 }
 
 .button:hover {
-  background: #1BCB7F;
+  background: $button-hover;
   color: white;
 }
 
 .button a {
   display: block;
+  text-decoration: none;
 }

@@ -1,4 +1,5 @@
 class SubscriptionsController < ApplicationController
+
   def show
     @subscription_words = []
     @subscription = Subscription.find(params[:id])
@@ -11,4 +12,19 @@ class SubscriptionsController < ApplicationController
     @course = Course.find(params[:course_id])
   end
 
+  def create
+    @course = Course.find(params[:format])
+    @subscription = Subscription.new
+    @subscription.course = @course
+    @subscription.user = current_user
+        authorize @subscription======= 
+
+
+    if @subscription.save
+      redirect_to course_subscription_path
+    
+    else
+      redirect_to courses_path
+    end
+  end
 end
