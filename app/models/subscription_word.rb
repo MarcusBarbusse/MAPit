@@ -6,5 +6,4 @@ class SubscriptionWord < ApplicationRecord
   validates :couse_word_id, presence: true
   validates :photo_mother_tongue, presence: true
   validates :phtoto_target_word, presence: true
-
 end
