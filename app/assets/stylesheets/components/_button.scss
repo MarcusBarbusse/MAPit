@@ -1,0 +1,17 @@
+.button {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $button;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: $button-hover;
+  color: white;
+}
+
+.button a {
+  display: block;
+  text-decoration: none;
+}
