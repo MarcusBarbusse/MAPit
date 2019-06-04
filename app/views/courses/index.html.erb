@@ -1,4 +1,10 @@
-<% @courses.each do |course| %>
-<%= course.name %>
-<%= course.category %>
-<%= course.language %>
+<div>
+  <% @courses.each do |course| %>
+	<h1><%= course.name %></h1>
+	<p><%= course.category %></p>
+	<p><%= course.language %></p>
+	<% if policy(Course).create? %>
+		<%=  link_to "join course", subscription_path(course), method: :post %>
+	<% end %>
+  <% end %>
+</div>

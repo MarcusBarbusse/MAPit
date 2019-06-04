@@ -7,6 +7,6 @@ Rails.application.routes.draw do
       resources :subscription_words
     end
   end
-
+  post 'subscription', to: 'subscriptions#create'
   get 'dashboards', to: 'dashboards#account'
 end
