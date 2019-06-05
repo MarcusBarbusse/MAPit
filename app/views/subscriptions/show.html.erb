@@ -29,14 +29,39 @@
 </div>
 
 <div class="row themapcountenair">
-  <div class="col-xs-12 col-sm-4">
-    <div class="col-xs-6 col-sm-2">
-
+  <div class="col-xs-12 col-sm-4 d-flex">
+    <div class="col-xs-12 col-sm-6">
+      <div class="element" data-choosen="false" data-photo-id="1">
+        to bark
+      </div>
     </div>
-    <div class="col-xs-6 col-sm-2">
-
+    <div class="col-xs-12 col-sm-6">
+      <div id="items2" data-box-number="2">
+        <div class="element" data-choosen="true">aboyer</div>
+      </div>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-8">
+  <div class="col-xs-12 col-sm-8 d-flex">
+    <div class="col-xs-1 col-sm-2">
+      <div class="searchbar" id="items1">
+        <div class="search-form-control form-group">
+          <button class='button-letter' name="sq_letter" id="search_query">
+            <%= link_to 'A', courses_path(language: "spanish")  %>
+          </button>
+        </div>
+      </div>
+      <div class="searchbar">
+        <div class="search-form-control form-group">
+          <button class='button-letter' name="sq_letter" id="search_query">
+            <%= link_to 'B', courses_path(language: "spanish")  %>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-11 col-sm-10">
+      <div class="themap">
+
+      </div>
+    </div>
   </div>
 </div>

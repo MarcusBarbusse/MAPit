@@ -3,12 +3,6 @@
   display: flex;
 }
 
-
-div {
-  width: 100%;
-}
-
-
 .element {
   margin: 5px;
   border: red 1px solid;
@@ -21,7 +15,13 @@ div {
   weight: 100vw;
   display: flex;
   border-radius: 8px;
-  margin-left: 10px;
-
+  margin: 10px;
 }
 
+.themap {
+  border: solid;
+  background-color: gray;
+  height: 500px;
+  weight:100vw;
+  border-radius: 8px;
+}
