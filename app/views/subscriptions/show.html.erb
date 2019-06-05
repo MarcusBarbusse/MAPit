@@ -1,4 +1,6 @@
-<div>
+
+<h1>Your course</h1>
+<div class="main-countainer">
   <%= @course_word.word %> - <%= @course_word.translation%>
 
   <%= simple_form_for [@course, @subscription, @subscription_word] do |f| %>
@@ -36,6 +38,5 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-8">
-
   </div>
 </div>
