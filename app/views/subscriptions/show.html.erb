@@ -1,4 +1,9 @@
 
+<h1>Your course</h1>
+  <div class="main-countainer">
+  </div>
+
+
   <%= @course_word.word %> - <%= @course_word.translation%>
 
   <%= simple_form_for [@course, @subscription, @subscription_word] do |f| %>
@@ -9,6 +14,7 @@
 
   <%= link_to "MapCards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
   <%= link_to "Courses",  courses_path %>
+
 
 
 
