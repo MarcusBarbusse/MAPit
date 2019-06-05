@@ -1,4 +1,4 @@
-class SubscriptionPolicy < ApplicationPolicy
+class SubscriptionWordPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -6,10 +6,10 @@ class SubscriptionPolicy < ApplicationPolicy
   end
 
   def show?
-    record.user == user
+    true
   end
 
   def create?
-    record.user == user
+    record.subscription.user = user
   end
 end
