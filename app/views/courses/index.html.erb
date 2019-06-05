@@ -7,25 +7,38 @@
 
 <div>
   <h1>MY COURSES</h1>
-  <div class="card-trip">
+  <div class="courses_container">
     <% @my_courses.each do |course| %>
-      <% if !@my_courses.present? %>
-        <p>No courses yet!</p>
-      <% end %>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= course.name %></h2>
-          <h2><%= course.category %></h2>
-          <h2><%= course.language %></h2>
+    <% if !@my_courses.present? %>
+    <p>No courses yet!</p>
+    <% end %>
+    <div class="popup">
+      <div class="card-trip">
+        <span class="popuptext myPopup">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= course.name %></h2>
+              <h2><%= course.category %></h2>
+              <h2><%= course.language %></h2>
+            </div>
+<!--             <#% raise %>
+ -->            <%= link_to "continue course", course_subscription_path(course.id, Subscription.all.where(user: current_user).where(course: course).first.id)%>
+          </div>
+        </span>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= course.name %></h2>
+          </div>
         </div>
-        <% if policy(Course).create? %>
-          <%=  link_to "join course", subscription_path(course), method: :post %>
-        <% end %>
       </div>
+    </div>
     <% end %>
   </div>
 </div>
+</div>
+
 
 <div>
   <h1>ALL COURSES</h1>
@@ -67,25 +80,32 @@
     </div>
   </div>
 
-  <div class="cards-all-courses">
-    <div class="card-trip" >
-      <% @courses.each do |course| %>
+  <div class="courses_container">
+    <% @courses.each do |course| %>
+    <div class="popup">
+      <div class="card-trip">
+        <span class="popuptext myPopup">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+          <div class="card-trip-infos-">
+            <div>
+              <h2><%= course.name %></h2>
+              <h2><%= course.category %></h2>
+              <h2><%= course.language %></h2>
+            </div>
+            <h2 class="card-trip-pricing">$9.99</h2>
+            <% if policy(Course).create? %>
+            <%=  link_to "join course", subscription_path(course), method: :post %>
+          </div>
+        </span>
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
         <div class="card-trip-infos">
           <div>
             <h2><%= course.name %></h2>
-            <h2><%= course.category %></h2>
-            <h2><%= course.language %></h2>
           </div>
-          <h2 class="card-trip-pricing">$9.99</h2>
-        <% if policy(Course).create? %>
-          <%=  link_to "join course", subscription_path(course), method: :post %>
-        <% end %>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
+    <% end %>
   </div>
-
 </div>
-
-

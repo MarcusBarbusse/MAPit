@@ -13,19 +13,21 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 53px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 4px;
 }
 
-.nav-item active {
-  color:white;
-}
-
-a {
+.navbar-nav a {
   position: relative;
   text-decoration: none;
   color: rgba(0, 0, 0, .4);
   transition: color .3s ease;
-
+  color: white !important;
+  &.black-text {
+    color: #3b9ce2 !important;
+  }
   &::after {
     --scale: 0;
 
