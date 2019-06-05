@@ -1,12 +1,16 @@
 class SubscriptionWordsController < ApplicationController
 
-  def show
-    # @subscription = Subscription.find(params[:subscription_id])
-    @subscription_word = SubscriptionWord.find(params[:id])
-    @course_word_id = @subscription_word.course_word_id
-    @course_word = CourseWord.find(@course_word_id)
-    authorize @course_word
-    authorize @subscription_word
+  def index
+    @subscription = Subscription.find(params[:subscription_id])
+    @subscription_words = policy_scope(SubscriptionWord)
+    @mapped_words = @subscription.subscription_words.where(mapped: true).where(flashed: false)
+    if @mapped_words.empty?
+       @subscription_word = "empty"
+    else
+      @subscription_word = @mapped_words.sample
+      authorize @subscription_word
+    end
+
   end
 
   def create
@@ -30,12 +34,13 @@ class SubscriptionWordsController < ApplicationController
     @subscription_word = SubscriptionWord.find(params[:id])
     @subscription_word.flashed = true
     @subscription_word.save
-    redirect_to course_subscription_subscription_word
+    authorize @subscription_word
+    redirect_to course_subscription_subscription_words_path
   end
 
   private
 
   def subscription_word_params
-    params.require(:subscription_word).permit(:photo_mother_tongue, :photo_target_word, :subscription_id)
+    params.require(:subscription_word).permit(:photo_mother_tongue, :photo_target_word, :subscription_id, :flashed)
   end
 end

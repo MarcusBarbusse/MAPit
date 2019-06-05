@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :courses do
     resources :subscriptions do
       resources :subscription_words
+
     end
   end
   post 'subscription', to: 'subscriptions#create'
