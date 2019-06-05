@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :courses do 
-    resources :subscriptions do 
+  resources :courses do
+    resources :subscriptions do
       resources :subscription_words
+
     end
   end
   post 'subscription', to: 'subscriptions#create'

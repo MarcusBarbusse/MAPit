@@ -1,0 +1,14 @@
+<% if @subscription_word == "empty"%>
+  Congrats, You've done all your flashcards
+  <%= link_to "Courses",  courses_path %>
+
+
+  <% else %>
+  <%= @subscription_word.course_word.word %>
+<%= @subscription_word.course_word.translation %>
+
+<%= link_to "I didn't map it", course_subscription_subscription_words_path %>
+<%= link_to "I mapped it", course_subscription_subscription_word_path(params[:course_id], params[:subscription_id], @subscription_word.id), method: :put %>
+<%= link_to "Courses",  courses_path %>
+<% end %>
+

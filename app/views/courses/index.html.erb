@@ -7,11 +7,12 @@
 
 <div>
   <h1>MY COURSES</h1>
-  <div class="card-trip">
+  <div class="courses-container">
     <% @my_courses.each do |course| %>
-      <% if !@my_courses.present? %>
-        <p>No courses yet!</p>
-      <% end %>
+    <% if !@my_courses.present? %>
+    <p>No courses yet!</p>
+    <% end %>
+    <div class="card-trip">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
       <div class="card-trip-infos">
         <div>
@@ -19,13 +20,16 @@
           <h2><%= course.category %></h2>
           <h2><%= course.language %></h2>
         </div>
-        <% if policy(Course).create? %>
-          <%=  link_to "join course", subscription_path(course), method: :post %>
-        <% end %>
+<!--         <%# if policy(Course).create? %>
+        <%#=  link_to "join course", subscription_path(course), method: :post %>
+        <%# end %> -->
       </div>
+    </div>
     <% end %>
   </div>
 </div>
+</div>
+
 
 <div>
   <h1>ALL COURSES</h1>
@@ -67,25 +71,24 @@
     </div>
   </div>
 
-  <div class="cards-all-courses">
+  <div class="courses-container">
+    <% @courses.each do |course| %>
     <div class="card-trip" >
-      <% @courses.each do |course| %>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= course.name %></h2>
-            <h2><%= course.category %></h2>
-            <h2><%= course.language %></h2>
-          </div>
-          <h2 class="card-trip-pricing">$9.99</h2>
-        <% if policy(Course).create? %>
-          <%=  link_to "join course", subscription_path(course), method: :post %>
-        <% end %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= course.name %></h2>
+          <h2><%= course.category %></h2>
+          <h2><%= course.language %></h2>
         </div>
-      <% end %>
+        <h2 class="card-trip-pricing">$9.99</h2>
+        <% if policy(Course).create? %>
+        <%=  link_to "join course", subscription_path(course), method: :post %>
+        <% end %>
+      </div>
     </div>
+    <% end %>
   </div>
-
 </div>
 
 

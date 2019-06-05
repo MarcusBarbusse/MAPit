@@ -5,11 +5,19 @@ class SubscriptionWordPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    true
+  end
+
   def show?
     true
   end
 
   def create?
     record.subscription.user = user
+  end
+
+  def update?
+    true
   end
 end
