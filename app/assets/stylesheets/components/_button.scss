@@ -15,3 +15,21 @@
   display: block;
   text-decoration: none;
 }
+
+.button-flag {
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.button-flag:hover {
+  background: $button-hover;
+  color: white;
+}
+
+.flags {
+  display: flex;
+  // justify-content: space-between;
+  margin: 10px auto;
+  padding: 6px;
+}
