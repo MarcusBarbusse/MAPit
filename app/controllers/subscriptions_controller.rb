@@ -6,7 +6,7 @@ class SubscriptionsController < ApplicationController
     @subscription.subscription_words.each do |word|
       @words_id.delete(word.course_word_id)
     end
-    @course_word = CourseWord.find(@words_id.first)
+    # @course_word = CourseWord.find(@words_id.first)
     @subscription_word = SubscriptionWord.new
     @course = Course.find(params[:course_id])
 
