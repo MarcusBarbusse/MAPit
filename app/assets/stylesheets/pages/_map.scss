@@ -1,11 +1,8 @@
-#app {
-  width: 100%;
-  display: flex;
-}
-
-.element {
+.image {
   margin: 5px;
-  border: red 1px solid;
+  border: black 1px solid;
+  width: 100px;
+  height: 100px;
 }
 
 .themapcountenair {
@@ -19,6 +16,7 @@
 }
 
 .themap {
+  display: flex;
   border: solid;
   background-color: gray;
   height: 500px;
@@ -26,7 +24,7 @@
   border-radius: 8px;
 }
 
-.row1 {
+.row1 .row2 .row3 .row4 .row5 .row6 {
   display: flex;
 }
 
