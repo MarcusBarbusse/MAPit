@@ -10,21 +10,34 @@
   <% else %>
 
 <div class="card-trip" id="flashcard">
-  <div class="" id="flashcard-context">
+  <div class="" id="flashcard-front">
   <%= @subscription_word.photo_mother_tongue %>
   <%= @subscription_word.photo_target_word %>
   </div>
+  <div class="invisible" id="flashcard-answer">
+    <%= @subscription_word.course_word.word %>
+    <%= @subscription_word.course_word.translation %>
+  </div>
 
+  </div>
   <a  href="javascript:void(0)" id="flash">See results</a>
 <%= link_to "I didn't map it", course_subscription_subscription_words_path %>
 <%= link_to "I mapped it", course_subscription_subscription_word_path(params[:course_id], params[:subscription_id], @subscription_word.id), method: :put %>
-</div>
+
 
 <%= link_to "Courses",  courses_path %>
 <% end %>
 
 
-  <div>
-  <%= @subscription_word.course_word.word %>
-  <%= @subscription_word.course_word.translation %>
+
+<!-- <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <img src="img_paris.jpg" alt="Paris" style="width:300px;height:200px">
+    </div>
+    <div class="flip-box-back">
+      <h2>Paris</h2>
+      <p>What an amazing city</p>
+    </div>
   </div>
+</div> -->
