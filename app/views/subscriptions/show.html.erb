@@ -53,7 +53,6 @@
       <div class="searchbar" id="items1">
         <div class="search-form-control form-group">
           <button class='button-letter' name="sq_letter" id="search_query">
-
           </button>
         </div>
       </div>
@@ -67,11 +66,14 @@
     </div>
     <div class="col-xs-11 col-sm-10">
       <div id="map" class="themap">
-        <% if (current_user.background_images != [])%>
-          <% @background_images.each do |img|%>
-          <%= cl_image_tag img.photo%>
-          <%= img.letter %>
+        <% letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] %>
+        <% letters.each do |letter|%>
+          <%current_user.background_images.where(letter: letter).each do |image| %>
+          <%=cl_image_tag image.photo %>
+          <% end %>
+         <!--  <%# raise %> -->
         <% end %>
+        
         <div class="row1">
           <div style="width: 100px; height: 100px;" data-dropzone data-x="1" data-y="1"></div>
           <div style="width: 100px; height: 100px;" data-dropzone data-x="2" data-y="1"></div>
@@ -107,13 +109,13 @@
           <div class="x4y1">
           </div>
         </div>
-        <% else %>
+        <%# else %>
         <%= simple_form_for(@background_image) do |f| %>
         <%= f.input :photo %>
         <%= f.input :letter %>
         <%= f.submit %>
         <% end %>
-        <% end %>
+        <%# end %>
       </div>
     </div>
   </div>

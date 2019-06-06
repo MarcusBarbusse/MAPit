@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :courses do
     resources :subscriptions do
       resources :subscription_words
+      resources :background_images
+
     end
   end
   resources :background_images
