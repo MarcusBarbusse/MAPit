@@ -1,15 +1,10 @@
-class CoursePolicy < ApplicationPolicy
+class BackgroundImagePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
-
-  def index?
-    true
-  end
-
   def create?
-    false
+    record.user == user
   end
 end

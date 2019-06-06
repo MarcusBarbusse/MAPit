@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   resources :courses do
     resources :subscriptions do
       resources :subscription_words
-
     end
   end
+  resources :background_images
+
   post 'subscription', to: 'subscriptions#create'
   get 'dashboards', to: 'dashboards#account'
 end

@@ -6,9 +6,9 @@
   <%= @course_word.word %> - <%= @course_word.translation%>
 
   <%= simple_form_for [@course, @subscription, @subscription_word] do |f| %>
-      <%= f.input :photo_mother_tongue %>
-      <%= f.input :photo_target_word %>
-      <%= f.submit  %>
+  <%= f.input :photo_mother_tongue %>
+  <%= f.input :photo_target_word %>
+  <%= f.submit  %>
   <% end %>
 
   <%= link_to "MapCards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
@@ -53,7 +53,7 @@
       <div class="searchbar" id="items1">
         <div class="search-form-control form-group">
           <button class='button-letter' name="sq_letter" id="search_query">
-            <%= link_to 'A', courses_path(language: "spanish")  %>
+
           </button>
         </div>
       </div>
@@ -66,7 +66,12 @@
       </div>
     </div>
     <div class="col-xs-11 col-sm-10">
-      <div id="map" class="themap" style="background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80') no-repeat center center fixed; background-size: cover">
+      <div id="map" class="themap">
+        <% if (current_user.background_images != [])%>
+          <% @background_images.each do |img|%>
+          <%= cl_image_tag img.photo%>
+          <%= img.letter %>
+        <% end %>
         <div class="row1">
           <div style="width: 100px; height: 100px;" data-dropzone data-x="1" data-y="1"></div>
           <div style="width: 100px; height: 100px;" data-dropzone data-x="2" data-y="1"></div>
@@ -102,11 +107,18 @@
           <div class="x4y1">
           </div>
         </div>
+        <% else %>
+        <%= simple_form_for(@background_image) do |f| %>
+        <%= f.input :photo %>
+        <%= f.input :letter %>
+        <%= f.submit %>
+        <% end %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
 
-            <div id="items2" data-box-number="2">
+<!--             <div id="items2" data-box-number="2">
               <div class="element" data-choosen="true">aboyer</div>
-            </div>
+            </div> -->
