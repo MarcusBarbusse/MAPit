@@ -47,7 +47,7 @@
     right: 0;
     top: 100%;
     height: 3px;
-    background: #3b9ce2;
+    background: $button;
     transform: scaleX(var(--scale));
     transform-origin: var(--x) 50%;
     transition: transform .3s cubic-bezier(.535, .05, .355, 1);
