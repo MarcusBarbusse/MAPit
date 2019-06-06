@@ -7,6 +7,10 @@ const initDragAndDrop = () => {
     group: "shared"
   });
 
+  var el2 = document.getElementById("translation-photo-list");
+  Sortable.create(el2, {
+    group: "shared"
+  });
 
   document.querySelectorAll('[data-dropzone]').forEach(el => {
     Sortable.create(el, {

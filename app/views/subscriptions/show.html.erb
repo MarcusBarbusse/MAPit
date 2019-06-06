@@ -3,49 +3,49 @@
 
 <h1>Your course</h1>
 <div class="main-countainer">
-  <%= @course_word.word %> - <%= @course_word.translation%>
-
   <%= simple_form_for [@course, @subscription, @subscription_word] do |f| %>
       <%= f.input :photo_mother_tongue %>
       <%= f.input :photo_target_word %>
       <%= f.submit  %>
   <% end %>
-
-  <%= link_to "MapCards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
-  <%= link_to "Courses",  courses_path %>
 </div>
-
-<!-- <div id="app">
-  <div id="items1">
-    <div class="element" data-choosen="false" data-photo-id="1">
-      to bark
-    </div>
-    <div class="element" data-choosen="false" data-photo-id="2">
-      a chunk
-    </div>
-  </div>
-  <div id="items2" data-box-number="2">
-    <div class="element" data-choosen="true">aboyer</div>
-    <div class="element" data-choosen="true">un morceau22</div>
-  </div>
-</div> -->
 
 <div class="row themapcountenair">
   <div class="col-xs-12 col-sm-4 d-flex">
     <div class="col-xs-12 col-sm-6">
       <div id="target-photo-list">
+        <div class="image" data-photo-id="eatPhotoID">
+          <%= @course_word.word %>
+        </div>
+        <div class='container-search'>
+          <div class="image-search-bar image">
+            <%= form_tag course_subscription_path(@course.id, Subscription.all.where(user: current_user).where(course: @course).first.id), method: :get do %>
+              <%= text_field_tag :q,
+                params[:q],
+                class: "form-control",
+                placeholder: "Find an image"
+              %>
+            <% end %>
+          </div>
+          <% if @image_results.any? %>
+            <% @image_results.each do |url| %>
+              <img src="<%= url %>" alt="" class="image-result">
+            <% end %>
+          <% else %>
+            <h4>No results, search for something real :)</h4>
+          <% end %>
+        </div>
         <div style="background: url('https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1333&q=80') no-repeat center center fixed; background-size: cover" class="image" data-photo-id="barkPhotoID">
           to bark
-        </div>
-        <div class="image" data-photo-id="eatPhotoID">
-          to eat
         </div>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6">
-      <!-- <div id="items2" data-box-number="2">
-        <div class="element" data-choosen="true">aboyer</div>
-      </div> -->
+      <div id="translation-photo-list">
+        <div class="image" data-photo-id="eatPhotoID">
+          <%= @course_word.translation%>
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-xs-12 col-sm-8 d-flex">
@@ -118,8 +118,15 @@
       </div>
     </div>
   </div>
+  <div class="buttons-for-map">
+    <button name="button" type="submit" class="button">
+      <%= link_to "Courses",  courses_path %>
+    </button>
+    <button name="button" type="submit" class="button">
+      <%= link_to "FlashCards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
+    </button>
+    <button name="button" type="submit" class="button">
+      <%= link_to "Next", courses_path %>
+    </button>
+  </div>
 </div>
-
-            <div id="items2" data-box-number="2">
-              <div class="element" data-choosen="true">aboyer</div>
-            </div>
