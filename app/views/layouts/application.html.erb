@@ -14,7 +14,12 @@
   </head>
   <body>
     <div class="wrapper">
-      <%= render 'shared/navbar' %>
+      <% if params[:controller] == 'pages' && params[:action] == "home" ||
+            params[:controller] == 'courses' && params[:action] == "index" %>
+        <%= render 'shared/navbar' %>
+      <% else %>
+        <%= render 'shared/navbar_coloured' %>
+      <% end %>
       <%= render 'shared/flashes' %>
       <%= yield %>
       <%= javascript_include_tag 'application' %>
