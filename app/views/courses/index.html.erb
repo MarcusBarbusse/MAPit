@@ -1,44 +1,35 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60);">
-  <div class="banner-container">
-    <h1>Courses overview</h1>
-    <p>Continue your course or begin a new one!</p>
-  </div>
-</div>
+<div class=courses-page>
 
-<div>
-  <h1>MY COURSES</h1>
-  <div class="courses_container">
-    <% @my_courses.each do |course| %>
-    <% if !@my_courses.present? %>
-    <p>No courses yet!</p>
-    <% end %>
-    <div class="popup">
-      <div class="card-trip">
-        <span class="popuptext myPopup">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= course.name %></h2>
-              <h2><%= course.category %></h2>
-              <h2><%= course.language %></h2>
-            </div>
-            <%= link_to "continue course", course_subscription_path(course.id, Subscription.all.where(user: current_user).where(course: course).first.id)%>
-          </div>
-        </span>
+<div class="courses-container">
+  <h1 class="highlight">My courses</h1>
+  <% @my_courses.each do |course| %>
+  <% if !@my_courses.present? %>
+  <p>No courses yet!</p>
+  <% end %>
+  <div class="popup">
+    <div class="card-trip">
+      <span class="popuptext myPopup">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
         <div class="card-trip-infos">
-          <div>
-            <h2><%= course.name %></h2>
-          </div>
+          <h2><%= course.name.capitalize %></h2>
+<!--           <h2><%= course.category %></h2>
+          <h2><%= course.language %></h2> -->
+        </div>
+        <button name="button" type="submit" class="button">
+        <%= link_to "Continue course", course_subscription_path(course.id, Subscription.all.where(user: current_user).where(course: course).first.id)%>
+      </button>
+      </span>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+        <div class="card-trip-infos">
+            <h2><%= course.name.capitalize %></h2>
         </div>
       </div>
     </div>
     <% end %>
-  </div>
 </div>
 
-<div>
-  <h1>ALL COURSES</h1>
+<div class="courses-container">
+  <h1 class="highlight">Discover other courses</h1>
   <div class="flags">
     <div class="flag">
       <div class="searchbar">
@@ -85,9 +76,19 @@
         </div>
       </div>
     </div>
+    <div class="flag">
+      <div class="searchbar">
+        <div class="search-form-control form-group">
+          <button class='button-flag' name="sq_category" id="search_query">
+            <%= link_to 'All', courses_path(language: "spanish")  %>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 
-    <div class="courses_container">
+
+    <div class="course-container">
       <% @courses.each do |course| %>
       <div class="popup">
         <div class="card-trip">
@@ -95,20 +96,20 @@
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
             <div class="card-trip-infos-">
               <div>
-                <h2><%= course.name %></h2>
-                <h2><%= course.category %></h2>
-                <h2><%= course.language %></h2>
+                <h2><%= course.name.capitalize %></h2>
+<!--                 <h2><%= course.category %></h2>
+                <h2><%= course.language %></h2> -->
               </div>
               <h2 class="card-trip-pricing">$9.99</h2>
               <% if policy(Course).create? %>
-              <%=  link_to "join course", subscription_path(course), method: :post %>
+              <button name="button" type="submit" class="button">
+              <%=  link_to "Join course", subscription_path(course), method: :post %>
+            </button>
             </div>
           </span>
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
           <div class="card-trip-infos">
-            <div>
-              <h2><%= course.name %></h2>
-            </div>
+              <h2><%= course.name.capitalize %></h2>
             <% end %>
           </div>
         </div>
@@ -116,3 +117,4 @@
       <% end %>
     </div>
   </div>
+</div>

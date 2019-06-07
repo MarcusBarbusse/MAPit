@@ -1,9 +1,9 @@
 .explanation-icon {
   font-size: 80px;
   color: $button;
-  border-style: solid;
-  border-radius: 50%;
-  max-width: 130px;
+  // border-style: solid;
+  // border-radius: 50%;
+  // max-width: 130px;
   margin: auto;
   background-color: white;
   display: inline-block;
@@ -23,7 +23,7 @@
 }
 
 .highlight {
-  background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #FFD0AE 50%);
+  background: linear-gradient(180deg,rgba(255,255,255,0) 90%, $button 20%);
 }
 
 .explanation p {
