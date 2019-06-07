@@ -13,7 +13,7 @@
   background-color: white;
   border: solid;
   height: 600px;
-  weight: 100vw;
+
   display: flex;
   border-radius: 8px;
   margin: 10px;
@@ -24,8 +24,10 @@
   border: solid;
   background-color: gray;
   height: 500px;
-  weight:100vw;
+  width:95%;
   border-radius: 8px;
+  background-size: cover;
+
 }
 
 .row1 .row2 .row3 .row4 .row5 .row6 {
@@ -67,10 +69,17 @@
   display: flex;
 }
 
+.images {
+  display: flex;
+}
+
+.image_button_container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 5%;
+  // flex-direction: column;
+}
+
 .no-result-for-search h4 {
   font-size: 15px;
 }
-
-
-
-

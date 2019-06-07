@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
     end
   end
+  patch '/background_images', to: 'background_images#update'
+  resources :background_images
   post 'subscription', to: 'subscriptions#create'
   get 'dashboards', to: 'dashboards#account'
 end
