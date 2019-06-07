@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- code below is the icon in the browswertab -->
-    <link rel="icon" href="http://example.com/favicon.png">
+    <link rel="icon" href="https://i.imgur.com/EQY8ogf.png">
     <link href="https://fonts.googleapis.com/css?family=Mukta&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <title>MAPit</title>
@@ -15,8 +15,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <% if params[:controller] == 'pages' && params[:action] == "home" ||
-            params[:controller] == 'courses' && params[:action] == "index" %>
+      <% if params[:controller] == 'pages' && params[:action] == "home" %>
         <%= render 'shared/navbar' %>
       <% else %>
         <%= render 'shared/navbar_coloured' %>
