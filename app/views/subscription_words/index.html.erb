@@ -1,14 +1,44 @@
+<br>
+<br>
+<br>
+
 <% if @subscription_word == "empty"%>
-  Congrats, You've done all your flashcards
-  <%= link_to "Courses",  courses_path %>
-
-
-  <% else %>
-  <%= @subscription_word.course_word.word %>
-<%= @subscription_word.course_word.translation %>
-
-<%= link_to "I didn't map it", course_subscription_subscription_words_path %>
-<%= link_to "I mapped it", course_subscription_subscription_word_path(params[:course_id], params[:subscription_id], @subscription_word.id), method: :put %>
+Congrats, You've done all your flashcards
 <%= link_to "Courses",  courses_path %>
+
+
+<% else %>
+<div id="flashcard-container">
+  <div class="" id="flashcard">
+
+    <div class="" id="flashcard-front">
+     <img src="https://images.unsplash.com/photo-1559783510-c448bd7d686b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
+     <div class="flashcard-button">
+      <button class="button" href="javascript:void(0)" id="flash">See results</button>
+      <button class="button" id="button-flashed" ><%= link_to "I mapped it", course_subscription_subscription_word_path(params[:course_id], params[:subscription_id], @subscription_word.id), method: :put %></button>
+    </div>
+
+<!--       <%= @subscription_word.photo_mother_tongue %>
+  <%= @subscription_word.photo_target_word %> -->
+</div>
+<div class="invisible" id="flashcard-answer">
+    <img src="https://images.unsplash.com/photo-1559783510-c448bd7d686b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
+    <br>
+    <strong><%= @subscription_word.course_word.word %> -
+    <%= @subscription_word.course_word.translation %></strong>
+    <div class="flashcard-button">
+      <button  class="button" > <%= link_to "I didn't map it", course_subscription_subscription_words_path %></button>
+      <button class="button" id="button-flashed" ><%= link_to "I mapped it", course_subscription_subscription_word_path(params[:course_id], params[:subscription_id], @subscription_word.id), method: :put %></button>
+    </div>
+  </div>
+
+</div>
+<div>
+
+
+
+</div>
 <% end %>
+
+</div>
 
