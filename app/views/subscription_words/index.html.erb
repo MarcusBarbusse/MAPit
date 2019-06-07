@@ -22,10 +22,11 @@ Congrats, You've done all your flashcards
   <%= @subscription_word.photo_target_word %> -->
 </div>
 <div class="invisible" id="flashcard-answer">
-  <p>
-    <%= @subscription_word.course_word.word %> -
-    <%= @subscription_word.course_word.translation %>
-    <div class="flashcard-button"></p>
+    <img src="https://images.unsplash.com/photo-1559783510-c448bd7d686b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
+    <br>
+    <strong><%= @subscription_word.course_word.word %> -
+    <%= @subscription_word.course_word.translation %></strong>
+    <div class="flashcard-button">
       <button  class="button" > <%= link_to "I didn't map it", course_subscription_subscription_words_path %></button>
       <button class="button" id="button-flashed" ><%= link_to "I mapped it", course_subscription_subscription_word_path(params[:course_id], params[:subscription_id], @subscription_word.id), method: :put %></button>
     </div>
