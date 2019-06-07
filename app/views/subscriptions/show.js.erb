@@ -1,31 +1,37 @@
-// console.log("hello")
 
-// const search_mother = (query) => {
-//     const image_mother_results = []
-//     const apiUrl = `https://pixabay.com/api/?key=${ENV['PIXABAY_KEY']}&q=${params[:query]}&image_type=photo`
-//     fetch(apiUrl)
-//       .then(image_mother_results => image_mother_results.json())
-//       .then((data) => {
-//             data.Search.forEach((result) => {
-//               const movie = `<li class="list-inline-item">
-//                 <img src="${result.Poster}" alt="">
-//                 <p>${result.Title}</p>
-//               </li>`;
-//               results.insertAdjacentHTML("beforeend", movie);
-//             });
-//       });
-//   }
+var formInput = document.getElementById("q1");
+if (formInput.value !== "") {
+var photoBox = document.getElementById("target-photo-list");
+photoBox.innerHTML = "";
 
+        var context = '<% if @image_target_results.any? %>' +
+            '<% @image_target_results.each do |url| %>' +
+              '<img src="<%= url %>" alt="" class="image-result">' +
+            '<% end %>' +
+          '<% else %>' +
+            '<div class="no-result-for-search">' +
+            '</div>' +
+          '<% end %>';
 
+photoBox.insertAdjacentHTML('beforeend', context);
+document.getElementById("q1").value = "";
 
+var photoMotherBox = document.getElementById("mother-photo-list");
+} else {
 
-// def search_target
-//     @image_target_results = []
-//     if params[:q1]
-//       url = "https://pixabay.com/api/?key=#{ENV['PIXABAY_KEY']}&q=#{params[:q1]}&image_type=photo"
-//       response1 = ::HTTParty.get(url)
-//       @image_target_results = JSON.parse(response1.body)['hits'].first(3).map do |photo|
-//         photo["webformatURL"]
-//       end
-//     end
-//   end
+photoMotherBox.innerHTML = "";
+
+      var context = '<% if @image_mother_results.any? %>' +
+            '<% @image_mother_results.each do |url| %>' +
+              '<img src="<%= url %>" alt="" class="image-result">' +
+            '<% end %>' +
+          '<% else %>' +
+            '<div class="no-result-for-search">' +
+            '</div>' +
+          '<% end %>';
+
+photoMotherBox.insertAdjacentHTML('beforeend', context);
+document.getElementById("q2").value = "";
+
+};
+
