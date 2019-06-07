@@ -11,6 +11,8 @@ class SubscriptionsController < ApplicationController
    @course = Course.find(params[:course_id])
 
    authorize @subscription_word
+   search_target
+   search_mother
  end
 
  def create
@@ -26,4 +28,28 @@ class SubscriptionsController < ApplicationController
      redirect_to courses_path
    end
  end
+
+ private
+
+  def search_target
+    @image_target_results = []
+    if params[:q1]
+      url = "https://pixabay.com/api/?key=#{ENV['PIXABAY_KEY']}&q=#{params[:q1]}&image_type=photo"
+      response1 = ::HTTParty.get(url)
+      @image_target_results = JSON.parse(response1.body)['hits'].first(3).map do |photo|
+        photo["webformatURL"]
+      end
+    end
+  end
+
+  def search_mother
+    @image_mother_results = []
+    if params[:q2]
+      url = "https://pixabay.com/api/?key=#{ENV['PIXABAY_KEY']}&q=#{params[:q2]}&image_type=photo"
+      response2 = ::HTTParty.get(url)
+      @image_mother_results = JSON.parse(response2.body)['hits'].first(3).map do |photo|
+        photo["webformatURL"]
+      end
+    end
+  end
 end
