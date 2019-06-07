@@ -8,9 +8,10 @@ class SubscriptionsController < ApplicationController
     @course_word = CourseWord.find(@words_id.first)
     @subscription_word = SubscriptionWord.new
     @course = Course.find(params[:course_id])
-    @background_images = BackgroundImage.all
+    @background_images = current_user.background_images
     @background_image = BackgroundImage.new
     authorize @subscription_word
+    # @background_image_find = BackgroundImage.find(params())
     # authorize @background_image
   end
 

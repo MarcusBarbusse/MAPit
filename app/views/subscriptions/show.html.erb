@@ -49,77 +49,78 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-8 d-flex">
-    <div class="col-xs-1 col-sm-2">
-      <div class="searchbar" id="items1">
-        <div class="search-form-control form-group">
-          <button class='button-letter' name="sq_letter" id="search_query">
-          </button>
-        </div>
-      </div>
-      <div class="searchbar">
-        <div class="search-form-control form-group">
-          <button class='button-letter' name="sq_letter" id="search_query">
-            <%= link_to 'B', courses_path(language: "spanish")  %>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-11 col-sm-10">
-      <div id="map" class="themap">
-        <% letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] %>
-        <% letters.each do |letter|%>
-          <%current_user.background_images.where(letter: letter).each do |image| %>
-          <%=cl_image_tag image.photo %>
+    <div class="searchbar" id="items1">
+      <% letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] %>
+
+      <div class="image_button_container">
+        <div class="button-letter">
+          <% letters.each_with_index do |letter, index|%>
+          <button id="<%= index %>"  class="letter"><%=letter%></button>          
           <% end %>
-         <!--  <%# raise %> -->
-        <% end %>
-        
-        <div class="row1">
-          <div style="width: 100px; height: 100px;" data-dropzone data-x="1" data-y="1"></div>
-          <div style="width: 100px; height: 100px;" data-dropzone data-x="2" data-y="1"></div>
-          <div style="width: 100px; height: 100px;" data-dropzone data-x="3" data-y="1"></div>
-          <div style="width: 100px; height: 100px;" data-dropzone data-x="4" data-y="1"></div>
         </div>
-        <div class="row2">
-          <div class="x1y3"></div>
-          <div class="x2y3">
-          </div>
-          <div class="x3y3">
-          </div>
-          <div class="x4y3">
-          </div>
-        </div>
-        <div class="row3">
-          <div class="x1y2">
-          </div>
-          <div class="x2y2">
-          </div>
-          <div class="x3y2">
-          </div>
-          <div class="x4y2">
-          </div>
-        </div>
-        <div class="row4">
-          <div class="x1y1">
-          </div>
-          <div class="x2y1">
-          </div>
-          <div class="x3y1">
-          </div>
-          <div class="x4y1">
-          </div>
-        </div>
-        <%# else %>
-        <%= simple_form_for(@background_image) do |f| %>
+      </div>
+     </div>
+
+     <% @background_images.each_with_index do |image, index| %>
+     <div id="map <%= index %>" class="themap maps d-none" style=" background-image : url(<%= image.photo %>);">
+      <%= simple_form_for image, method: :patch do |f|%>
+
+        <!-- <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden"> -->
+        <!-- <input type="file" name="background_image[photo]"> -->
+        <!-- <input name="letter" type="hidden" value="<%= image.letter %>"> -->
+        <!-- <input type="submit" name="" id="" value="Submit"> -->
         <%= f.input :photo %>
-        <%= f.input :letter %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
         <%= f.submit %>
-        <% end %>
-        <%# end %>
+      <% end %>
+      <div class="row1">
+        <div style="width: 100px; height: 100px;" data-dropzone data-x="1" data-y="1"></div>
+        <div style="width: 100px; height: 100px;" data-dropzone data-x="2" data-y="1"></div>
+        <div style="width: 100px; height: 100px;" data-dropzone data-x="3" data-y="1"></div>
+        <div style="width: 100px; height: 100px;" data-dropzone data-x="4" data-y="1"></div>
+      </div>
+      <div class="row2">
+        <div class="x1y3"></div>
+        <div class="x2y3">
+        </div>
+        <div class="x3y3">
+        </div>
+        <div class="x4y3">
+        </div>
+      </div>
+      <div class="row3">
+        <div class="x1y2">
+        </div>
+        <div class="x2y2">
+        </div>
+        <div class="x3y2">
+        </div>
+        <div class="x4y2">
+        </div>
+      </div>
+      <div class="row4">
+        <div class="x1y1">
+        </div>
+        <div class="x2y1">
+        </div>
+        <div class="x3y1">
+        </div>
+        <div class="x4y1">
+        </div>
       </div>
     </div>
+    <% end %>
   </div>
+
 </div>
+<!--         <div id="map <%# index %>" class="">
+-->    
+<%#= f.input :letter %>
+<%#= f.submit %>
+<%# end %>
+
+
 
 <!--             <div id="items2" data-box-number="2">
               <div class="element" data-choosen="true">aboyer</div>

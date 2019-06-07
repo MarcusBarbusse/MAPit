@@ -4,4 +4,5 @@ initUpdateNavbarOnScroll();
 import { initDragAndDrop } from "../components/draganddrop";
 initDragAndDrop();
 import '../components/cards';
-
+import { clickLetter } from "../components/mapletters";
+clickLetter();
