@@ -1,4 +1,5 @@
 class SubscriptionsController < ApplicationController
+
   def show
     @subscription = Subscription.find(params[:id])
     @words_id = @subscription.course_words.ids
@@ -66,4 +67,3 @@ class SubscriptionsController < ApplicationController
       photo["webformatURL"]
     end
   end
-end

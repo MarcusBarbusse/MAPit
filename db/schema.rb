@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_150241) do
+ActiveRecord::Schema.define(version: 2019_06_07_134255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,10 @@ ActiveRecord::Schema.define(version: 2019_06_03_150241) do
     t.bigint "course_word_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "photo_mother_tongue_x"
+    t.integer "photo_mother_tongue_y"
+    t.integer "photo_target_word_x"
+    t.integer "photo_target_word_y"
     t.index ["course_word_id"], name: "index_subscription_words_on_course_word_id"
     t.index ["subscription_id"], name: "index_subscription_words_on_subscription_id"
   end

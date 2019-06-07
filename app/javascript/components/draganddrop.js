@@ -2,6 +2,13 @@ import Sortable from "sortablejs";
 
 const initDragAndDrop = () => {
 
+  const motherX = document.getElementById('subscription_word_photo_mother_tongue_x')
+  const motherY = document.getElementById('subscription_word_photo_mother_tongue_y')
+  const motherUrl = document.getElementById('subscription_word_photo_mother_tongue')
+  const targetX = document.getElementById('subscription_word_photo_target_word_x')
+  const targetY = document.getElementById('subscription_word_photo_target_word_y')
+  const targetUrl = document.getElementById('subscription_word_photo_target_word')
+
   var el1 = document.getElementById("target-photo-list");
   Sortable.create(el1, {
     group: "shared"
@@ -22,31 +29,16 @@ const initDragAndDrop = () => {
   const onAdd = (event) => {
     const el = event.to
     const item = event.item
-    alert(`you dropped ${item.dataset.photoId} in ${el.dataset.x} ${el.dataset.y}`)
-    // document.getElementById('map').style.backgroundImage = "url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')"
+    eval(`${item.dataset.category}X`).value = el.dataset.x
+    eval(`${item.dataset.category}Y`).value = el.dataset.y
+    eval(`${item.dataset.category}Url`).value = item.src
   };
 
-  // const search = document.querySelector(".form-control");
-  // search.addEventListener("blur", (event) => {
-  //   console.log(event.currentTarget);
-  // });
+  document.getElementById("nextWordButton").addEventListener("click", (event) => {
+    document.getElementById("submitFormButton").click()
+  })
 
-  // const search_mother = (query) => {
-  //   const image_mother_results = []
-  //   const apiUrl = `https://pixabay.com/api/?key=${ENV['PIXABAY_KEY']}&q=${params[:query]}&image_type=photo`
-  //   fetch(apiUrl)
-  //     .then(image_mother_results => image_mother_results.json())
-  //     .then((data) => {
-  //       console.log(data)
-            // data.Search.forEach((result) => {
-            //   const movie = `<li class="list-inline-item">
-            //     <img src="${result.Poster}" alt="">
-            //     <p>${result.Title}</p>
-            //   </li>`;
-            //   results.insertAdjacentHTML("beforeend", movie);
-            // });
-  //     });
-  // }
 }
+
 
 export { initDragAndDrop };

@@ -6,7 +6,7 @@ photoBox.innerHTML = "";
 
         var context = '<% if @image_target_results.any? %>' +
             '<% @image_target_results.each do |url| %>' +
-              '<img src="<%= url %>" alt="" class="image-result">' +
+              '<img data-category="target" src="<%= url %>" alt="" class="image-result">' +
             '<% end %>' +
           '<% else %>' +
             '<div class="no-result-for-search">' +
@@ -23,7 +23,7 @@ photoMotherBox.innerHTML = "";
 
       var context = '<% if @image_mother_results.any? %>' +
             '<% @image_mother_results.each do |url| %>' +
-              '<img src="<%= url %>" alt="" class="image-result">' +
+              '<img data-category="mother" src="<%= url %>" alt="" class="image-result">' +
             '<% end %>' +
           '<% else %>' +
             '<div class="no-result-for-search">' +
