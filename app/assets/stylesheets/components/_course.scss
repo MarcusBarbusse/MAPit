@@ -1,9 +1,23 @@
-.courses_container {
+.courses-page {
+  background-color: whitesmoke;
+  padding: 90px;
+  h1 {
+    color: $title;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 40px;
+  }
+  .button a {
+    color: white;
+  }
+}
+
+.course-container {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding-left: 25px;
+  // padding-bottom: 25px;
   flex-wrap: wrap;
 }
 
@@ -11,30 +25,34 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 3px;
   cursor: pointer;
   width: 200px;
   margin-right: 25px;
   margin-top: 25px;
 }
+
 .popup {
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
 
+
 .popup .popuptext {
   visibility: hidden;
   // width: 20%;
   // height: 25%;
-  background-color: #010101;
-  color: #fff;
+  background-color: white;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+  color: black;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 3px;
   position: absolute;
   z-index: 1;
   bottom: 100%;
   left: 0%;
-  padding-top : 5px;
+  padding-bottom: 5px;
   margin-left: -15px;
   img {
     width: 300px;
@@ -67,6 +85,8 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .card-trip p {
@@ -94,10 +114,14 @@
 .flags {
   display: flex;
   justify-content: flex-start;
-  padding: 10px;
+  // padding: 10px;
 }
 .flag {
-  padding: 10px;
+  padding-right: 10px;
+  a {
+    text-decoration: none;
+    display: block;
+  }
 }
 
 @-webkit-keyframes fadeIn {

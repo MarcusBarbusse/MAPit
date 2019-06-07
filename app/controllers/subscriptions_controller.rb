@@ -11,8 +11,9 @@ class SubscriptionsController < ApplicationController
     @background_images = current_user.background_images
     @background_image = BackgroundImage.new
     authorize @subscription_word
-    # @background_image_find = BackgroundImage.find(params())
-    # authorize @background_image
+   search_target
+   search_mother
+ end
   end
 
   def create
@@ -23,9 +24,46 @@ class SubscriptionsController < ApplicationController
     authorize @subscription
     if @subscription.save
       redirect_to course_subscription_path(@course, @subscription)
-
     else
       redirect_to courses_path
+    end
+  end
+
+  def create
+   @course = Course.find(params[:format])
+   @subscription = Subscription.new
+   @subscription.course = @course
+   @subscription.user = current_user
+   authorize @subscription
+   if @subscription.save
+     redirect_to course_subscription_path(@course, @subscription)
+
+   else
+     redirect_to courses_path
+   end
+ end
+
+ private
+
+  def search_target
+    @image_target_results = []
+    if params[:q1]
+      url = "https://pixabay.com/api/?key=#{ENV['PIXABAY_KEY']}&q=#{params[:q1]}&image_type=photo"
+      response1 = ::HTTParty.get(url)
+      @image_target_results = JSON.parse(response1.body)['hits'].first(3).map do |photo|
+        photo["webformatURL"]
+      end
+    end
+  end
+
+  def search_mother
+    @image_mother_results = []
+    # params[:q2] = @course_word.translation
+    params[:q2] = "sun"
+    url = "https://pixabay.com/api/?key=#{ENV['PIXABAY_KEY']}&q=#{params[:q2]}&image_type=photo"
+    response2 = ::HTTParty.get(url)
+    @image_mother_results = JSON.parse(response2.body)['hits'].first(3).map do |photo|
+      photo["webformatURL"]
     end
   end
 end

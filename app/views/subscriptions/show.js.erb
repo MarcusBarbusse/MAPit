@@ -1,0 +1,37 @@
+
+var formInput = document.getElementById("q1");
+if (formInput.value !== "") {
+var photoBox = document.getElementById("target-photo-list");
+photoBox.innerHTML = "";
+
+        var context = '<% if @image_target_results.any? %>' +
+            '<% @image_target_results.each do |url| %>' +
+              '<img src="<%= url %>" alt="" class="image-result">' +
+            '<% end %>' +
+          '<% else %>' +
+            '<div class="no-result-for-search">' +
+            '</div>' +
+          '<% end %>';
+
+photoBox.insertAdjacentHTML('beforeend', context);
+document.getElementById("q1").value = "";
+
+var photoMotherBox = document.getElementById("mother-photo-list");
+} else {
+
+photoMotherBox.innerHTML = "";
+
+      var context = '<% if @image_mother_results.any? %>' +
+            '<% @image_mother_results.each do |url| %>' +
+              '<img src="<%= url %>" alt="" class="image-result">' +
+            '<% end %>' +
+          '<% else %>' +
+            '<div class="no-result-for-search">' +
+            '</div>' +
+          '<% end %>';
+
+photoMotherBox.insertAdjacentHTML('beforeend', context);
+document.getElementById("q2").value = "";
+
+};
+

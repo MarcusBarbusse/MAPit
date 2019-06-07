@@ -1,0 +1,57 @@
+
+.unflipped {
+  transform: rotateY(0deg);
+  transition: 0.5s;
+}
+
+.flipped {
+  transform: rotateY(-180deg);
+  transition: 0.5s;
+}
+
+.invisible {
+  display: none;
+  // transform: rotateY(-180deg);
+  transition: 0.5s;
+}
+#flashcard-front {
+  transform: rotateY(0deg);
+  transition: 0.5s;
+}
+#flashcard-answer {
+  transform: rotateY(-180deg);
+  transition: 0.5s;
+}
+
+#flashcard {
+  margin: 40px;
+  text-align: center;
+  padding: 10px;
+
+}
+#flashcard-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#flashcard-front > img {
+  height: 400px;
+  width: 800px;
+  object-fit: cover;
+}
+
+#flashcard-answer > img {
+  height: 400px;
+  width: 800px;
+  object-fit: cover;
+}
+
+.flashcard-button {
+  margin: 10px;
+}
+.flashcard-button a {
+  color: white;
+}
+
