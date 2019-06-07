@@ -14,20 +14,8 @@ class SubscriptionWordsController < ApplicationController
   end
 
   def create
-    @subscription = Subscription.find(params[:subscription_id])
-    @words_id = @subscription.course_words.ids
-    @subscription.subscription_words.each do |word|
-    @words_id.delete(word.course_word_id)
-    end
-    @course_word = CourseWord.find(@words_id.first)
-
-    @subscription_word = SubscriptionWord.new(subscription_word_params)
-    @subscription_word.subscription = @subscription
-    @subscription_word.course_word_id = @course_word.id
-    @subscription_word.mapped = true
-    authorize @subscription_word
-    @subscription_word.save
-    redirect_to course_subscription_path(@subscription.course_id, @subscription.id)
+    save_subscription_word
+    redirect_to course_subscription_path(course_id: course_id, id: subscription_id)
   end
 
   def update
@@ -41,6 +29,26 @@ class SubscriptionWordsController < ApplicationController
   private
 
   def subscription_word_params
-    params.require(:subscription_word).permit(:photo_mother_tongue, :photo_target_word, :subscription_id, :flashed)
+    params
+      .require(:subscription_word)
+      .permit(:photo_mother_tongue, :photo_target_word, :subscription_id, :flashed, :course_word_id,
+        :photo_mother_tongue_x, :photo_mother_tongue_y, :photo_target_word_x, :photo_target_word_y)
+  end
+
+  def course_id
+    params[:course_id]
+  end
+
+  def subscription_id
+    params[:subscription_id]
+  end
+
+  def save_subscription_word
+    @subscription_word = SubscriptionWord.new(subscription_word_params.merge(
+      subscription_id: subscription_id,
+      mapped: true
+    ))
+    authorize @subscription_word
+    @subscription_word.save
   end
 end

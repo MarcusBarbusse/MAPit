@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
      @words_id.delete(word.course_word_id)
    end
    @course_word = CourseWord.find(@words_id.first)
-   @subscription_word = SubscriptionWord.new
+   @subscription_word = SubscriptionWord.new(course_word_id: @course_word.id)
    @course = Course.find(params[:course_id])
 
    authorize @subscription_word
