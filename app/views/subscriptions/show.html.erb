@@ -17,11 +17,11 @@
                 class: "form-control",
                 placeholder: "Find an image"
               %>
+          <button name="button" type="submit" class="button" value="Submit">
+            <%#= link_to "Search" %>🔍Search
+          </button>
             <% end %>
           </div>
-          <button name="button" type="submit" class="button">
-            <%= link_to "🔍Search", courses_path %>
-          </button>
         </div>
         <div id="target-photo-list" data-photo-id="search">
           <% if @image_target_results.any? %>
@@ -42,31 +42,23 @@
     <div class="col-xs-12 col-sm-6">
       <div>
         <div class="image" data-photo-id="eatPhotoID">
-          <%= @course_word.translation%>
+          <%= @course_word.translation %>
         </div>
         <div class='container-search' data-photo-id="search">
           <div class="image-search-bar">
             <%= form_tag course_subscription_path(@course.id, Subscription.all.where(user: current_user).where(course: @course).first.id), method: :get do %>
               <%= text_field_tag :q2,
                 params[:q2],
-                class: "form-control",
-                placeholder: "Find an image"
+                class: "form-control"
               %>
             <% end %>
           </div>
-          <button name="button" type="submit" class="button">
-            <%= link_to "🔍Search", courses_path %>
-          </button>
         </div>
         <div id="mother-photo-list" data-photo-id="search">
           <% if @image_mother_results.any? %>
             <% @image_mother_results.each do |url| %>
               <img src="<%= url %>" alt="" class="image-result">
             <% end %>
-          <% else %>
-            <div class="no-result-for-search">
-              <h4>Oups, no results! Search for something real :)</h4>
-            </div>
           <% end %>
         </div>
       </div>

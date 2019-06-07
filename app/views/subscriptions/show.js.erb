@@ -1,0 +1,31 @@
+// console.log("hello")
+
+// const search_mother = (query) => {
+//     const image_mother_results = []
+//     const apiUrl = `https://pixabay.com/api/?key=${ENV['PIXABAY_KEY']}&q=${params[:query]}&image_type=photo`
+//     fetch(apiUrl)
+//       .then(image_mother_results => image_mother_results.json())
+//       .then((data) => {
+//             data.Search.forEach((result) => {
+//               const movie = `<li class="list-inline-item">
+//                 <img src="${result.Poster}" alt="">
+//                 <p>${result.Title}</p>
+//               </li>`;
+//               results.insertAdjacentHTML("beforeend", movie);
+//             });
+//       });
+//   }
+
+
+
+
+// def search_target
+//     @image_target_results = []
+//     if params[:q1]
+//       url = "https://pixabay.com/api/?key=#{ENV['PIXABAY_KEY']}&q=#{params[:q1]}&image_type=photo"
+//       response1 = ::HTTParty.get(url)
+//       @image_target_results = JSON.parse(response1.body)['hits'].first(3).map do |photo|
+//         photo["webformatURL"]
+//       end
+//     end
+//   end
