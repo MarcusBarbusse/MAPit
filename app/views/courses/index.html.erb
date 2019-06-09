@@ -1,91 +1,91 @@
 <div class=courses-page>
 
-<div class="courses-container">
-  <h1 class="highlight">My courses</h1>
-  <% @my_courses.each do |course| %>
-  <% if !@my_courses.present? %>
-  <p>No courses yet!</p>
-  <% end %>
-  <div class="popup">
-    <div class="card-trip">
-      <span class="popuptext myPopup">
+  <div class="courses-container">
+    <h1 class="highlight">My courses</h1>
+    <% if current_user != nil %>
+      <% @my_courses.each do |course| %>
+        <% if !@my_courses.present? %>
+          <p>No courses yet!</p>
+        <% end %>
+      <div class="popup">
+      <div class="card-trip">
+        <span class="popuptext myPopup">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+          <div class="card-trip-infos">
+            <h2><%= course.name.capitalize %></h2>
+          </div>
+          <button name="button" type="submit" class="button">
+            <%= link_to "Continue course", course_subscription_path(course.id, Subscription.all.where(user: current_user).where(course: course).first.id)%>
+          </button>
+        </span>
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
         <div class="card-trip-infos">
           <h2><%= course.name.capitalize %></h2>
-<!--           <h2><%= course.category %></h2>
-          <h2><%= course.language %></h2> -->
-        </div>
-        <button name="button" type="submit" class="button">
-        <%= link_to "Continue course", course_subscription_path(course.id, Subscription.all.where(user: current_user).where(course: course).first.id)%>
-      </button>
-      </span>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-        <div class="card-trip-infos">
-            <h2><%= course.name.capitalize %></h2>
         </div>
       </div>
     </div>
     <% end %>
-</div>
-
-<div class="courses-container">
-  <h1 class="highlight">Discover other courses</h1>
-  <div class="flags">
-    <div class="flag">
-      <div class="searchbar">
-        <div class="search-form-control form-group">
-          <button class='button-flag' name="category" id="search_query">
-            <%= link_to '🇬🇧', courses_path(language: "english")  %>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="flag">
-      <div class="searchbar">
-        <div class="search-form-control form-group">
-          <button class='button-flag' name="sq_category" id="search_query">
-            <%= link_to '🇳🇱', courses_path(language: "dutch")  %>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="flag">
-      <div class="searchbar">
-        <div class="search-form-control form-group">
-          <button class='button-flag' name="sq_category" id="search_query">
-            <%= link_to '🇫🇷', courses_path(language: "french")  %>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="flag">
-      <div class="searchbar">
-        <div class="search-form-control form-group">
-          <button class='button-flag' name="sq_category" id="search_query">
-            <%= link_to '🇮🇹', courses_path(language: "italian")  %>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="flag">
-      <div class="searchbar">
-        <div class="search-form-control form-group">
-          <button class='button-flag' name="sq_category" id="search_query">
-            <%= link_to '🇪🇸', courses_path(language: "spanish")  %>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="flag">
-      <div class="searchbar">
-        <div class="search-form-control form-group">
-          <button class='button-flag' name="sq_category" id="search_query">
-            <%= link_to 'All', courses_path(language: "spanish")  %>
-          </button>
-        </div>
-      </div>
-    </div>
+  <% end %>
   </div>
+
+  <div class="courses-container">
+    <h1 class="highlight">Discover other courses</h1>
+    <div class="flags">
+      <div class="flag">
+        <div class="searchbar">
+          <div class="search-form-control form-group">
+            <button class='button-flag' name="category" id="search_query">
+              <%= link_to '🇬🇧', courses_path(language: "english")  %>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="flag">
+        <div class="searchbar">
+          <div class="search-form-control form-group">
+            <button class='button-flag' name="sq_category" id="search_query">
+              <%= link_to '🇳🇱', courses_path(language: "dutch")  %>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="flag">
+        <div class="searchbar">
+          <div class="search-form-control form-group">
+            <button class='button-flag' name="sq_category" id="search_query">
+              <%= link_to '🇫🇷', courses_path(language: "french")  %>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="flag">
+        <div class="searchbar">
+          <div class="search-form-control form-group">
+            <button class='button-flag' name="sq_category" id="search_query">
+              <%= link_to '🇮🇹', courses_path(language: "italian")  %>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="flag">
+        <div class="searchbar">
+          <div class="search-form-control form-group">
+            <button class='button-flag' name="sq_category" id="search_query">
+              <%= link_to '🇪🇸', courses_path(language: "spanish")  %>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="flag">
+        <div class="searchbar">
+          <div class="search-form-control form-group">
+            <button class='button-flag' name="sq_category" id="search_query">
+              <%= link_to 'All', courses_path(language: "spanish")  %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <div class="course-container">
@@ -98,23 +98,23 @@
               <div>
                 <h2><%= course.name.capitalize %></h2>
 <!--                 <h2><%= course.category %></h2>
-                <h2><%= course.language %></h2> -->
-              </div>
-              <h2 class="card-trip-pricing">$9.99</h2>
-              <% if policy(Course).create? %>
-              <button name="button" type="submit" class="button">
-              <%=  link_to "Join course", subscription_path(course), method: :post %>
-            </button>
-            </div>
-          </span>
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-          <div class="card-trip-infos">
-              <h2><%= course.name.capitalize %></h2>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
+  <h2><%= course.language %></h2> -->
+</div>
+<h2 class="card-trip-pricing">$9.99</h2>
+<% if policy(Course).create? %>
+<button name="button" type="submit" class="button">
+  <%=  link_to "Join course", subscription_path(course), method: :post %>
+</button>
+</div>
+</span>
+<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+<div class="card-trip-infos">
+  <h2><%= course.name.capitalize %></h2>
+  <% end %>
+</div>
+</div>
+</div>
+<% end %>
+</div>
+</div>
 </div>
