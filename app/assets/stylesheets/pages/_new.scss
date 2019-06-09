@@ -1,7 +1,14 @@
 .container-login {
-  padding: 40px;
+  padding: 50px;
   max-width: 50%;
   margin: 0 auto;
+  margin-top: 150px;
   border-radius: 5px;
-  background-color: orange;
-}
+  background-color: white;
+  border-style: solid;
+  border-color: $button;
+    h2 {
+      color: $title;
+      font-weight: bolder;
+    }
+  }

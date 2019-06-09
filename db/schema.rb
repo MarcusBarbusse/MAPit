@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 2019_06_03_150241) do
   create_table "subscription_words", force: :cascade do |t|
     t.string "photo_target_word"
     t.string "photo_mother_tongue"
-    t.boolean "mapped", default: false
-    t.boolean "flashed", default: false
+    t.boolean "mapped"
+    t.boolean "flashed"
     t.bigint "subscription_id"
     t.bigint "course_word_id"
     t.datetime "created_at", null: false
