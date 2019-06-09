@@ -1,6 +1,5 @@
-<div class="banner">
-  <div class="container-login" style="background-color: white">
-    <div class="row">
+<div class="container-login">
+  <div class="login-text">
       <h2>Sign up</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -23,7 +22,7 @@
           <button name="button" type="submit" class="button">Sign up</button>
         </div>
       <% end %>
+      <br>
       <%= render "devise/shared/links" %>
-    </div>
   </div>
 </div>
