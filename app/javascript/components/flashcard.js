@@ -27,16 +27,16 @@ const flashcard = () => {
 export { flashcard };
 
 
-const photoMother = document.querySelector(".mother_photo_display");
-const MotherId = photoMother.id;
-const locationMother = document.getElementById(MotherId);
+// const photoMother = document.querySelector(".mother_photo_display");
+// const MotherId = photoMother.id;
+// const locationMother = document.getElementById(MotherId);
 
-locationMother.appendChild(photoMother);
+// locationMother.appendChild(photoMother);
 
-const photoTarget = document.querySelector(".target_photo_display");
-const targetId = photoTarget.id;
-const locationTarget = document.getElementById(targetId);
+// const photoTarget = document.querySelector(".target_photo_display");
+// const targetId = photoTarget.id;
+// const locationTarget = document.getElementById(targetId);
 
-locationTarget.appendChild(photoTarget);
+// locationTarget.appendChild(photoTarget);
 
 
