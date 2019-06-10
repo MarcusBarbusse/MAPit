@@ -7,15 +7,17 @@
 }
 
 .banner-text {
-    padding-left: 140px;
+  padding-left: 140px;
   margin-bottom: 360px;
   font-family: 'Noto Sans JP', sans-serif;
 }
 
 .arrow-down {
   text-align: center;
+  color: $title;
   a {
     text-decoration: none;
+    color: $title;
   }
 }
 
