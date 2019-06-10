@@ -23,35 +23,36 @@
   transition: 0.5s;
 }
 
-#flashcard {
-  margin: 40px;
-  text-align: center;
-  padding: 10px;
 
-}
-#flashcard-container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
+// #flashcard {
+//   margin: 40px;
+//   text-align: center;
+//   padding: 10px;
 
-#flashcard-front > img {
-  height: 400px;
-  width: 800px;
-  object-fit: cover;
-}
+// }
+// #flashcard-container {
+//     padding-right: 15px;
+//     padding-left: 15px;
+//     margin-right: auto;
+//     margin-left: auto;
+// }
 
-#flashcard-answer > img {
-  height: 400px;
-  width: 800px;
-  object-fit: cover;
-}
+// #flashcard-front > img {
+//   height: 400px;
+//   width: 800px;
+//   object-fit: cover;
+// }
 
-.flashcard-button {
-  margin: 10px;
-}
-.flashcard-button a {
-  color: white;
-}
+// #flashcard-answer > img {
+//   height: 400px;
+//   width: 800px;
+//   object-fit: cover;
+// }
+
+// .flashcard-button {
+//   margin: 10px;
+// }
+// .flashcard-button a {
+//   color: white;
+// }
 
