@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
       @words_id.delete(word.course_word_id)
     end
     @course_word = CourseWord.find(@words_id.first)
-    @subscription_word = SubscriptionWord.new
+    @subscription_word = SubscriptionWord.new(course_word_id: @course_word.id)
     @course = Course.find(params[:course_id])
     @background_images = current_user.background_images
     @background_image = BackgroundImage.new
@@ -15,7 +15,7 @@ class SubscriptionsController < ApplicationController
    search_target
    search_mother
  end
-  end
+
 
   def create
     @course = Course.find(params[:format])
@@ -30,19 +30,6 @@ class SubscriptionsController < ApplicationController
     end
   end
 
-  def create
-   @course = Course.find(params[:format])
-   @subscription = Subscription.new
-   @subscription.course = @course
-   @subscription.user = current_user
-   authorize @subscription
-   if @subscription.save
-     redirect_to course_subscription_path(@course, @subscription)
-
-   else
-     redirect_to courses_path
-   end
- end
 
  private
 
@@ -67,3 +54,4 @@ class SubscriptionsController < ApplicationController
       photo["webformatURL"]
     end
   end
+end
