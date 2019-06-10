@@ -12,10 +12,10 @@ class SubscriptionsController < ApplicationController
     @background_images = current_user.background_images
     @background_image = BackgroundImage.new
     authorize @subscription_word
-   search_target
-   search_mother
- end
+    search_target
+    search_mother
   end
+
 
   def create
     @course = Course.find(params[:format])
@@ -30,21 +30,14 @@ class SubscriptionsController < ApplicationController
     end
   end
 
-  def create
-   @course = Course.find(params[:format])
-   @subscription = Subscription.new
-   @subscription.course = @course
-   @subscription.user = current_user
-   authorize @subscription
-   if @subscription.save
-     redirect_to course_subscription_path(@course, @subscription)
+  def destroy
+    @subscription = Subscription.find(params[:format])
+    @subscription.destroy
+    redirect_to courses_path
+  end
 
-   else
-     redirect_to courses_path
-   end
- end
 
- private
+  private
 
   def search_target
     @image_target_results = []
@@ -67,3 +60,4 @@ class SubscriptionsController < ApplicationController
       photo["webformatURL"]
     end
   end
+end
