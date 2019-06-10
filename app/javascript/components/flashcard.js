@@ -24,7 +24,6 @@ card.addEventListener("click", (event) => {
 
 export { flashcard };
 
-const displayImage = () => {
 
 const photoMother = document.querySelector(".mother_photo_display");
 const MotherId = photoMother.id;
@@ -38,6 +37,4 @@ const locationTarget = document.getElementById(targetId);
 
 locationTarget.appendChild(photoTarget);
 
-}
 
-export { displayImage };
