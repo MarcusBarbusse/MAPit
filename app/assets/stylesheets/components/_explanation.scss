@@ -23,19 +23,19 @@
 }
 
 .highlight {
-  background: linear-gradient(180deg,rgba(255,255,255,0) 90%, $button 20%);
+  background: linear-gradient(180deg,rgba(255,255,255,0) 90%, $course_bar 20%);
 }
 
 .explanation p {
   opacity: .8;
-  color: $title;
+  color: c4c4c4;
 }
 
 .explanation {
   text-align: center;
   padding-left: 35px;
   padding-right: 35px;
-  padding-top: 20px;
+  padding-top: 10px;
   flex-grow: 10;
 }
 

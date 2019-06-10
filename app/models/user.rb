@@ -5,5 +5,26 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  :recoverable, :rememberable, :validatable
+
+  def mapping_percentage(course_id)
+
+    subscription = self.subscriptions.find_by(course_id: course_id)
+    course_words = subscription.course.course_words.count
+    subscription_words = subscription.subscription_words.count
+    subscription_words == 0 ? 0 : (course_words / subscription_words) * 100
+
+  end
+
+
+
+
+
+
+
+
+
+
+
+
 end

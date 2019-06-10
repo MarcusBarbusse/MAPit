@@ -6,15 +6,29 @@
   align-items: flex-end;
 }
 
+.banner-container {
+  display: flex;
+}
+
 .banner-text {
   padding-left: 140px;
-  margin-bottom: 360px;
+  margin-bottom: 200px;
   font-family: 'Noto Sans JP', sans-serif;
+}
+
+.square-map {
+  padding: 160px;
+  border: solid;
+  border-color: white;
+  height: 200px;
+  weight: 200px;
+  margin-left: 80px;
 }
 
 .arrow-down {
   text-align: center;
   color: $title;
+  margin-left: 30px;
   a {
     text-decoration: none;
     color: $title;

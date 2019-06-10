@@ -1,31 +1,42 @@
 <div class=courses-page>
+
   <div class="courses-container">
     <h1 class="highlight">My courses</h1>
     <% if current_user != nil %>
       <% @my_courses.each do |course| %>
         <% if !@my_courses.present? %>
-          <p>No courses yet!</p>
+        <p>No courses yet!</p>
         <% end %>
-          <div class="popup">
-            <div class="card-trip">
-              <span class="popuptext myPopup">
-                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-                <div class="card-trip-infos">
-                  <h2><%= course.name.capitalize %></h2>
-                </div>
-                <button name="button" type="submit" class="button">
-                  <%= link_to "Continue course", course_subscription_path(course.id, Subscription.all.where(user: current_user).where(course: course).first.id)%>
-                </button>
-              </span>
+        <div class="popup">
+          <div class="card-trip">
+            <span class="popuptext myPopup">
               <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
               <div class="card-trip-infos">
                 <h2><%= course.name.capitalize %></h2>
               </div>
+              <button name="button" type="submit" class="button">
+                <%= link_to "Continue course", course_subscription_path(course.id, Subscription.all.where(user: current_user).where(course: course).first.id)%>
+              </button> 
+
+              <button name="button" type="submit" class="button">
+                <%= link_to "delete course", course_subscription_path(course.id, Subscription.all.where(user: current_user).where(course: course).first.id), method: :delete%>
+              </button>
+
+            </span>
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+            <div class="card-trip-infos">
+              <h2><%= course.name.capitalize %></h2>
+            </div>
+            <% percentage = current_user.mapping_percentage(course.id) %>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated length" role="progressbar" aria-valuenow="<%= percentage %>%" aria-valuemin="0" aria-valuemax="100" style="width: <%= percentage %>%"></div>
             </div>
           </div>
-        <% end %>
+        </div>
+      <% end %>
     <% end %>
   </div>
+
   <div class="courses-container">
     <h1 class="highlight">Discover other courses</h1>
     <div class="flags">
@@ -78,12 +89,14 @@
         <div class="searchbar">
           <div class="search-form-control form-group">
             <button class='button-flag' name="sq_category" id="search_query">
-              <%= link_to 'All', courses_path(language: "spanish")  %>
+              <%= link_to 'All', courses_path(language: "")  %>
             </button>
           </div>
         </div>
       </div>
     </div>
+
+
     <div class="course-container">
       <% @courses.each do |course| %>
       <div class="popup">
@@ -91,20 +104,20 @@
           <span class="popuptext myPopup">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
             <div class="card-trip-infos-">
-               <div>
+              <div>
                 <h2><%= course.name.capitalize %></h2>
-               </div>
-                <h2 class="card-trip-pricing">$9.99</h2>
-                  <% if policy(Course).create? %>
-                  <button name="button" type="submit" class="button">
-                    <%=  link_to "Join course", subscription_path(course), method: :post %>
-                  </button>
+              </div>
+              <h2 class="card-trip-pricing">$9.99</h2>
+              <% if policy(Course).create? %>
+              <button name="button" type="submit" class="button">
+                <%=  link_to "Join course", subscription_path(course), method: :post %>
+              </button>
+              <% end %>
             </div>
           </span>
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-            <div class="card-trip-infos">
-                <h2><%= course.name.capitalize %></h2>
-            <% end %>
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+          <div class="card-trip-infos">
+            <h2><%= course.name.capitalize %></h2>
           </div>
         </div>
       </div>
