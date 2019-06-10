@@ -20,3 +20,4 @@ flashcard();
 $(function () {
   $('[data-toggle="popover"]').popover()
 })
+
