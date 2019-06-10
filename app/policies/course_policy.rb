@@ -10,6 +10,7 @@ class CoursePolicy < ApplicationPolicy
   end
 
   def create?
-    false
+    true
   end
+
 end
