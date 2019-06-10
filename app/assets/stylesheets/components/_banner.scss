@@ -27,9 +27,11 @@
 
 .arrow-down {
   text-align: center;
+  color: $title;
   margin-left: 30px;
   a {
     text-decoration: none;
+    color: $title;
   }
 }
 
