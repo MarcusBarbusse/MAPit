@@ -19,7 +19,7 @@
               </button> 
 
               <button name="button" type="submit" class="button">
-                <%=  link_to "Join course", subscription_path(course), method: :delete %>
+                <%= link_to "delete course", course_subscription_path(course.id, Subscription.all.where(user: current_user).where(course: course).first.id), method: :delete%>
               </button>
 
             </span>
