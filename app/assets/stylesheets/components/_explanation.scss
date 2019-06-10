@@ -23,7 +23,7 @@
 }
 
 .highlight {
-  background: linear-gradient(180deg,rgba(255,255,255,0) 90%, $button 20%);
+  background: linear-gradient(180deg,rgba(255,255,255,0) 90%, $course_bar 20%);
 }
 
 .explanation p {
@@ -46,8 +46,4 @@
   justify-content: space-between;
   padding-top: 130px;
   padding-bottom: 100px;
-}
-
-.explanation-arrow {
-  color: #3b9ce2;
 }

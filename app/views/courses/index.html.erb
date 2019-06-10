@@ -28,6 +28,10 @@
             <div class="card-trip-infos">
               <h2><%= course.name.capitalize %></h2>
             </div>
+            <% percentage = current_user.mapping_percentage(course.id) %>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated length" role="progressbar" aria-valuenow="<%= percentage %>%" aria-valuemin="0" aria-valuemax="100" style="width: <%= percentage %>%"></div>
+            </div>
           </div>
         </div>
       <% end %>
@@ -115,9 +119,15 @@
             <img src="<%= course.picture %>">
             <div class="card-trip-infos">
               <h2><%= course.name.capitalize %></h2>
+
             </div>
+          </span>
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+          <div class="card-trip-infos">
+            <h2><%= course.name.capitalize %></h2>
           </div>
         </div>
+      </div>
       <% end %>
     </div>
   </div>
