@@ -10,20 +10,21 @@
         <div class="popup">
           <div class="card-trip">
             <span class="popuptext myPopup">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+              <img src="<%= course.picture %>">
+
               <div class="card-trip-infos">
                 <h2><%= course.name.capitalize %></h2>
               </div>
               <button name="button" type="submit" class="button">
                 <%= link_to "Continue course", course_subscription_path(course.id, Subscription.all.where(user: current_user).where(course: course).first.id)%>
-              </button> 
+              </button>
 
               <button name="button" type="submit" class="button">
                 <%= link_to "delete course", course_subscription_path(course.id, Subscription.all.where(user: current_user).where(course: course).first.id), method: :delete%>
               </button>
 
             </span>
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+           <img src="<%= course.picture %>">
             <div class="card-trip-infos">
               <h2><%= course.name.capitalize %></h2>
             </div>
@@ -98,7 +99,7 @@
         <div class="popup">
           <div class="card-trip">
             <span class="popuptext myPopup">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+              <img src="<%= course.picture %>">
               <div class="card-trip-infos-">
                 <div>
                   <h2><%= course.name.capitalize %></h2>
@@ -111,7 +112,7 @@
                 <% end %>
               </div>
             </span>
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+            <img src="<%= course.picture %>">
             <div class="card-trip-infos">
               <h2><%= course.name.capitalize %></h2>
             </div>
