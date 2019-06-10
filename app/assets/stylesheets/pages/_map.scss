@@ -8,7 +8,7 @@
 
 .buttons-for-map {
   display: flex;
-  margin-left: 500px;
+  margin-left: 50%;
 }
 
 .themapcountenair {
@@ -17,16 +17,20 @@
   height: 650px;
   display: flex;
   border-radius: 5px;
-  margin: 10px;
+  margin: 1%;
   margin-top: 50px;
-  padding: 40px;
+  padding: 20px;
+}
+
+.searchbarall {
+  margin-left: 3%;
 }
 
 .image {
   // margin: 5px;
   background-color: rgb(237, 237, 237);
   // border: black 1px solid;
-  width: 150px;
+  width: 140px;
   height: 100px;
   border-radius: 5px;
   padding: 10px;
@@ -65,8 +69,8 @@
   height: 100px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 8%;
+  margin-top: 8%;
 }
 
 .no-result-for-search {
@@ -97,6 +101,27 @@
 
 .mapbutton {
   height: 40px;
+  background-color: rgb(98, 177, 246);
+  margin: 1%;
+  color: white;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 4px;
+  // background: $button;
+  transition: background 0.3s ease;
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  font-weight: bold;
+}
+
+.mapbutton:hover {
+  background: rgb(11, 113, 196);
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.mapbutton a {
+  display: block;
+  text-decoration: none;
 }
 
 .searchbar {
