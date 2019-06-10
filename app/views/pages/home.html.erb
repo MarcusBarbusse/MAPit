@@ -1,4 +1,7 @@
 <%= render 'shared/banner' %>
 <%= render "shared/explanation" %>
 <%= render "shared/testimonials" %>
+<%= content_for :after_js do %>
+  <%= javascript_pack_tag 'navbar_scroll' %>
+<% end %>
 

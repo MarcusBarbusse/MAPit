@@ -1,12 +1,23 @@
+// import libraries
 import "bootstrap";
-import { initDragAndDrop } from "../components/draganddrop";
-initDragAndDrop();
 import '../components/cards';
+
+// import custom js functions
+import { initDragAndDrop } from "../components/draganddrop";
 import { clickLetter } from "../components/mapletters";
-clickLetter();
 import { initUpdateNavbarOnScroll } from '../components/navbar';
-initUpdateNavbarOnScroll();
 import { flashcard } from "../components/flashcard";
+
+// run ajax functions
+
+// initialize function
+initDragAndDrop();
+clickLetter();
+// initUpdateNavbarOnScroll();
 flashcard();
-import { displayImage } from "../components/flashcard";
-displayImage();
+
+// event listeners
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+

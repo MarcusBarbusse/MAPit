@@ -9,15 +9,19 @@ const initDragAndDrop = () => {
   const targetY = document.getElementById('subscription_word_photo_target_word_y')
   const targetUrl = document.getElementById('subscription_word_photo_target_word')
 
-  var el1 = document.getElementById("target-photo-list");
-  Sortable.create(el1, {
-    group: "shared"
-  });
+  if (el1) {
+    var el1 = document.getElementById("target-photo-list");
+    Sortable.create(el1, {
+      group: "shared"
+    });
+  }
 
-  var el2 = document.getElementById("mother-photo-list");
-  Sortable.create(el2, {
-    group: "shared"
-  });
+  if (el2) {
+    var el2 = document.getElementById("mother-photo-list");
+    Sortable.create(el2, {
+      group: "shared"
+    });
+  }
 
   document.querySelectorAll('[data-dropzone]').forEach(el => {
     Sortable.create(el, {
@@ -34,9 +38,12 @@ const initDragAndDrop = () => {
     eval(`${item.dataset.category}Url`).value = item.src
   };
 
-  document.getElementById("nextWordButton").addEventListener("click", (event) => {
-    document.getElementById("submitFormButton").click()
-  })
+  const nextButton = document.getElementById("nextWordButton");
+  if (nextButton) {
+    nextButton.addEventListener("click", (event) => {
+      document.getElementById("submitFormButton").click()
+    })
+  }
 
 }
 
