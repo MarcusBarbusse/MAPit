@@ -27,6 +27,10 @@
             <div class="card-trip-infos">
               <h2><%= course.name.capitalize %></h2>
             </div>
+            <% percentage = current_user.mapping_percentage(course.id) %>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated length" role="progressbar" aria-valuenow="<%= percentage %>%" aria-valuemin="0" aria-valuemax="100" style="width: <%= percentage %>%"></div>
+            </div>
           </div>
         </div>
       <% end %>
@@ -95,28 +99,28 @@
 
     <div class="course-container">
       <% @courses.each do |course| %>
-        <div class="popup">
-          <div class="card-trip">
-            <span class="popuptext myPopup">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-              <div class="card-trip-infos-">
-                <div>
-                  <h2><%= course.name.capitalize %></h2>
-                </div>
-                <h2 class="card-trip-pricing">$9.99</h2>
-                <% if policy(Course).create? %>
-                  <button name="button" type="submit" class="button">
-                    <%=  link_to "Join course", subscription_path(course), method: :post %>
-                  </button>
-                <% end %>
-              </div>
-            </span>
+      <div class="popup">
+        <div class="card-trip">
+          <span class="popuptext myPopup">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-            <div class="card-trip-infos">
-              <h2><%= course.name.capitalize %></h2>
+            <div class="card-trip-infos-">
+              <div>
+                <h2><%= course.name.capitalize %></h2>
+              </div>
+              <h2 class="card-trip-pricing">$9.99</h2>
+              <% if policy(Course).create? %>
+              <button name="button" type="submit" class="button">
+                <%=  link_to "Join course", subscription_path(course), method: :post %>
+              </button>
+              <% end %>
             </div>
+          </span>
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+          <div class="card-trip-infos">
+            <h2><%= course.name.capitalize %></h2>
           </div>
         </div>
+      </div>
       <% end %>
     </div>
   </div>
