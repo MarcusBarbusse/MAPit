@@ -18,5 +18,9 @@ flashcard();
 
 // event listeners
 $(function () {
-  $('[data-toggle="popover"]').popover()
+  $('[data-toggle="popover"]').popover({
+    trigger: 'hover',
+    html: true,
+    delay: { "show": 100, "hide": 1000 }
+  })
 })
