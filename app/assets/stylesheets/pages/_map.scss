@@ -42,8 +42,6 @@
 .themap {
   display: flex;
   background-color: gray;
-  // height: 480px;
-  // width: 640px;
   height: 70%;
   width: 100%;
   border-radius: 5px;
@@ -63,10 +61,7 @@
 }
 
 .image-result {
-  // border-style: solid;
-  // border-color: #3b9ce2;
-  // width: 40%;
-  border-radius: 5px;
+  border-radius: 45px;
   width: 100px;
   height: 100px;
   display: flex;
