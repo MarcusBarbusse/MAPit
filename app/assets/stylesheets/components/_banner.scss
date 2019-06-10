@@ -1,18 +1,34 @@
 .banner {
   background-size: cover;
   background-position: center;
-  height: 96vh;
+  height: 97vh;
   display: flex;
   align-items: flex-end;
+  h2 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 3vw;
+  }
+  h4 {
+  font-size: 2vw;
+  color: white;
+  opacity: .8;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 2rem;
+  }
+  a {
+  color: white;
+  }
 }
 
-.banner-container {
+.banner-text-photo {
   display: flex;
 }
 
 .banner-text {
   padding-left: 140px;
-  margin-bottom: 200px;
+  margin-bottom: 30%;
   font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -28,30 +44,10 @@
 .arrow-down {
   text-align: center;
   color: $title;
-  margin-left: 30px;
   a {
     text-decoration: none;
     color: $title;
   }
-}
-
-.banner h2 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 50px;
-}
-
-.banner h4 {
-  font-size: 24px;
-  color: white;
-  opacity: .8;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  margin-bottom: 2rem;
-}
-
-.banner a {
-  color: white;
 }
 
 .bounce {
