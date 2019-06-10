@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   patch '/background_images', to: 'background_images#update'
   resources :background_images
   post 'subscription', to: 'subscriptions#create'
+  delete 'subscription', to: 'subscriptions#destroy'
   get 'dashboards', to: 'dashboards#account'
 end

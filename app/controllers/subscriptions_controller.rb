@@ -14,8 +14,7 @@ class SubscriptionsController < ApplicationController
     authorize @subscription_word
    search_target
    search_mother
- end
-
+  end
 
   def create
     @course = Course.find(params[:format])
@@ -30,8 +29,14 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+  def destroy
+    @subscription = Subscription.find(params[:id])
+    authorize @subscription
+    @subscription.delete
+    redirect_to courses_path
+  end
 
- private
+  private
 
   def search_target
     @image_target_results = []
