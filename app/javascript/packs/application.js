@@ -24,3 +24,4 @@ $(function () {
     delay: { "show": 100, "hide": 1000 }
   })
 })
+

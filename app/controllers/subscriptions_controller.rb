@@ -51,8 +51,7 @@ class SubscriptionsController < ApplicationController
 
   def search_mother
     @image_mother_results = []
-    # params[:q2] = @course_word.translation
-    params[:q2] = "sun"
+    params[:q2] = @course_word.translation
     url = "https://pixabay.com/api/?key=#{ENV['PIXABAY_KEY']}&q=#{params[:q2]}&image_type=photo"
     response2 = ::HTTParty.get(url)
     @image_mother_results = JSON.parse(response2.body)['hits'].first(3).map do |photo|
