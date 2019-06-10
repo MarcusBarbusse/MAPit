@@ -7,15 +7,14 @@ class SubscriptionsController < ApplicationController
       @words_id.delete(word.course_word_id)
     end
     @course_word = CourseWord.find(@words_id.first)
-    @subscription_word = SubscriptionWord.new
+    @subscription_word = SubscriptionWord.new(course_word_id: @course_word.id)
     @course = Course.find(params[:course_id])
     @background_images = current_user.background_images
     @background_image = BackgroundImage.new
     authorize @subscription_word
-    search_target
-    search_mother
+   search_target
+   search_mother
   end
-
 
   def create
     @course = Course.find(params[:format])
@@ -36,7 +35,6 @@ class SubscriptionsController < ApplicationController
     @subscription.delete
     redirect_to courses_path
   end
-
 
   private
 
