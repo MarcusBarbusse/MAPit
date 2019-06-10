@@ -1,3 +1,5 @@
+
+
 const card = document.getElementById("flash");
 const context = document.getElementById("flashcard-front");
 const answer = document.getElementById("flashcard-answer");
@@ -22,3 +24,20 @@ card.addEventListener("click", (event) => {
 
 export { flashcard };
 
+const displayImage = () => {
+
+const photoMother = document.querySelector(".mother_photo_display");
+const MotherId = photoMother.id;
+const locationMother = document.getElementById(MotherId);
+
+locationMother.appendChild(photoMother);
+
+const photoTarget = document.querySelector(".target_photo_display");
+const targetId = photoTarget.id;
+const locationTarget = document.getElementById(targetId);
+
+locationTarget.appendChild(photoTarget);
+
+}
+
+export { displayImage };

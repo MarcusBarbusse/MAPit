@@ -8,4 +8,5 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
 import { flashcard } from "../components/flashcard";
 flashcard();
-
+import { displayImage } from "../components/flashcard";
+displayImage();
