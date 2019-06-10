@@ -19,14 +19,14 @@ course.save
 course_word = CourseWord.new(
   word: "de winst",
   translation: "the profit",
-  course_id: course,
+  course_id: course.id,
   )
 course_word.save
 
 course_word = CourseWord.new(
   word: "de schuld",
   translation: "the debt",
-  course_id: course,
+  course_id: course.id,
   )
 course_word.save
 
