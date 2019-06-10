@@ -1,5 +1,5 @@
 .everything-testimonials {
-  background: $button;
+  background: white;
   width: 100%;
   padding: 80px;
   height: 96vh;
@@ -28,8 +28,10 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  padding: 10px;
-  border-radius: 5px;
+  // padding: 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .card-product img {
@@ -39,6 +41,7 @@
 }
 
 .card-product h2 {
+  color: 4c4c4c;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
