@@ -2,10 +2,10 @@
 </div> -->
 <div class="pagemap" style="background-color: rgb(182, 215, 240);">
   <div class="row themapcountenair">
-    <div class="col-xs-12 col-sm-4 d-flex">
+    <div class="col-xs-12 col-sm-5 d-flex">
       <div class="col-xs-10 col-sm-5">
         <div class="image" data-photo-id="eatPhotoID">
-          <div>
+          <div class="word-to-remember">
             <%= @course_word.word %>
           </div>
           <div class='container-search' data-photo-id="search">
@@ -30,7 +30,7 @@
       </div>
       <div class="col-xs-10 col-sm-5">
         <div class="image" data-photo-id="eatPhotoID">
-          <div>
+          <div class="word-to-remember">
           <%= @course_word.translation %>
           </div>
           <div class='container-search' data-photo-id="search">
@@ -81,7 +81,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-8 d-flex">
+    <div class="col-xs-12 col-sm-7 d-flex">
       <div class="col-xs-12 col-sm-12">
         <% @background_images.each_with_index do |image, index| %>
         <div id="map <%= index %>" class="themap maps d-none" style=" background-image : url(<%= image.photo %>);">
@@ -136,12 +136,10 @@
         </div>
         <div id="form <%= index %>" class=" maps d-none">
           <%= simple_form_for image, method: :patch do |f|%>
-
           <%= f.input :photo %>
-          <%= f.input :photo_cache, as: :hidden %>
-          <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
+          <% f.input :photo_cache, as: :hidden %>
+          <% f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
           <%= f.submit %>
-
           <% end %>
         </div>
         <% end %>
