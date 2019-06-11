@@ -108,11 +108,12 @@
           data-content='€9.99
                         <br>
                         <% if policy(Course).create? %>
-                        <%= link_to "Join course", subscription_path(course), method: :post %>
+                        <%= link_to "Join course", course_subscriptions_path(course), method: :post %>
                         <% end %>' >
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
           <div class="card-trip-infos">
             <h2><%= course.name.capitalize %></h2>
+            <%= link_to "Join course", subscription_path(course_id: course), method: :post %>
           </div>
         </div>
       </div>

@@ -4,5 +4,5 @@ class BackgroundImage < ApplicationRecord
 
   validates :user_id, presence: true
   validates :letter, presence: true
-  validates :photo, presence: true
+  # validates :photo, presence: true
 end
