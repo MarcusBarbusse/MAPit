@@ -27,6 +27,7 @@ const flashcard = () => {
 export { flashcard };
 
 
+
 // const photoMother = document.querySelector(".mother_photo_display");
 // const MotherId = photoMother.id;
 // const locationMother = document.getElementById(MotherId);
