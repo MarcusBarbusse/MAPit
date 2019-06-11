@@ -9,15 +9,15 @@ const initDragAndDrop = () => {
   const targetY = document.getElementById('subscription_word_photo_target_word_y')
   const targetUrl = document.getElementById('subscription_word_photo_target_word')
 
+  var el1 = document.getElementById("target-photo-list");
   if (el1) {
-    var el1 = document.getElementById("target-photo-list");
     Sortable.create(el1, {
       group: "shared"
     });
   }
 
+  var el2 = document.getElementById("mother-photo-list");
   if (el2) {
-    var el2 = document.getElementById("mother-photo-list");
     Sortable.create(el2, {
       group: "shared"
     });
