@@ -69,12 +69,17 @@ Congrats, You've done all your flashcards
         </div>
       </div>
       <div class="invisible" id="flashcard-answer">
+          <div class="d-flex justify-content-around">
+            <div class=flashcard-image>
+            <img class="themap" id="<%= @subscription_word.photo_mother_tongue_x %><%= @subscription_word.photo_mother_tongue_y %>" class="mother_photo_display image-result" src="<%= @subscription_word.photo_mother_tongue%>" >
+            <%= @subscription_word.course_word.translation %>
+            </div>
+            <div class=flashcard-image>
+            <img class="themap" id="<%= @subscription_word.photo_target_word_x %><%= @subscription_word.photo_target_word_y %>" class="target_photo_display image-result" src="<%= @subscription_word.photo_target_word%>" >
+            <%= @subscription_word.course_word.word %>
+            </div>
+          </div>
 
-            <img id="<%= @subscription_word.photo_mother_tongue_x %><%= @subscription_word.photo_mother_tongue_y %>" class="mother_photo_display image-result" src="<%= @subscription_word.photo_mother_tongue%>" >
-            <img id="<%= @subscription_word.photo_target_word_x %><%= @subscription_word.photo_target_word_y %>" class="target_photo_display image-result" src="<%= @subscription_word.photo_target_word%>" >
-
-          <strong><%= @subscription_word.course_word.word %> -
-            <%= @subscription_word.course_word.translation %></strong>
           <div class="flashcard-button">
             <button  class="button" > <%= link_to "I didn't map it", course_subscription_subscription_words_path %></button>
             <button class="button" id="button-flashed" ><%= link_to "I mapped it", course_subscription_subscription_word_path(params[:course_id], params[:subscription_id], @subscription_word.id), method: :put %></button>
