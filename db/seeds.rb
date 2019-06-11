@@ -184,9 +184,9 @@ course_word.save
 
 
 course = Course.new(
-  category: "First 50",
+  category: "First 10",
   language: "italian",
-  name: "Your first 50 words in italian",
+  name: "Your first 10 words in italian",
   picture: 'https://images.unsplash.com/photo-1514516870926-20598973e480?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
   )
 course.save
@@ -248,8 +248,51 @@ course_word = CourseWord.new(
 course_word.save
 
 course_word = CourseWord.new(
-  word: "mucca",
-  translation: "cow",
+  word: "arancia",
+  translation: "orange",
   course_id: course.id,
   )
 course_word.save
+
+course_word = CourseWord.new(
+  word: "cibo",
+  translation: "food",
+  course_id: course.id,
+  )
+course_word.save
+
+
+
+
+course = Course.new(
+  category: "First 50",
+  language: "italian",
+  name: "Your first 50 words in italian",
+  picture: 'https://images.unsplash.com/photo-1498579150354-977475b7ea0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "ghiaccio",
+  translation: "ice",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "sabbia",
+  translation: "sand",
+  course_id: course.id,
+  )
+course_word.save
+
+
+
+course = Course.new(
+  category: "First 50",
+  language: "italian",
+  name: "Your first 50 words in italian",
+  picture: 'https://images.unsplash.com/photo-1498579150354-977475b7ea0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  )
+course.save
+
