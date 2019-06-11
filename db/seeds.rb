@@ -74,6 +74,8 @@ course_word = CourseWord.new(
   )
 course_word.save
 
+
+
 course = Course.new(
   category: "law",
   language: "french",
@@ -155,7 +157,7 @@ course.save
 
 course_word = CourseWord.new(
   word: "afternoon",
-  translation: "après-midi",
+  translation: "apres-midi",
   course_id: course.id,
   )
 course_word.save
