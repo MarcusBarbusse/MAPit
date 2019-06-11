@@ -10,7 +10,7 @@ function clickLetter() {
 			});
 			document.getElementById(`form ${letter.id}`).classList.remove('d-none');
 			document.getElementById(`map ${letter.id}`).classList.remove('d-none');
-      backgroundImageForm.value = parseInt(letter.id, 10)
+      backgroundImageForm.value = parseInt(letter.id, 10) + 1
 
 		});
 	});

@@ -8,7 +8,7 @@ class SubscriptionWordsController < ApplicationController
        @subscription_word = "empty"
     else
       @subscription_word = @mapped_words.sample
-      @background_image = BackgroundImage.where(user_id: current_user).where(letter: "a")[0]
+      @background_image = BackgroundImage.where(id: @subscription_word.background_image_id)[0]
       # @subscription_word.course_word.word[0]
       authorize @subscription_word
     end
