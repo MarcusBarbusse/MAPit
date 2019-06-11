@@ -7,19 +7,8 @@
     font-weight: bold;
     margin-top: 40px;
   }
-  .button a {
-    color: white;
-  }
 }
 
-.course-container {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  // padding-bottom: 25px;
-  flex-wrap: wrap;
-}
 
 .card-trip {
   overflow: hidden;
@@ -28,8 +17,7 @@
   border-radius: 5px;
   cursor: pointer;
   width: 200px;
-  margin-right: 25px;
-  margin-top: 25px;
+  margin: 15px;
   > img {
     height: 125px;
     width: 225px;
@@ -41,20 +29,50 @@
     margin: 0;
     padding-bottom: 5px;
     padding-top: 5px;
+    text-align: center;
+    color: black;
     }
-  .card-trip-infos {
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    position: relative;
-  }
+}
+
+button {
+  display: none; /* Hide button */
+}
+
+.card-trip-infos {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+}
+
+.card-trip-infos:hover {
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+}
+
+.course-button {
+  display: none;
 }
 
 .popup {
   position: relative;
   display: inline-block;
   cursor: pointer;
+  opacity: 0.7;
+  transition: all .3s ease-in-out;
+  :hover button {
+    display: inline-block;
+  }
+}
+
+.popup:hover {
+  transform: scale(1.03);
+  transition: all .3s ease-in-out;
+  opacity: 1;
+}
+
+.popup a {
+  text-decoration: none;
 }
 
 .flags {
@@ -74,12 +92,3 @@
   background: linear-gradient(180deg,rgba(255,255,255,0) 90%, $course_bar 20%);
 }
 
-// @-webkit-keyframes fadeIn {
-//   from {opacity: 0;}
-//   to {opacity: 1;}
-// }
-
-// @keyframes fadeIn {
-//   from {opacity: 0;}
-//   to {opacity:1 ;}
-// }
