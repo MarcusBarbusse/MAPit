@@ -31,6 +31,7 @@ course_word.save
 course_word = CourseWord.new(
   word: "verpanden",
   translation: "to pledge",
+
   course_id: course.id,
   )
 course_word.save
@@ -38,6 +39,7 @@ course_word.save
 course_word = CourseWord.new(
   word: "deelbaar",
   translation: "divisible",
+
   course_id: course.id,
   )
 course_word.save
@@ -45,6 +47,7 @@ course_word.save
 course_word = CourseWord.new(
   word: "vervaldag",
   translation: "maturity date",
+
   course_id: course.id,
   )
 course_word.save
@@ -52,6 +55,7 @@ course_word.save
 course_word = CourseWord.new(
   word: "de spaarder",
   translation: "saver",
+
   course_id: course.id,
   )
 course_word.save
@@ -69,9 +73,6 @@ course_word = CourseWord.new(
   course_id: course.id,
   )
 course_word.save
-
-
-
 
 course = Course.new(
   category: "law",
