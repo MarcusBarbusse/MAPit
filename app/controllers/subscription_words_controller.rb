@@ -34,7 +34,7 @@ class SubscriptionWordsController < ApplicationController
     params
       .require(:subscription_word)
       .permit(:photo_mother_tongue, :photo_target_word, :subscription_id, :flashed, :course_word_id,
-        :photo_mother_tongue_x, :photo_mother_tongue_y, :photo_target_word_x, :photo_target_word_y)
+        :photo_mother_tongue_x, :photo_mother_tongue_y, :photo_target_word_x, :photo_target_word_y, :background_image_id)
   end
 
   def course_id

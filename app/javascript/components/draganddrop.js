@@ -36,6 +36,7 @@ var el2 = document.getElementById("mother-photo-list");
     eval(`${item.dataset.category}X`).value = el.dataset.x
     eval(`${item.dataset.category}Y`).value = el.dataset.y
     eval(`${item.dataset.category}Url`).value = item.src
+
   };
 
   const nextButton = document.getElementById("nextWordButton");
