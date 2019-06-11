@@ -136,11 +136,11 @@
             <div class="picture-dropzone" data-dropzone data-x="6" data-y="6"></div>
           </div>
         </div>
-        <div id="form <%= index %>" class=" maps d-none" style="display: none;">
+        <div id="form <%= index %>" class=" maps d-none">
           <%= simple_form_for image, method: :patch do |f|%>
           <%= f.input :photo %>
-          <% f.input :photo_cache, as: :hidden %>
-          <% f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
           <%= f.submit %>
           <% end %>
         </div>
@@ -162,14 +162,6 @@
     <% end %>
   </div>
   <div class="button-container">
-    <div class="button-upload-backgroud-auto" style="display: none;">
-      <h1>Your course</h1>
-      <%= simple_form_for(@background_image) do |f| %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.input :letter %>
-      <%= f.submit %>
-      <% end %>
     </div>
     <div class="buttons-for-map">
       <button name="button" type="submit" class="mapbutton">
