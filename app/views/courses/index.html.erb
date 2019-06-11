@@ -8,7 +8,19 @@
         <p>No courses yet!</p>
         <% end %>
         <div class="popup">
-          <div class="card-trip">
+
+          <div class="card-trip"
+            data-toggle="popover"
+            data-placement="right"
+            title="<b><%= course.name.capitalize %></b>"
+            data-content='<%=
+              (link_to "Continue course", course_subscription_path(course.id, Subscription.all.where(user: current_user).where(course: course).first.id)) %>' >
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+            <div class="card-trip-infos">
+              <h2><%= course.name.capitalize %></h2>
+            </div>
+
+          <!-- <div class="card-trip">
             <span class="popuptext myPopup">
               <img src="<%= course.picture %>">
 
@@ -27,7 +39,7 @@
            <img src="<%= course.picture %>">
             <div class="card-trip-infos">
               <h2><%= course.name.capitalize %></h2>
-            </div>
+            </div> -->
             <% percentage = current_user.mapping_percentage(course.id) %>
             <div class="progress">
               <div class="progress-bar progress-bar-striped progress-bar-animated length" role="progressbar" aria-valuenow="<%= percentage %>%" aria-valuemin="0" aria-valuemax="100" style="width: <%= percentage %>%"></div>
@@ -97,38 +109,34 @@
       </div>
     </div>
 
-
     <div class="course-container">
       <% @courses.each do |course| %>
-        <div class="popup">
-          <div class="card-trip">
-            <span class="popuptext myPopup">
-              <img src="<%= course.picture %>">
-              <div class="card-trip-infos-">
-                <div>
-                  <h2><%= course.name.capitalize %></h2>
-                </div>
-                <h2 class="card-trip-pricing">$9.99</h2>
-                <% if policy(Course).create? %>
-                  <button name="button" type="submit" class="button">
-                    <%=  link_to "Join course", subscription_path(course), method: :post %>
-                  </button>
-                <% end %>
-              </div>
-            </span>
-            <img src="<%= course.picture %>">
-            <div class="card-trip-infos">
-              <h2><%= course.name.capitalize %></h2>
-
-            </div>
-          </span>
+      <div class="popup">
+        <div class="card-trip"
+          data-toggle="popover"
+          data-placement="right"
+          title="<b><%= course.name.capitalize %></b>"
+          data-content='€9.99
+                        <br>
+                        <% if policy(Course).create? %>
+                        <%= link_to "Join course", course_subscriptions_path(course), method: :post %>
+                        <% end %>' >
+                        <!-- above we pass the course in the url string properly -->
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
           <div class="card-trip-infos">
             <h2><%= course.name.capitalize %></h2>
+            <!-- passing the course id as aquery parameter in the url -->
+            <%= link_to "Join course", subscription_path(course: course), method: :post %>
           </div>
         </div>
       </div>
       <% end %>
     </div>
+      </div>
+    </div>
   </div>
 </div>
+
+  </div>
+</div>
+

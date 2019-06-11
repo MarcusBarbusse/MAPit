@@ -25,9 +25,6 @@ const flashcard = () => {
   }
 }
 
-
-
-
 export { flashcard };
 
 const userPictures = () => {
@@ -44,6 +41,7 @@ const userPictures = () => {
     locationTarget.appendChild(photoTarget);
   };
 };
+
 
 userPictures();
 
