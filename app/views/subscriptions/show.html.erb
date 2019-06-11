@@ -84,7 +84,7 @@
     <div class="col-xs-12 col-sm-7 d-flex">
       <div class="col-xs-12 col-sm-12">
         <% @background_images.each_with_index do |image, index| %>
-        <div id="map <%= index %>" class="themap maps d-none" style=" background-image : url(<%= image.photo %>);">
+        <div id="map <%= index %>" class="themap maps d-none" style=" background-image : url(<%= cl_image_path(image.photo.url) %>);">
           <div class="row1">
             <div class="picture-dropzone" data-dropzone data-x="1" data-y="1"></div>
             <div class="picture-dropzone" data-dropzone data-x="2" data-y="1"></div>
@@ -155,6 +155,7 @@
     <%= f.input :photo_target_word %>
     <%= f.input :photo_target_word_x %>
     <%= f.input :photo_target_word_y %>
+    <%= f.input :background_image_id %>
     <%= f.submit id: "submitFormButton" %>
     <% end %>
   </div>

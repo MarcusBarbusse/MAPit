@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_10_093459) do
-
+ActiveRecord::Schema.define(version: 2019_06_11_074423) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
+  
   create_table "background_images", force: :cascade do |t|
     t.string "photo"
     t.string "letter"
@@ -23,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_093459) do
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_background_images_on_user_id"
   end
-
+  
   create_table "course_words", force: :cascade do |t|
     t.string "word"
     t.string "translation"
@@ -55,6 +54,8 @@ ActiveRecord::Schema.define(version: 2019_06_10_093459) do
     t.integer "photo_mother_tongue_y"
     t.integer "photo_target_word_x"
     t.integer "photo_target_word_y"
+    t.bigint "background_image_id"
+    t.index ["background_image_id"], name: "index_subscription_words_on_background_image_id"
     t.index ["course_word_id"], name: "index_subscription_words_on_course_word_id"
     t.index ["subscription_id"], name: "index_subscription_words_on_subscription_id"
   end
@@ -80,8 +81,10 @@ ActiveRecord::Schema.define(version: 2019_06_10_093459) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "background_images", "users"
   add_foreign_key "course_words", "courses"
+  add_foreign_key "subscription_words", "background_images"
   add_foreign_key "subscription_words", "course_words"
   add_foreign_key "subscription_words", "subscriptions"
   add_foreign_key "subscriptions", "courses"
