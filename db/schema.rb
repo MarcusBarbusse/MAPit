@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_11_062410) do
+ActiveRecord::Schema.define(version: 2019_06_11_074423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,11 @@ ActiveRecord::Schema.define(version: 2019_06_11_062410) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_background_images_on_user_id"
+  end
+
+  create_table "background_img_generals", force: :cascade do |t|
+    t.string "photo"
+    t.string "letter"
   end
 
   create_table "course_words", force: :cascade do |t|
