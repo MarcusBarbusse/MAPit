@@ -75,7 +75,7 @@
             <div class="image_button_container">
               <div class="button-letter">
                 <% letters.each_with_index do |letter, index|%>
-                <button id="<%= index %>"  class="letter"><%=letter%></button>
+                <button id="<%= index = index + 13 %>"  class="letter"><%=letter%></button>
                 <% end %>
               </div>
             </div>
@@ -139,8 +139,8 @@
         <div id="form <%= index %>" class=" maps d-none">
           <%= simple_form_for image, method: :patch do |f|%>
           <%= f.input :photo %>
-          <% f.input :photo_cache, as: :hidden %>
-          <% f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
           <%= f.submit %>
           <% end %>
         </div>
@@ -162,14 +162,6 @@
     <% end %>
   </div>
   <div class="button-container">
-    <div class="button-upload-backgroud-auto">
-      <h1>Your course</h1>
-      <%= simple_form_for(@background_image) do |f| %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.input :letter %>
-      <%= f.submit %>
-      <% end %>
     </div>
     <div class="buttons-for-map">
       <button name="button" type="submit" class="mapbutton">

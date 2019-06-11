@@ -6,6 +6,7 @@ function clickLetter() {
     console.log(letters);
     letters.forEach((letter) => {
 
+
     	document.getElementById(letter.id).addEventListener('click', () => {
     		document.querySelectorAll(`.maps`).forEach(el => {
     			el.classList.add('d-none')
