@@ -38,14 +38,9 @@ class User < ApplicationRecord
 
   def mapping_percentage(course_id)
     subscription = self.subscriptions.find_by(course_id: course_id)
-    course_words = subscription.course.course_words.count
-    subscription_words = subscription.subscription_words.count
-    subscription_words.zero? ? 0 : (course_words / subscription_words) * 100
-  end
-
-  def creating_default_image
-    image = "tada"
-    background_image = BackgroundImage.new(photo: "/image/upload/", letter: "a")
+    course_words = subscription.course.course_words.count.to_f
+    subscription_words = subscription.subscription_words.count.to_f
+    subscription_words.zero? ? 0 : (subscription_words / course_words) * 100
   end
 
   def set_default_backgrounds
