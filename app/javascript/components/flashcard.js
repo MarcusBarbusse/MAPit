@@ -6,39 +6,28 @@ const answer = document.getElementById("flashcard-answer");
 const flipped = document.getElementById("flashcard");
 const flashed = document.getElementById("button-flashed");
 const map = document.getElementById("map")
-// const flashcard = () => {
-//   if (card) {
-//     card.addEventListener("click", (event) => {
-//       if (context.classList.contains("invisible")) {
-//         context.classList.remove("invisible");
-//         answer.classList.add("invisible");
-//         flipped.classList.remove("flipped");
-//         flipped.classList.add("unflipped");
-//       } else {
-//         context.classList.add("invisible");
-//         answer.classList.remove("invisible");
-//         flipped.classList.add("flipped");
-//         // flipped.classList.remove("unflipped");
-//       }
-//       userPictures()
-//     });
-//   }
-// }
 
 const flashcard = () => {
   if (card) {
     card.addEventListener("click", (event) => {
-      moving_Image()
-
+      if (context.classList.contains("invisible")) {
+        context.classList.remove("invisible");
+        flipped.classList.remove("flipped");
+        flipped.classList.add("unflipped");
+      } else {
+        context.classList.add("invisible");
+        answer.classList.remove("invisible");
+        flipped.classList.add("flipped");
+        // flipped.classList.remove("unflipped");
+      }
+      userPictures()
     });
   }
 }
 
-function moving_Image() {
-  let imageOffset = 0
-  imageOffset += 1000
-  context.style.left = imageOffset + "px";
-}
+
+
+
 export { flashcard };
 
 const userPictures = () => {
