@@ -24,6 +24,7 @@ class SubscriptionsController < ApplicationController
   def create
 
 
+
     @course = Course.find(params[:course_id])
 
     @subscription = Subscription.new

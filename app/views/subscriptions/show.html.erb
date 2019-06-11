@@ -136,7 +136,7 @@
             <div class="picture-dropzone" data-dropzone data-x="6" data-y="6"></div>
           </div>
         </div>
-        <div id="form <%= index %>" class=" maps d-none">
+        <div id="form <%= index %>" class=" maps d-none" style="display: none;">
           <%= simple_form_for image, method: :patch do |f|%>
           <%= f.input :photo %>
           <% f.input :photo_cache, as: :hidden %>
@@ -162,7 +162,7 @@
     <% end %>
   </div>
   <div class="button-container">
-    <div class="button-upload-backgroud-auto">
+    <div class="button-upload-backgroud-auto" style="display: none;">
       <h1>Your course</h1>
       <%= simple_form_for(@background_image) do |f| %>
       <%= f.input :photo %>
