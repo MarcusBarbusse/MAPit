@@ -8,6 +8,7 @@
         <p>No courses yet!</p>
         <% end %>
         <div class="popup">
+
           <div class="card-trip">
             <span class="popuptext myPopup">
               <img src="<%= course.picture %>">
@@ -97,8 +98,33 @@
       </div>
     </div>
 
+<div class="course-container">
+      <% @courses.each do |course| %>
+      <div class="popup">
+        <div class="card-trip"
+          data-toggle="popover"
+          data-placement="right"
+          title="<b><%= course.name.capitalize %></b>"
+          data-content='€9.99
+                        <br>
+                        <% if policy(Course).create? %>
+                        <%= link_to "Join course", subscription_path(course), method: :post %>
+                        <% end %>' >
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+          <div class="card-trip-infos">
+            <h2><%= course.name.capitalize %></h2>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <div class="course-container">
+
+    <!-- <div class="course-container">
       <% @courses.each do |course| %>
         <div class="popup">
           <div class="card-trip">
@@ -122,13 +148,10 @@
 
             </div>
           </span>
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-          <div class="card-trip-infos">
-            <h2><%= course.name.capitalize %></h2>
-          </div>
         </div>
       </div>
       <% end %>
     </div>
   </div>
 </div>
+ -->
