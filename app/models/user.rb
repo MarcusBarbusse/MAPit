@@ -13,4 +13,8 @@ class User < ApplicationRecord
     subscription_words = subscription.subscription_words.count
     subscription_words.zero? ? 0 : (course_words / subscription_words) * 100
   end
+
+  def creating_default_image
+    
+  end
 end
