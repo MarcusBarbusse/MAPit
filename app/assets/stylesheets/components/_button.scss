@@ -9,16 +9,17 @@
   font-weight: bold;
 }
 
+.button a {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
 .button:hover {
   background: $button-hover;
   color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-.button a {
-  display: block;
-  text-decoration: none;
-}
 
 .button-flag {
   padding: 8px 24px;

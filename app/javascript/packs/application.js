@@ -21,7 +21,7 @@ $(function () {
   $('[data-toggle="popover"]').popover({
     trigger: 'hover',
     html: true,
-    delay: { "show": 100, "hide": 1000 }
+    delay: { "show": 300, "hide": 10 }
   })
 })
 
