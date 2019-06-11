@@ -22,7 +22,10 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    @course = Course.find(params[:course])
+
+
+    @course = Course.find(params[:course_id])
+
     @subscription = Subscription.new
     @subscription.course = @course
     @subscription.user = current_user

@@ -125,8 +125,8 @@
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
           <div class="card-trip-infos">
             <h2><%= course.name.capitalize %></h2>
-            <!-- passing the course id as aquery parameter in the url -->
-            <%= link_to "Join course", subscription_path(course: course), method: :post %>
+            <%= link_to "Join course", subscription_path(course_id: course), method: :post %>
+
           </div>
         </div>
       </div>
