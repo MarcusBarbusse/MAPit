@@ -8,7 +8,7 @@ class SubscriptionWordsController < ApplicationController
        @subscription_word = "empty"
     else
       @subscription_word = @mapped_words.sample
-      @background_image = BackgroundImage.where(user_id: current_user).where(letter: "a")[0]
+      @background_image = BackgroundImage.where(id: @subscription_word.background_image_id)[0]
       # @subscription_word.course_word.word[0]
       authorize @subscription_word
     end
@@ -34,7 +34,7 @@ class SubscriptionWordsController < ApplicationController
     params
       .require(:subscription_word)
       .permit(:photo_mother_tongue, :photo_target_word, :subscription_id, :flashed, :course_word_id,
-        :photo_mother_tongue_x, :photo_mother_tongue_y, :photo_target_word_x, :photo_target_word_y)
+        :photo_mother_tongue_x, :photo_mother_tongue_y, :photo_target_word_x, :photo_target_word_y, :background_image_id)
   end
 
   def course_id
