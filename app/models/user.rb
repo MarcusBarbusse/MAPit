@@ -17,6 +17,7 @@ class User < ApplicationRecord
   end
 
   def set_default_backgrounds
+    
     ("a".."z").to_a.each do |key|
       BackgroundImage.create(user: self, letter: key)
     end
