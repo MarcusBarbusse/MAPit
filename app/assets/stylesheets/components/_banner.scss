@@ -3,7 +3,7 @@
   background-position: center;
   height: 97vh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   h2 {
   margin: 0;
   color: white;
@@ -24,21 +24,18 @@
 
 .banner-text-photo {
   display: flex;
+  justify-content: space-around;
 }
 
 .banner-text {
-  padding-left: 140px;
-  margin-bottom: 30%;
   font-family: 'Noto Sans JP', sans-serif;
+  padding: 10px;
+  justify-content: center;
 }
 
 .square-map {
-  border: solid;
-  border-color: white;
-  height: 200px;
-  weight: 200px;
-  margin-left: 80px;
-  margin-top: 20%
+  margin-left: 0%;
+  padding: 10px;
 }
 
 .arrow-down {
