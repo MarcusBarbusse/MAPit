@@ -1,6 +1,7 @@
 function clickLetter() {
 	const letters = document.querySelectorAll('.letter');
   const backgroundImageForm = document.getElementById('subscription_word_background_image_id')
+  const userId = parseInt(backgroundImageForm.value, 10)
 	console.log(letters);
 	letters.forEach((letter) => {
 
@@ -10,9 +11,9 @@ function clickLetter() {
 			});
 			document.getElementById(`form ${letter.id}`).classList.remove('d-none');
 			document.getElementById(`map ${letter.id}`).classList.remove('d-none');
-      backgroundImageForm.value = parseInt(letter.id, 10) + 1
+      backgroundImageForm.value = (userId * 26) - 26 + parseInt(letter.id, 10) + 1
 		});
 	});
 }
 
-export {clickLetter}
+export { clickLetter }
