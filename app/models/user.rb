@@ -15,6 +15,7 @@ class User < ApplicationRecord
   end
 
   def creating_default_image
-    
+    image = "tada"
+    background_image = BackgroundImage.new(photo:)
   end
 end
