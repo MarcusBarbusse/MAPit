@@ -6,22 +6,23 @@
   height: 100px;
   padding: 0px 50px;
   color: $title;
-  font-weight: 12px;
+  font-size: 12px;
+  .fa-heart {
+  color: $button;
+  }
 }
+
 .footer-links {
   display: flex;
   align-items: center;
-}
-.footer-links a {
+  a {
   color: $title !important;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
   color: $button-hover;
-}
-.footer-links a:hover {
-  opacity: 0.8;
-}
-.footer .fa-heart {
-  color: $title;
+    :hover {
+    opacity: 0.8;
+    }
+  }
 }
