@@ -42,11 +42,7 @@
   object-fit: cover;
 }
 
-#flashcard-answer > img {
-  height: 400px;
-  width: 800px;
-  object-fit: cover;
-}
+
 
 .flashcard-button {
   margin: 10px;
@@ -55,3 +51,8 @@
   color: white;
 }
 
+.flashcard-image {
+  height: 300px;
+  width: 600px;
+  object-fit:cover;
+}
