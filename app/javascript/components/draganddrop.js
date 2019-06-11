@@ -9,14 +9,18 @@ const initDragAndDrop = () => {
   const targetY = document.getElementById('subscription_word_photo_target_word_y')
   const targetUrl = document.getElementById('subscription_word_photo_target_word')
 
-    var el1 = document.getElementById("target-photo-list");
+
+  var el1 = document.getElementById("target-photo-list");
+  
   if (el1) {
     Sortable.create(el1, {
       group: "shared"
     });
   }
 
-var el2 = document.getElementById("mother-photo-list");
+
+  var el2 = document.getElementById("mother-photo-list");
+
   if (el2) {
     Sortable.create(el2, {
       group: "shared"
@@ -36,6 +40,7 @@ var el2 = document.getElementById("mother-photo-list");
     eval(`${item.dataset.category}X`).value = el.dataset.x
     eval(`${item.dataset.category}Y`).value = el.dataset.y
     eval(`${item.dataset.category}Url`).value = item.src
+
   };
 
   const nextButton = document.getElementById("nextWordButton");
