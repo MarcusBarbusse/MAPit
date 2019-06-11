@@ -72,6 +72,7 @@ course_word.save
 
 
 
+
 course = Course.new(
   category: "law",
   language: "french",
@@ -79,7 +80,6 @@ course = Course.new(
   picture: 'https://images.unsplash.com/photo-1528747008803-f9f5cc8f1a64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
   )
 course.save
-
 
 course_word = CourseWord.new(
   word: "coupable",
@@ -120,9 +120,136 @@ course_word = CourseWord.new(
   )
 course_word.save
 
+course_word = CourseWord.new(
+  word: "empeñar",
+  translation: "to pledge",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "el ahorrador",
+  translation: "saver",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "el proveedor",
+  translation: "the supllier",
+  course_id: course.id,
+  )
+course_word.save
 
 
 
 
+course = Course.new(
+  category: "First 625",
+  language: "english",
+  name: "Vos premiers 625 mots",
+  picture: 'https://images.unsplash.com/photo-1516831083365-0efd347838f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "afternoon",
+  translation: "après-midi",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "an arm",
+  translation: "un bras",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "a bed",
+  translation: "un lit",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "a beach",
+  translation: "une plage",
+  course_id: course.id,
+  )
+course_word.save
 
 
+
+
+course = Course.new(
+  category: "First 50",
+  language: "italian",
+  name: "Your first 50 words in italian",
+  picture: 'https://images.unsplash.com/photo-1514516870926-20598973e480?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "attore",
+  translation: "actor",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "pomeriggio",
+  translation: "afternoon",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "braccio",
+  translation: "arm",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "letto",
+  translation: "bed",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "spiaggia",
+  translation: "beach",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "manzo",
+  translation: "beef",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "mucca",
+  translation: "cow",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "il cane",
+  translation: "dog",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "mucca",
+  translation: "cow",
+  course_id: course.id,
+  )
+course_word.save
