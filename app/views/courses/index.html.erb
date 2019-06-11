@@ -15,7 +15,8 @@
             title="<b><%= course.name.capitalize %></b>"
             data-content='<%=
               (link_to "Continue course", course_subscription_path(course.id, Subscription.all.where(user: current_user).where(course: course).first.id)) %>' >
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+            <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg"> -->
+              <img src="<%= course.picture %>">
             <div class="card-trip-infos">
               <h2><%= course.name.capitalize %></h2>
             </div>
@@ -122,7 +123,8 @@
                         <%= link_to "Join course", course_subscriptions_path(course), method: :post %>
                         <% end %>' >
                         <!-- above we pass the course in the url string properly -->
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+          <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg"> -->
+          <img src="<%= course.picture %>">
           <div class="card-trip-infos">
             <h2><%= course.name.capitalize %></h2>
             <%= link_to "Join course", subscription_path(course_id: course), method: :post %>
