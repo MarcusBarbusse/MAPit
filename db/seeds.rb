@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 course = Course.new(
   category: "finance",
   language: "dutch",
@@ -14,7 +13,6 @@ course = Course.new(
   picture: 'https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
   )
 course.save
-
 
 course_word = CourseWord.new(
   word: "de winst",
@@ -29,6 +27,50 @@ course_word = CourseWord.new(
   course_id: course.id,
   )
 course_word.save
+
+course_word = CourseWord.new(
+  word: "verpanden",
+  translation: "to pledge",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "deelbaar",
+  translation: "divisible",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "vervaldag",
+  translation: "maturity date",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "de spaarder",
+  translation: "saver",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "schatten",
+  translation: "estimer",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "de leverancier",
+  translation: "the supllier",
+  course_id: course.id,
+  )
+course_word.save
+
+
 
 course = Course.new(
   category: "law",
@@ -53,6 +95,9 @@ course_word = CourseWord.new(
   )
 course_word.save
 
+
+
+
 course = Course.new(
   category: "finance",
   language: "spanish",
@@ -60,7 +105,6 @@ course = Course.new(
   picture: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
   )
 course.save
-
 
 course_word = CourseWord.new(
   word: "la ganancia",
