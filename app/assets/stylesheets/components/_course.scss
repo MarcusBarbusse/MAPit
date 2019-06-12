@@ -1,29 +1,36 @@
 .courses-page {
   background-color: whitesmoke;
-  padding: 90px;
+  padding: 120px;
   h1 {
     color: $title;
     font-size: 30px;
     font-weight: bold;
     margin-top: 40px;
+    padding-bottom: 10px;
   }
 }
 
 .courses-container {
-  text-align: center;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  display: grid;
+  grid-template-columns: 285px 285px 285px 285px;
+  grid-gap: 10px;
+  justify-content: space-between;
 }
 
 .card-trip {
+  margin-top: 15px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 30px rgba(0,0,0,0.3);
   border-radius: 5px;
   cursor: pointer;
-  width: 240px;
-  margin: 15px;
+  width: 280px;
   > img {
-    height: 125px;
-    width: 240px;
+    height: 135px;
+    width: 280px;
     object-fit: cover;
     }
   h2 {
@@ -57,9 +64,6 @@
   transition: all .3s ease-in-out;
   :hover button {
     display: inline-block;
-  }
-  :hover h2 {
-    color: $title;
   }
 }
 
