@@ -2,81 +2,89 @@
 <br>
 <br>
 <% if @subscription_word == "empty"%>
-Congrats, You've done all your flashcards
-<%= link_to "Courses",  courses_path %>
+<% flashed_percentage = current_user.flashing_percentage(params[:subscription_id]) %>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated length" role="progressbar" aria-valuenow="<%= flashed_percentage %>%" aria-valuemin="0" aria-valuemax="100" style="width: <%= flashed_percentage %>%">
+    Congrats, You've done all your flashcards
+    <%= link_to "Courses",  courses_path %>
 
-<% else %>
+    <% else %>
 
-<div class="col-xs-6 col-sm-6">
-  <div id="flashcard-container">
-    <div class="" id="flashcard">
-      <div class="" id="flashcard-front" >
-        <div id="map" class="themap"  style="background-image : url(<%= @background_image.photo %>)" >
-          <div class="row1">
-            <div class="picture-dropzone" id="11" data-dropzone data-x="1" data-y="1"></div>
-            <div class="picture-dropzone" id="21" data-dropzone data-x="2" data-y="1"></div>
-            <div class="picture-dropzone" id="31" data-dropzone data-x="3" data-y="1"></div>
-            <div class="picture-dropzone" id="41" data-dropzone data-x="4" data-y="1"></div>
-            <div class="picture-dropzone" id="51" data-dropzone data-x="5" data-y="1"></div>
-            <div class="picture-dropzone" id="61" data-dropzone data-x="6" data-y="1"></div>
+    <div class="col-xs-6 col-sm-6">
+      <div id="flashcard-container">
+        <div class="" id="flashcard">
+          <div class="" id="flashcard-front" >
+           <% flashed_percentage = current_user.flashing_percentage(params[:subscription_id]) %>
+           <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated length" role="progressbar" aria-valuenow="<%= flashed_percentage %>%" aria-valuemin="0" aria-valuemax="100" style="width: <%= flashed_percentage %>%">
+            </div>
           </div>
-          <div class="row2">
-            <div class="picture-dropzone" id="12" data-dropzone data-x="1" data-y="2"></div>
-            <div class="picture-dropzone" id="22" data-dropzone data-x="2" data-y="2"></div>
-            <div class="picture-dropzone" id="32" data-dropzone data-x="3" data-y="2"></div>
-            <div class="picture-dropzone" id="42" data-dropzone data-x="4" data-y="2"></div>
-            <div class="picture-dropzone" id="52" data-dropzone data-x="5" data-y="2"></div>
-            <div class="picture-dropzone" id="62" data-dropzone data-x="6" data-y="2"></div>
+          <div id="map" class="themap"  style="background-image : url(<%= @background_image.photo %>)" >
+            <div class="row1">
+              <div class="picture-dropzone" id="11" data-dropzone data-x="1" data-y="1"></div>
+              <div class="picture-dropzone" id="21" data-dropzone data-x="2" data-y="1"></div>
+              <div class="picture-dropzone" id="31" data-dropzone data-x="3" data-y="1"></div>
+              <div class="picture-dropzone" id="41" data-dropzone data-x="4" data-y="1"></div>
+              <div class="picture-dropzone" id="51" data-dropzone data-x="5" data-y="1"></div>
+              <div class="picture-dropzone" id="61" data-dropzone data-x="6" data-y="1"></div>
+            </div>
+            <div class="row2">
+              <div class="picture-dropzone" id="12" data-dropzone data-x="1" data-y="2"></div>
+              <div class="picture-dropzone" id="22" data-dropzone data-x="2" data-y="2"></div>
+              <div class="picture-dropzone" id="32" data-dropzone data-x="3" data-y="2"></div>
+              <div class="picture-dropzone" id="42" data-dropzone data-x="4" data-y="2"></div>
+              <div class="picture-dropzone" id="52" data-dropzone data-x="5" data-y="2"></div>
+              <div class="picture-dropzone" id="62" data-dropzone data-x="6" data-y="2"></div>
+            </div>
+            <div class="row3">
+              <div class="picture-dropzone" id="13" data-dropzone data-x="1" data-y="3"></div>
+              <div class="picture-dropzone" id="23" data-dropzone data-x="2" data-y="3"></div>
+              <div class="picture-dropzone" id="33" data-dropzone data-x="3" data-y="3"></div>
+              <div class="picture-dropzone" id="43" data-dropzone data-x="4" data-y="3"></div>
+              <div class="picture-dropzone" id="53" data-dropzone data-x="5" data-y="3"></div>
+              <div class="picture-dropzone" id="63" data-dropzone data-x="6" data-y="3"></div>
+            </div>
+            <div class="row4">
+              <div class="picture-dropzone" id="14" data-dropzone data-x="1" data-y="4"></div>
+              <div class="picture-dropzone" id="24" data-dropzone data-x="2" data-y="4"></div>
+              <div class="picture-dropzone" id="34" data-dropzone data-x="3" data-y="4"></div>
+              <div class="picture-dropzone" id="44" data-dropzone dasa-x="4" data-y="4"></div>
+              <div class="picture-dropzone" id="54" data-dropzone data-x="5" data-y="4"></div>
+              <div class="picture-dropzone" id="64" data-dropzone data-x="6" data-y="4"></div>
+            </div>
+            <div class="row5">
+              <div class="picture-dropzone" id="15" data-dropzone data-x="1" data-y="5"></div>
+              <div class="picture-dropzone" id="25" data-dropzone data-x="2" data-y="5"></div>
+              <div class="picture-dropzone" id="35" data-dropzone data-x="3" data-y="5"></div>
+              <div class="picture-dropzone" id="45" data-dropzone data-x="4" data-y="5"></div>
+              <div class="picture-dropzone" id="55" data-dropzone data-x="5" data-y="5"></div>
+              <div class="picture-dropzone" id="65" data-dropzone data-x="6" data-y="5"></div>
+            </div>
+            <div class="row6">
+              <div class="picture-dropzone" id="16" data-dropzone data-x="1" data-y="6"></div>
+              <div class="picture-dropzone" id="26" data-dropzone data-x="2" data-y="6"></div>
+              <div class="picture-dropzone" id="36" data-dropzone data-x="3" data-y="6"></div>
+              <div class="picture-dropzone" id="46" data-dropzone data-x="4" data-y="6"></div>
+              <div class="picture-dropzone" id="56" data-dropzone data-x="5" data-y="6"></div>
+              <div class="picture-dropzone" id="66" data-dropzone data-x="6" data-y="6"></div>
+            </div>
+            <img id="<%= @subscription_word.photo_mother_tongue_x %><%= @subscription_word.photo_mother_tongue_y %>" class="mother_photo_display image-result" src="<%= @subscription_word.photo_mother_tongue%>" >
+            <img id="<%= @subscription_word.photo_target_word_x %><%= @subscription_word.photo_target_word_y %>" class="target_photo_display image-result" src="<%= @subscription_word.photo_target_word%>" >
           </div>
-          <div class="row3">
-            <div class="picture-dropzone" id="13" data-dropzone data-x="1" data-y="3"></div>
-            <div class="picture-dropzone" id="23" data-dropzone data-x="2" data-y="3"></div>
-            <div class="picture-dropzone" id="33" data-dropzone data-x="3" data-y="3"></div>
-            <div class="picture-dropzone" id="43" data-dropzone data-x="4" data-y="3"></div>
-            <div class="picture-dropzone" id="53" data-dropzone data-x="5" data-y="3"></div>
-            <div class="picture-dropzone" id="63" data-dropzone data-x="6" data-y="3"></div>
+          <div class="flashcard-button">
+            <button class="button" href="javascript:void(0)" id="flash" >See results</button>
+            <button class="button" id="button-flashed" ><%= link_to "I mapped it", course_subscription_subscription_word_path(params[:course_id], params[:subscription_id], @subscription_word.id), method: :put %></button>
           </div>
-          <div class="row4">
-            <div class="picture-dropzone" id="14" data-dropzone data-x="1" data-y="4"></div>
-            <div class="picture-dropzone" id="24" data-dropzone data-x="2" data-y="4"></div>
-            <div class="picture-dropzone" id="34" data-dropzone data-x="3" data-y="4"></div>
-            <div class="picture-dropzone" id="44" data-dropzone dasa-x="4" data-y="4"></div>
-            <div class="picture-dropzone" id="54" data-dropzone data-x="5" data-y="4"></div>
-            <div class="picture-dropzone" id="64" data-dropzone data-x="6" data-y="4"></div>
-          </div>
-          <div class="row5">
-            <div class="picture-dropzone" id="15" data-dropzone data-x="1" data-y="5"></div>
-            <div class="picture-dropzone" id="25" data-dropzone data-x="2" data-y="5"></div>
-            <div class="picture-dropzone" id="35" data-dropzone data-x="3" data-y="5"></div>
-            <div class="picture-dropzone" id="45" data-dropzone data-x="4" data-y="5"></div>
-            <div class="picture-dropzone" id="55" data-dropzone data-x="5" data-y="5"></div>
-            <div class="picture-dropzone" id="65" data-dropzone data-x="6" data-y="5"></div>
-          </div>
-          <div class="row6">
-            <div class="picture-dropzone" id="16" data-dropzone data-x="1" data-y="6"></div>
-            <div class="picture-dropzone" id="26" data-dropzone data-x="2" data-y="6"></div>
-            <div class="picture-dropzone" id="36" data-dropzone data-x="3" data-y="6"></div>
-            <div class="picture-dropzone" id="46" data-dropzone data-x="4" data-y="6"></div>
-            <div class="picture-dropzone" id="56" data-dropzone data-x="5" data-y="6"></div>
-            <div class="picture-dropzone" id="66" data-dropzone data-x="6" data-y="6"></div>
-          </div>
-          <img id="<%= @subscription_word.photo_mother_tongue_x %><%= @subscription_word.photo_mother_tongue_y %>" class="mother_photo_display image-result" src="<%= @subscription_word.photo_mother_tongue%>" >
-          <img id="<%= @subscription_word.photo_target_word_x %><%= @subscription_word.photo_target_word_y %>" class="target_photo_display image-result" src="<%= @subscription_word.photo_target_word%>" >
         </div>
-        <div class="flashcard-button">
-          <button class="button" href="javascript:void(0)" id="flash" >See results</button>
-          <button class="button" id="button-flashed" ><%= link_to "I mapped it", course_subscription_subscription_word_path(params[:course_id], params[:subscription_id], @subscription_word.id), method: :put %></button>
-        </div>
-      </div>
-      <div class="invisible" id="flashcard-answer">
+        <div class="invisible" id="flashcard-answer">
           <div class="d-flex justify-content-around">
             <div class=flashcard-image>
-            <img class="themap" id="<%= @subscription_word.photo_mother_tongue_x %><%= @subscription_word.photo_mother_tongue_y %>" class="mother_photo_display image-result" src="<%= @subscription_word.photo_mother_tongue%>" >
-            <%= @subscription_word.course_word.translation %>
+              <img class="themap" id="<%= @subscription_word.photo_mother_tongue_x %><%= @subscription_word.photo_mother_tongue_y %>" class="mother_photo_display image-result" src="<%= @subscription_word.photo_mother_tongue%>" >
+              <%= @subscription_word.course_word.translation %>
             </div>
             <div class=flashcard-image>
-            <img class="themap" id="<%= @subscription_word.photo_target_word_x %><%= @subscription_word.photo_target_word_y %>" class="target_photo_display image-result" src="<%= @subscription_word.photo_target_word%>" >
-            <%= @subscription_word.course_word.word %>
+              <img class="themap" id="<%= @subscription_word.photo_target_word_x %><%= @subscription_word.photo_target_word_y %>" class="target_photo_display image-result" src="<%= @subscription_word.photo_target_word%>" >
+              <%= @subscription_word.course_word.word %>
             </div>
           </div>
 
@@ -84,11 +92,11 @@ Congrats, You've done all your flashcards
             <button  class="button" > <%= link_to "I didn't map it", course_subscription_subscription_words_path %></button>
             <button class="button" id="button-flashed" ><%= link_to "I mapped it", course_subscription_subscription_word_path(params[:course_id], params[:subscription_id], @subscription_word.id), method: :put %></button>
           </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <% end %>
