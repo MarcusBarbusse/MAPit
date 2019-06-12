@@ -7,7 +7,7 @@
     <link rel="icon" href="https://i.imgur.com/EQY8ogf.png">
     <link href="https://fonts.googleapis.com/css?family=Mukta&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-    <title>MAPit</title>
+    <title>MAPit today, remember it tomorrow</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -16,6 +16,8 @@
   <body>
     <div class="wrapper">
       <% if params[:controller] == 'pages' && params[:action] == "home" %>
+        <%= render 'shared/navbar' %>
+      <% elsif params[:controller] == 'subscription_words' && params[:action] == "index"%>
         <%= render 'shared/navbar' %>
       <% elsif params[:controller] == 'subscriptions' && params[:action] == "show"%>
         <%= render 'shared/navbar' %>
