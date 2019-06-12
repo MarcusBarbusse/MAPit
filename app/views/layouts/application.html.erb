@@ -14,22 +14,22 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <% if params[:controller] == 'pages' && params[:action] == "home" %>
+      <%= render 'shared/navbar' %>
+    <% elsif params[:controller] == 'subscription_words' && params[:action] == "index"%>
+      <%= render 'shared/navbar' %>
+    <% elsif params[:controller] == 'subscriptions' && params[:action] == "show"%>
+      <%= render 'shared/navbar' %>
+    <% else %>
+      <%= render 'shared/navbar_coloured' %>
+    <% end %>
     <div class="wrapper">
-      <% if params[:controller] == 'pages' && params[:action] == "home" %>
-        <%= render 'shared/navbar' %>
-      <% elsif params[:controller] == 'subscription_words' && params[:action] == "index"%>
-        <%= render 'shared/navbar' %>
-      <% elsif params[:controller] == 'subscriptions' && params[:action] == "show"%>
-        <%= render 'shared/navbar' %>
-      <% else %>
-        <%= render 'shared/navbar_coloured' %>
-      <% end %>
       <%= render 'shared/flashes' %>
       <%= yield %>
       <%= javascript_include_tag 'application' %>
       <%= javascript_pack_tag 'application' %>
       <%= yield :after_js %>
+      <%= render 'shared/footer' %>
     </div>
-    <%= render 'shared/footer' %>
   </body>
 </html>
