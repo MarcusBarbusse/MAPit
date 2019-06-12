@@ -36,14 +36,18 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin-top: 53px;
 }
 
 .letter {
-  border-radius: 5px;
-  background-color: rgb(237, 237, 237);
-  height: 6.5%;
-  weight: 30%;
-  margin: 2.5px;
+  border-radius: 3px;
+  // background-color: rgb(237, 237, 237);
+  // height: 6.5%;
+  // weight: 30%;
+  color: #3b9ce2;
+  margin: 4px;
+  border: 1px solid #3b9ce2;
+  text-transform: uppercase;
 }
 
 .button-landing-page {

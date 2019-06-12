@@ -7,13 +7,18 @@
 }
 
 .buttons-for-map {
-  // display: flex;
+  display: flex;
+  justify-content: space-between;
   // margin-left: 42%;
+}
+
+.map-nav-buttons {
+  width: 100%;
 }
 
 .themapcountenair {
   background-color: white;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   border-radius: 5px;
   // margin: 1%;
@@ -106,8 +111,9 @@
 }
 
 .mapbutton {
+  display: inline-block;
   height: 40px;
-  background-color: rgb(98, 177, 246);
+  background-color: $title;
   margin: 1%;
   color: white;
   padding: 8px 24px;
@@ -115,11 +121,16 @@
   border-radius: 4px;
   transition: background 0.3s ease;
   font-family: "Open Sans", "Helvetica", "sans-serif";
+  font-size: 16px;
   font-weight: bold;
   text-decoration: none;
     a {
       color: white;
     }
+}
+
+.nextbtn {
+  margin: 10%;
 }
 
 .inputfile {
@@ -133,21 +144,31 @@
 
 .background_image_photo {
   label {
-      font-size: 1.25em;
-      font-weight: 700;
-      color: white;
-      background-color: $button;
-      display: inline-block;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: $title;
+    padding: 8px 24px;
+    border-radius: 4px;
+    display: inline-block;
+    font-family: "Open Sans", "Helvetica", "sans-serif";
+    :hover {
+      box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24), 0 10px 10px 0 rgba(0,0,0,0.19);
+      // cursor: pointer;
+    }
   }
 }
 
-.inputfile:focus + label,
-.inputfile + label:hover {
-    background-color: red;
+.background_image_photo {
+  label:hover {
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24), 0 10px 10px 0 rgba(0,0,0,0.19);
+  }
 }
 
 .mapbutton:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  color: white;
 }
 
 .mapbutton a {
