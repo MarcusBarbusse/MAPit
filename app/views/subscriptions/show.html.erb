@@ -2,11 +2,7 @@
   <div class="row themapcountenair">
     <div class="col-xs-12 col-sm-5 d-flex">
       <div class="col-xs-10 col-sm-5">
-        <% percentage = current_user.mapped_percentage(params[:id]) %>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated length" role="progressbar" aria-valuenow="<%= percentage %>%" aria-valuemin="0" aria-valuemax="100" style="width: <%= percentage %>%">
-              </div>
-            </div>
+        
         <div class="image" data-photo-id="eatPhotoID">
           <div class="word-to-remember">
             <%= @course_word.word %>
@@ -19,172 +15,172 @@
               class: "form-control",
                 placeholder: "Find an image"
                 %>
-              <% end %>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
-        <div id="target-photo-list" data-photo-id="search">
-          <% if @image_target_results.any? %>
-          <% @image_target_results.each do |url| %>
-          <img data-category="target" src="<%= url %>" alt="" class="image-result">
-          <% end %>
-          <% end %>
-        </div>
-      </div>
-      <div class="col-xs-10 col-sm-5">
-        <div class="image" data-photo-id="eatPhotoID">
-          <div class="word-to-remember">
-          <%= @course_word.translation %>
+          <div id="target-photo-list" data-photo-id="search">
+            <% if @image_target_results.any? %>
+            <% @image_target_results.each do |url| %>
+            <img data-category="target" src="<%= url %>" alt="" class="image-result">
+            <% end %>
+            <% end %>
           </div>
-          <div class='container-search' data-photo-id="search">
-            <div class="image-search-bar">
-            <%= form_tag course_subscription_path(@course.id, Subscription.all.where(user: current_user).where(course: @course).first.id), method: :get, remote: true do %>
+        </div>
+        <div class="col-xs-10 col-sm-5">
+          <div class="image" data-photo-id="eatPhotoID">
+            <div class="word-to-remember">
+              <%= @course_word.translation %>
+            </div>
+            <div class='container-search' data-photo-id="search">
+              <div class="image-search-bar">
+                <%= form_tag course_subscription_path(@course.id, Subscription.all.where(user: current_user).where(course: @course).first.id), method: :get, remote: true do %>
                 <%= text_field_tag :q2,
                 params[:q2],
                 class: "form-control",
-                placeholder: "Find an image"
+                  placeholder: "Find an image"
                   %>
                   <% end %>
+                </div>
+              </div>
+            </div>
+            <div id="mother-photo-list" data-photo-id="search">
+              <% if @image_mother_results.any? %>
+              <% @image_mother_results.each do |url| %>
+              <img data-category="mother" src="<%= url %>" alt="" class="image-result">
+              <% end %>
+              <% else %>
+              <div class="no-result-for-search">
+              </div>
+              <% end %>
             </div>
           </div>
-        </div>
-        <div id="mother-photo-list" data-photo-id="search">
-          <% if @image_mother_results.any? %>
-          <% @image_mother_results.each do |url| %>
-          <img data-category="mother" src="<%= url %>" alt="" class="image-result">
-          <% end %>
-          <% else %>
-            <div class="no-result-for-search">
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="col-xs-2 col-sm-2">
-        <div class="searchbarall d-flex">
-          <div class="searchbar" id="items1">
-            <% letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'] %>
-            <div class="image_button_container">
-              <div class="button-letter">
-                <% letters.each_with_index do |letter, index|%>
-                <button id="<%= index %>"  class="letter"><%=letter%></button>
-                <% end %>
+          <div class="col-xs-2 col-sm-2">
+            <div class="searchbarall d-flex">
+              <div class="searchbar" id="items1">
+                <% letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'] %>
+                <div class="image_button_container">
+                  <div class="button-letter">
+                    <% letters.each_with_index do |letter, index|%>
+                    <button id="<%= index %>"  class="letter"><%=letter%></button>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="searchbar" id="items1">
+                <% letters = ['n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] %>
+                <div class="image_button_container">
+                  <div class="button-letter">
+                    <% letters.each_with_index do |letter, index|%>
+                    <button id="<%= index = index + 13 %>"  class="letter"><%=letter%></button>
+                    <% end %>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="searchbar" id="items1">
-            <% letters = ['n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] %>
-            <div class="image_button_container">
-              <div class="button-letter">
-                <% letters.each_with_index do |letter, index|%>
-                <button id="<%= index = index + 13 %>"  class="letter"><%=letter%></button>
-                <% end %>
+        </div>
+        <div class="col-xs-12 col-sm-7 d-flex">
+          <div class="col-xs-12 col-sm-12">
+            <% @background_images.each_with_index do |image, index| %>
+            <div id="map <%= index %>" class="themap maps d-none" style=" background-image : url(<%= cl_image_path(image.photo.url) %>);">
+              <div class="row1">
+                <div class="picture-dropzone" data-dropzone data-x="1" data-y="1"></div>
+                <div class="picture-dropzone" data-dropzone data-x="2" data-y="1"></div>
+                <div class="picture-dropzone" data-dropzone data-x="3" data-y="1"></div>
+                <div class="picture-dropzone" data-dropzone data-x="4" data-y="1"></div>
+                <div class="picture-dropzone" data-dropzone data-x="5" data-y="1"></div>
+                <div class="picture-dropzone" data-dropzone data-x="6" data-y="1"></div>
+              </div>
+              <div class="row2">
+                <div class="picture-dropzone" data-dropzone data-x="1" data-y="2"></div>
+                <div class="picture-dropzone" data-dropzone data-x="2" data-y="2"></div>
+                <div class="picture-dropzone" data-dropzone data-x="3" data-y="2"></div>
+                <div class="picture-dropzone" data-dropzone data-x="4" data-y="2"></div>
+                <div class="picture-dropzone" data-dropzone data-x="5" data-y="2"></div>
+                <div class="picture-dropzone" data-dropzone data-x="6" data-y="2"></div>
+              </div>
+              <div class="row3">
+                <div class="picture-dropzone" data-dropzone data-x="1" data-y="3"></div>
+                <div class="picture-dropzone" data-dropzone data-x="2" data-y="3"></div>
+                <div class="picture-dropzone" data-dropzone data-x="3" data-y="3"></div>
+                <div class="picture-dropzone" data-dropzone data-x="4" data-y="3"></div>
+                <div class="picture-dropzone" data-dropzone data-x="5" data-y="3"></div>
+                <div class="picture-dropzone" data-dropzone data-x="6" data-y="3"></div>
+              </div>
+              <div class="row4">
+                <div class="picture-dropzone" data-dropzone data-x="1" data-y="4"></div>
+                <div class="picture-dropzone" data-dropzone data-x="2" data-y="4"></div>
+                <div class="picture-dropzone" data-dropzone data-x="3" data-y="4"></div>
+                <div class="picture-dropzone" data-dropzone data-x="4" data-y="4"></div>
+                <div class="picture-dropzone" data-dropzone data-x="5" data-y="4"></div>
+                <div class="picture-dropzone" data-dropzone data-x="6" data-y="4"></div>
+              </div>
+              <div class="row5">
+                <div class="picture-dropzone" data-dropzone data-x="1" data-y="5"></div>
+                <div class="picture-dropzone" data-dropzone data-x="2" data-y="5"></div>
+                <div class="picture-dropzone" data-dropzone data-x="3" data-y="5"></div>
+                <div class="picture-dropzone" data-dropzone data-x="4" data-y="5"></div>
+                <div class="picture-dropzone" data-dropzone data-x="5" data-y="5"></div>
+                <div class="picture-dropzone" data-dropzone data-x="6" data-y="5"></div>
+              </div>
+              <div class="row6">
+                <div class="picture-dropzone" data-dropzone data-x="1" data-y="6"></div>
+                <div class="picture-dropzone" data-dropzone data-x="2" data-y="6"></div>
+                <div class="picture-dropzone" data-dropzone data-x="3" data-y="6"></div>
+                <div class="picture-dropzone" data-dropzone data-x="4" data-y="6"></div>
+                <div class="picture-dropzone" data-dropzone data-x="5" data-y="6"></div>
+                <div class="picture-dropzone" data-dropzone data-x="6" data-y="6"></div>
               </div>
             </div>
+            <div id="form <%= index %>" class=" maps d-none">
+              <%= simple_form_for image, method: :patch do |f|%>
+              <%= f.input :photo %>
+              <%= f.input :photo_cache, as: :hidden %>
+              <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
+              <%= f.submit %>
+              <% end %>
+            </div>
+            <% end %>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-xs-12 col-sm-7 d-flex">
-      <div class="col-xs-12 col-sm-12">
-        <% @background_images.each_with_index do |image, index| %>
-        <div id="map <%= index %>" class="themap maps d-none" style=" background-image : url(<%= cl_image_path(image.photo.url) %>);">
-          <div class="row1">
-            <div class="picture-dropzone" data-dropzone data-x="1" data-y="1"></div>
-            <div class="picture-dropzone" data-dropzone data-x="2" data-y="1"></div>
-            <div class="picture-dropzone" data-dropzone data-x="3" data-y="1"></div>
-            <div class="picture-dropzone" data-dropzone data-x="4" data-y="1"></div>
-            <div class="picture-dropzone" data-dropzone data-x="5" data-y="1"></div>
-            <div class="picture-dropzone" data-dropzone data-x="6" data-y="1"></div>
-          </div>
-          <div class="row2">
-            <div class="picture-dropzone" data-dropzone data-x="1" data-y="2"></div>
-            <div class="picture-dropzone" data-dropzone data-x="2" data-y="2"></div>
-            <div class="picture-dropzone" data-dropzone data-x="3" data-y="2"></div>
-            <div class="picture-dropzone" data-dropzone data-x="4" data-y="2"></div>
-            <div class="picture-dropzone" data-dropzone data-x="5" data-y="2"></div>
-            <div class="picture-dropzone" data-dropzone data-x="6" data-y="2"></div>
-          </div>
-          <div class="row3">
-            <div class="picture-dropzone" data-dropzone data-x="1" data-y="3"></div>
-            <div class="picture-dropzone" data-dropzone data-x="2" data-y="3"></div>
-            <div class="picture-dropzone" data-dropzone data-x="3" data-y="3"></div>
-            <div class="picture-dropzone" data-dropzone data-x="4" data-y="3"></div>
-            <div class="picture-dropzone" data-dropzone data-x="5" data-y="3"></div>
-            <div class="picture-dropzone" data-dropzone data-x="6" data-y="3"></div>
-          </div>
-          <div class="row4">
-            <div class="picture-dropzone" data-dropzone data-x="1" data-y="4"></div>
-            <div class="picture-dropzone" data-dropzone data-x="2" data-y="4"></div>
-            <div class="picture-dropzone" data-dropzone data-x="3" data-y="4"></div>
-            <div class="picture-dropzone" data-dropzone data-x="4" data-y="4"></div>
-            <div class="picture-dropzone" data-dropzone data-x="5" data-y="4"></div>
-            <div class="picture-dropzone" data-dropzone data-x="6" data-y="4"></div>
-          </div>
-          <div class="row5">
-            <div class="picture-dropzone" data-dropzone data-x="1" data-y="5"></div>
-            <div class="picture-dropzone" data-dropzone data-x="2" data-y="5"></div>
-            <div class="picture-dropzone" data-dropzone data-x="3" data-y="5"></div>
-            <div class="picture-dropzone" data-dropzone data-x="4" data-y="5"></div>
-            <div class="picture-dropzone" data-dropzone data-x="5" data-y="5"></div>
-            <div class="picture-dropzone" data-dropzone data-x="6" data-y="5"></div>
-          </div>
-          <div class="row6">
-            <div class="picture-dropzone" data-dropzone data-x="1" data-y="6"></div>
-            <div class="picture-dropzone" data-dropzone data-x="2" data-y="6"></div>
-            <div class="picture-dropzone" data-dropzone data-x="3" data-y="6"></div>
-            <div class="picture-dropzone" data-dropzone data-x="4" data-y="6"></div>
-            <div class="picture-dropzone" data-dropzone data-x="5" data-y="6"></div>
-            <div class="picture-dropzone" data-dropzone data-x="6" data-y="6"></div>
-          </div>
-        </div>
-        <div id="form <%= index %>" class=" maps d-none">
-          <%= simple_form_for image, method: :patch do |f|%>
-          <%= f.input :photo %>
-          <%= f.input :photo_cache, as: :hidden %>
-          <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
-          <%= f.submit %>
-          <% end %>
-        </div>
+      <div style="display: none;">
+        <%= simple_form_for [@course, @subscription, @subscription_word] do |f| %>
+        <%= f.input :course_word_id %>
+        <%= f.input :photo_mother_tongue %>
+        <%= f.input :photo_mother_tongue_x %>
+        <%= f.input :photo_mother_tongue_y %>
+        <%= f.input :photo_target_word %>
+        <%= f.input :photo_target_word_x %>
+        <%= f.input :photo_target_word_y %>
+        <%= f.input :background_image_id, input_html: { value: @subscription.user_id } %>
+        <%= f.submit id: "submitFormButton" %>
         <% end %>
+      </div>
+      <div class="button-container">
+      </div>
+      <div class="buttons-for-map">
+        <button name="button" type="submit" class="mapbutton">
+          <%= link_to "Courses",  courses_path %>
+        </button>
+        <button name="button" type="submit" class="mapbutton">
+          <%= link_to "FlashCards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
+        </button>
+        <button id="nextWordButton" name="button" type="submit" class="mapbutton">
+          Next
+        </button>
       </div>
     </div>
   </div>
   <div style="display: none;">
+
     <%= simple_form_for [@course, @subscription, @subscription_word] do |f| %>
-    <%= f.input :course_word_id %>
     <%= f.input :photo_mother_tongue %>
-    <%= f.input :photo_mother_tongue_x %>
-    <%= f.input :photo_mother_tongue_y %>
     <%= f.input :photo_target_word %>
-    <%= f.input :photo_target_word_x %>
-    <%= f.input :photo_target_word_y %>
-    <%= f.input :background_image_id, input_html: { value: @subscription.user_id } %>
-    <%= f.submit id: "submitFormButton" %>
+    <%= f.submit  %>
     <% end %>
   </div>
-  <div class="button-container">
-    </div>
-    <div class="buttons-for-map">
-      <button name="button" type="submit" class="mapbutton">
-        <%= link_to "Courses",  courses_path %>
-      </button>
-      <button name="button" type="submit" class="mapbutton">
-        <%= link_to "FlashCards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
-      </button>
-      <button id="nextWordButton" name="button" type="submit" class="mapbutton">
-        Next
-      </button>
-    </div>
-  </div>
-</div>
-<div style="display: none;">
-
-  <%= simple_form_for [@course, @subscription, @subscription_word] do |f| %>
-  <%= f.input :photo_mother_tongue %>
-  <%= f.input :photo_target_word %>
-  <%= f.submit  %>
-  <% end %>
-</div>
 
 
 
