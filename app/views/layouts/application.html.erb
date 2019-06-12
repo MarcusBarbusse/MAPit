@@ -17,6 +17,8 @@
     <div class="wrapper">
       <% if params[:controller] == 'pages' && params[:action] == "home" %>
         <%= render 'shared/navbar' %>
+      <% elsif params[:controller] == 'subscriptions' && params[:action] == "show"%>
+        <%= render 'shared/navbar' %>
       <% else %>
         <%= render 'shared/navbar_coloured' %>
       <% end %>
