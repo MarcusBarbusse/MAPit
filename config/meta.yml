@@ -1,0 +1,5 @@
+meta_product_name: "MAPit"
+meta_title: "MAPit today, remember it tomorrow"
+meta_description: "Language learning website"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"
