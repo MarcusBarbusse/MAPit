@@ -33,11 +33,10 @@
   background-color: rgb(182, 215, 240);
   padding: 3% 6%;
   padding-bottom: 90px;
-  height: 100%;
+  height: 100vh;
 }
 #flashcard {
   margin: 70px 0px;
-  text-align: center;
   padding: 50px 0px;
 
 }
@@ -57,25 +56,36 @@
   margin: 0px 15px;
 }
 
+#button-flashcard-left {
+  text-align: right;
+}
+
+#button-flashcard-right {
+  text-align: left;
+}
+
 #background-img {
   background-repeat: no-repeat;
   display: flex;
   background-size: cover;
   border-radius: 5px;
+}
+
+#flashcard-answer img {
+  border-radius: 5px;
+}
+
+.flashcard-words {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  font-weight: 800;
+  font-size: 30px;
+  color: $title;
 
 }
-// .flashcard-button {
-//   margin: 10px;
-// }
-// .flashcard-button a {
-//   color: white;
-// }
-
-// .flashcard-image {
-//   height: 300px;
-//   width: 600px;
-//   object-fit:cover;
-// }
 
 @media screen and (max-width: 2200px) {
   .div-box {
@@ -90,6 +100,10 @@
   #background-img {
     height: 600px;
     width: 1200px;
+  }
+  #flashcard-answer img {
+    height: 300px;
+    width: 600px;
   }
 }
 
@@ -106,7 +120,10 @@
   #background-img {
     height: 500px;
     width: 1000px;
-
+  }
+  #flashcard-answer img {
+    height: 250px;
+    width: 500px;
   }
 }
 
@@ -123,7 +140,10 @@
   #background-img {
     height: 400px;
     width: 800px;
-
+  }
+  #flashcard-answer img {
+    height: 200px;
+    width: 400px;
   }
 }
 
@@ -140,7 +160,10 @@
   #background-img {
     height: 300px;
     width: 600px;
-
+  }
+  #flashcard-answer img {
+    height: 150px;
+    width: 300px;
   }
 }
 
@@ -157,6 +180,9 @@
   #background-img {
     height: 150px;
     width: 300px;
-
+  }
+  #flashcard-answer img {
+    height: 75px;
+    width: 150px;
   }
 }
