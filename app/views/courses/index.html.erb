@@ -1,7 +1,7 @@
 <div class=courses-page>
 
   <h1 class="highlight">My courses</h1>
-  <div class=courses-container>
+  <div class="courses-container">
     <% if current_user != nil %>
       <% @my_courses.each do |course| %>
         <% if !@my_courses.present? %>
@@ -28,7 +28,7 @@
   </div>
 
   <h1 class="highlight">Discover other courses</h1>
-   <div class=courses-container>
+    <div class="courses-container">
       <% @courses.each do |course| %>
       <div class="popup">
         <%= link_to subscription_path(course: course), method: :post do%>
