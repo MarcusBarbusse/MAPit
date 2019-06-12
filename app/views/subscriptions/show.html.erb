@@ -128,7 +128,21 @@
               <%= f.submit %>
               <% end %>
             </div>
+            <div class="button-container">
+              <div class="buttons-for-map">
+                <button id="button1 <%= index %>" name="button" type="submit" class="mapbutton maps d-none">
+                  <%= link_to "Courses",  courses_path %>
+                </button>
+                <button id="button2 <%= index %>" name="button" type="submit" class="mapbutton maps d-none">
+                  <%= link_to "FlashCards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
+                </button>
+              </div>
+            </div>
             <% end %>
+
+            <button id="nextWordButton" name="button" type="submit" class="mapbutton">
+              Next
+            </button>
           </div>
         </div>
       </div>
@@ -145,19 +159,7 @@
         <%= f.submit id: "submitFormButton" %>
         <% end %>
       </div>
-      <div class="button-container">
-      </div>
-      <div class="buttons-for-map">
-        <button name="button" type="submit" class="mapbutton">
-          <%= link_to "Courses",  courses_path %>
-        </button>
-        <button name="button" type="submit" class="mapbutton">
-          <%= link_to "FlashCards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
-        </button>
-        <button id="nextWordButton" name="button" type="submit" class="mapbutton">
-          Next
-        </button>
-      </div>
+
     </div>
   </div>
   <div style="display: none;">
