@@ -5,7 +5,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  :recoverable, :rememberable, :validatable
   after_create :set_default_backgrounds
 
 
@@ -16,8 +16,21 @@ class User < ApplicationRecord
     subscription_words.zero? ? 0 : (subscription_words / course_words) * 100
   end
 
+  def flashing_percentage(course_id)
+    subscription = self.subscriptions.find(course_id)
+    course_words = subscription.course.course_words.count.to_f
+    subscription_words = subscription.subscription_words.where(flashed: true).count.to_f
+    subscription_words.zero? ? 0 : (subscription_words / course_words) * 100
+  end
+
+  def mapped_percentage(course_id)
+    subscription = self.subscriptions.find(course_id)
+    course_words = subscription.course.course_words.count.to_f
+    subscription_words = subscription.subscription_words.count.to_f
+    subscription_words.zero? ? 0 : (subscription_words / course_words) * 100
+  end
+
   def set_default_backgrounds
-    
     ("a".."z").to_a.each do |key|
       BackgroundImage.create(user: self, letter: key)
     end
