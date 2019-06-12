@@ -131,12 +131,14 @@
   z-index: -1;
 }
 
-.inputfile + label {
-    font-size: 1.25em;
-    font-weight: 700;
-    color: white;
-    background-color: $button;
-    display: inline-block;
+.background_image_photo {
+  label {
+      font-size: 1.25em;
+      font-weight: 700;
+      color: white;
+      background-color: $button;
+      display: inline-block;
+  }
 }
 
 .inputfile:focus + label,

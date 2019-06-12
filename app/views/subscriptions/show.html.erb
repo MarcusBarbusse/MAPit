@@ -126,15 +126,14 @@
             <div class="picture-dropzone" data-dropzone data-x="5" data-y="6"></div>
           </div>
         </div>
-        <div id="form <%= index %>" class="maps d-none">
-          <%= simple_form_for image, method: :patch do |f|%>
-          <input class="form-control-file file optional inputfile" type="file" name="background_image[photo]" id="background_image_photo">
-          <label for="background_image_photo">Edit background image</label>
-          <%= f.input :photo_cache, label: false, as: :hidden %>
-          <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
-          <%= f.button :submit, "Upload", class: "button" %>
-          <% end %>
-        </div>
+        <div id="form <%= index %>" class=" maps d-none">
+        <%= simple_form_for image, method: :patch do |f|%>
+        <%= f.input :photo, label: 'upload', input_html: { class: 'inputfile' } %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
+        <%= f.submit %>
+        <% end %>
+      </div>
         <% end %>
       </div>
     </div>
