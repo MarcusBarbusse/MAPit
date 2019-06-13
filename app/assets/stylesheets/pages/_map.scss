@@ -18,7 +18,7 @@
 
 .themapcountenair {
   background-color: white;
-  height: 85vh;
+  height: 75vh;
   display: flex;
   border-radius: 5px;
   // margin: 1%;
@@ -63,6 +63,7 @@
   background-size: cover;
   margin-left: 1%;
   margin-bottom: 10px;
+  margin-left: 0px;
 }
 
 .row1 .row2 .row3 .row4 .row5 .row6 .row7 .row8 {
@@ -135,6 +136,7 @@
 }
 .orange {
   background-color: $button !important;
+  margin: 10px 0px;
 }
 .nextbtn {
   margin: 10%;
@@ -190,7 +192,9 @@
   // margin: 8%;
 }
 
-
+.big-div-box {
+  margin-top: 57px;
+}
 
 @media screen and (max-width: 2000px) {
   .div-map-box {
