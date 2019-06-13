@@ -5,6 +5,7 @@ import '../components/cards';
 // import custom js functions
 import { initDragAndDrop } from "../components/draganddrop";
 import { clickLetter } from "../components/mapletters";
+import { imgUpload } from "../components/imageuploader"
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { flashcard } from "../components/flashcard";
 
@@ -13,6 +14,7 @@ import { flashcard } from "../components/flashcard";
 // initialize function
 initDragAndDrop();
 clickLetter();
+imgUpload();
 // initUpdateNavbarOnScroll();
 flashcard();
 
