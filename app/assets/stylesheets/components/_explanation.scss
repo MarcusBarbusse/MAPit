@@ -10,40 +10,38 @@
   background: white;
   width: 100%;
   height: 100vh;
+  position: relative;
+    padding: 8%;
   h4 {
     text-align: center;
     font-size: 30px;
     margin-top: 15px;
     color: $title;
     }
+   h1 {
+    text-align: center;
+    color: $title;
+    font-size: 35px;
+    font-weight:bold;
+    padding: 10px;
+  };
 }
 
 .explanation {
   text-align: center;
-  padding-left: 60px;
-  padding-right: 60px;
-  padding-top: 10px;
+  // padding-left: 60px;
+  // padding-right: 60px;
+  // padding-top: 10px;
   flex-grow: 10;
   p {
   opacity: .8;
   color: c4c4c4;
-  }
+  };
 }
 
-.explanations {
+.explanations-grid {
   background-color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
-}
-
-.container-explanations {
-  padding: 8%;
-   h1 {
-  text-align: center;
-  color: $title;
-  font-size: 35px;
-  font-weight:bold;
-  padding: 10px;
-  }
 }
