@@ -16,15 +16,15 @@ class User < ApplicationRecord
     subscription_words.zero? ? 0 : (subscription_words / course_words) * 100
   end
 
-  def flashing_percentage(course_id)
-    subscription = self.subscriptions.find(course_id)
+  def flashing_percentage(subscription_id)
+    subscription = self.subscriptions.find(subscription_id)
     course_words = subscription.course.course_words.count.to_f
     subscription_words = subscription.subscription_words.where(flashed: true).count.to_f
     subscription_words.zero? ? 0 : (subscription_words / course_words) * 100
   end
 
-  def mapped_percentage(course_id)
-    subscription = self.subscriptions.find(course_id)
+  def mapped_percentage(subscription_id)
+    subscription = self.subscriptions.find(subscription_id)
     course_words = subscription.course.course_words.count.to_f
     subscription_words = subscription.subscription_words.count.to_f
     subscription_words.zero? ? 0 : (subscription_words / course_words) * 100
