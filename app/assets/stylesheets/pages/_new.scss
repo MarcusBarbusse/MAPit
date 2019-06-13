@@ -1,8 +1,16 @@
-.container-login {
+.big-container-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+}
+
+.small-container-login {
   padding: 50px;
-  max-width: 50%;
-  margin: 0 auto;
-  margin-top: 150px;
+  width: 50%;
+  // margin: 0 auto;
+  // margin-top: 150px;
   border-radius: 5px;
   background-color: white;
   border-style: solid;
