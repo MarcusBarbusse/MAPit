@@ -1,7 +1,7 @@
 <div class="pagemap" style="background-color: rgb(182, 215, 240);">
 
   <div class="row themapcountenair">
-    <% percentage = current_user.mapped_percentage(@course.id) %>
+    <% percentage = current_user.mapped_percentage(@subscription.id) %>
     <div class="progress progress-map">
       <div class="progress-bar progress-bar-striped progress-bar-animated length" role="progressbar" aria-valuenow="<%= percentage %>%" aria-valuemin="0" aria-valuemax="100" style="width: <%= percentage %>%">
       </div>
