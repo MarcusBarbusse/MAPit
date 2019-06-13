@@ -350,6 +350,20 @@ course_word = CourseWord.new(
 course_word.save
 
 course_word = CourseWord.new(
+  word: "inel",
+  translation: "ring",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "copil",
+  translation: "child",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
   word: "pisica",
   translation: "cat",
   course_id: course.id,
@@ -357,15 +371,22 @@ course_word = CourseWord.new(
 course_word.save
 
 course_word = CourseWord.new(
-  word: "vita",
-  translation: "beef",
+  word: "nisip",
+  translation: "sand",
   course_id: course.id,
   )
 course_word.save
 
 course_word = CourseWord.new(
-  word: "bucatarie",
-  translation: "kitchen",
+  word: "sticla",
+  translation: "bottle",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "vita",
+  translation: "beef",
   course_id: course.id,
   )
 course_word.save
@@ -411,6 +432,7 @@ course_word = CourseWord.new(
   course_id: course.id,
   )
 course_word.save
+
 
 
 
