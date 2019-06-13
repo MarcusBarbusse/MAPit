@@ -18,12 +18,16 @@
 
 .themapcountenair {
   background-color: white;
-  height: 100vh;
+  height: 85vh;
   display: flex;
   border-radius: 5px;
   // margin: 1%;
   margin-top: 2.8%;
   padding: 12px;
+}
+
+.themapcountenair .progress-map {
+  width: 100%;
 }
 
 .word-to-remember {
@@ -61,7 +65,7 @@
 
 }
 
-.row1 .row2 .row3 .row4 .row5 .row6 {
+.row1 .row2 .row3 .row4 .row5 .row6 .row7 .row8 {
   display: flex;
 }
 
@@ -129,7 +133,9 @@
       color: white;
     }
 }
-
+.orange {
+  background-color: $button !important;
+}
 .nextbtn {
   margin: 10%;
 }
@@ -141,6 +147,9 @@
   overflow: hidden;
   position: absolute;
   z-index: -1;
+}
+.letter {
+  background-color: white;
 }
 
 .background_image_photo {
@@ -180,6 +189,7 @@
 .searchbar {
   // margin: 8%;
 }
+
 
 
 @media screen and (max-width: 2000px) {
@@ -242,7 +252,7 @@
   .div-map-box img {
     height: 75px;
     width: 75px;
-  }
+  }  // height: 100vh;
 
   .themap {
     height: 300px;

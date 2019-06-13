@@ -1,11 +1,30 @@
 
 <% if @subscription_word == "empty"%>
+<br>
+<br>
+<br>
 <% flashed_percentage = current_user.flashing_percentage(params[:subscription_id]) %>
-<div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated length" role="progressbar" aria-valuenow="<%= flashed_percentage %>%" aria-valuemin="0" aria-valuemax="100" style="width: <%= flashed_percentage %>%">
-    Congrats, You've done all your flashcards
-    <%= link_to "Courses",  courses_path %>
 
+    <div id="congratulations">
+      <div id="congratulations-progressbar">
+     <div id="flashcard-progressbar" class="progress">
+       <div class="progress-bar progress-bar-striped progress-bar-animated length" role="progressbar" aria-valuenow="<%= flashed_percentage %>%" aria-valuemin="0" aria-valuemax="100" style="width: <%= flashed_percentage %>%">
+      </div>
+    </div>
+    </div>
+<!-- <div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated length" role="progressbar" aria-valuenow="<%= flashed_percentage %>%" aria-valuemin="0" aria-valuemax="100" style="width: <%= flashed_percentage %>%"> -->
+
+    <h4>Congrats, You've done all your mapped flashcards!</h4>
+    <% if flashed_percentage < 100 %>
+      <button class="button"><%= link_to "Map Page", course_subscription_path(@subscription.course_id, @subscription.id)  %></button>
+      <button class="button"> <%= link_to "Courses", courses_path %></button>
+    <% else %>
+      <button class="button"> <%= link_to "Courses",  courses_path %></button>
+    <% end %>
+
+    </div>
+    </div>
     <% else %>
     <div id="pageflashcard">
       <div id="flashcard-container">
