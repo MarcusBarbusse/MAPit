@@ -122,10 +122,10 @@
             </div>
             <div id="form <%= index %>" class=" maps d-none">
               <%= simple_form_for image, method: :patch do |f|%>
-              <%= f.input :photo, label: 'upload', input_html: { class: 'inputfile' } %>
+              <%= f.input :photo, label: 'Edit background photo', input_html: { class: 'inputfile' } %>
               <%= f.input :photo_cache, as: :hidden %>
               <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
-              <%= f.submit %>
+              <%= f.button :submit, "Upload", class: "mapbutton" %>
               <% end %>
             </div>
             <div class="button-container">
@@ -146,6 +146,21 @@
           </div>
         </div>
       </div>
+        <div class="buttons-for-map">
+          <div class="map-nav-buttons">
+            <button name="button" type="submit" class="mapbutton">
+              <%= link_to "Courses",  courses_path %>
+            </button>
+            <button name="button" type="submit" class="mapbutton">
+              <%= link_to "FlashCards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
+            </button>
+          </div>
+          <div>
+            <button id="nextWordButton" name="button" type="submit" class="button nextbtn">
+              Next
+            </button>
+          </div>
+        </div>
       <div style="display: none;">
         <%= simple_form_for [@course, @subscription, @subscription_word] do |f| %>
         <%= f.input :course_word_id %>
@@ -159,7 +174,6 @@
         <%= f.submit id: "submitFormButton" %>
         <% end %>
       </div>
-
     </div>
   </div>
   <div style="display: none;">
