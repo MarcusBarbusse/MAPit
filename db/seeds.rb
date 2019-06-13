@@ -80,7 +80,7 @@ course = Course.new(
   category: "law",
   language: "french",
   name: "French for Lawyers",
-  picture: 'https://images.unsplash.com/photo-1528747008803-f9f5cc8f1a64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  picture: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'
   )
 course.save
 
@@ -98,20 +98,46 @@ course_word = CourseWord.new(
   )
 course_word.save
 
-
+course_word = CourseWord.new(
+  word: "la peine",
+  translation: "the sentence",
+  course_id: course.id,
+  )
+course_word.save
 
 
 course = Course.new(
   category: "finance",
   language: "spanish",
   name: "Spanish for Bankers",
-  picture: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  picture: 'https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
   )
 course.save
 
 course_word = CourseWord.new(
   word: "la ganancia",
   translation: "the profit",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "la bolsa",
+  translation: "stock exchange",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "prestamo",
+  translation: "the loan",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "la multa",
+  translation: "the fine",
   course_id: course.id,
   )
 course_word.save
@@ -148,10 +174,10 @@ course_word.save
 
 
 course = Course.new(
-  category: "First 10",
+  category: "first 10",
   language: "italian",
   name: "Your first 10 words in Italian",
-  picture: 'https://images.unsplash.com/photo-1514516870926-20598973e480?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  picture: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
   )
 course.save
 
@@ -170,15 +196,15 @@ course_word = CourseWord.new(
 course_word.save
 
 course_word = CourseWord.new(
-  word: "attore",
-  translation: "actor",
+  word: "manzo",
+  translation: "beef",
   course_id: course.id,
   )
 course_word.save
 
 course_word = CourseWord.new(
-  word: "manzo",
-  translation: "beef",
+  word: "attore",
+  translation: "actor",
   course_id: course.id,
   )
 course_word.save
@@ -229,10 +255,10 @@ course_word.save
 
 
 course = Course.new(
-  category: "First 50",
+  category: "next 50",
   language: "italian",
-  name: "Your first 50 words in Italian",
-  picture: 'https://images.unsplash.com/photo-1498579150354-977475b7ea0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  name: "Your next 50 words in Italian",
+  picture: 'https://images.unsplash.com/photo-1545313602-788f8a6a00fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
   )
 course.save
 
@@ -251,18 +277,405 @@ course_word = CourseWord.new(
 course_word.save
 
 course_word = CourseWord.new(
-  word: "el ahorrador",
-  translation: "saver",
+  word: "manzo",
+  translation: "beef",
   course_id: course.id,
   )
 course_word.save
 
 course_word = CourseWord.new(
-  word: "el proveedor",
-  translation: "the supllier",
+  word: "attore",
+  translation: "actor",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "pomeriggio",
+  translation: "afternoon",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "braccio",
+  translation: "arm",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "mucca",
+  translation: "cow",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "il cane",
+  translation: "dog",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "arancia",
+  translation: "orange",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "cibo",
+  translation: "food",
   course_id: course.id,
   )
 course_word.save
 
 
 
+course = Course.new(
+  category: "first 10",
+  language: "romanian",
+  name: "Your first 10 words in Romanian",
+  picture: 'https://images.unsplash.com/photo-1534371020656-6b85825f2b1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "lapte",
+  translation: "milk",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "pisica",
+  translation: "Kat",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "bucatarie",
+  translation: "kitchen",
+  course_id: course.id,
+  )
+course_word.save
+
+
+
+
+course = Course.new(
+  category: "first 10",
+  language: "polish",
+  name: "Your first 10 words in Polish",
+  picture: 'https://images.unsplash.com/photo-1536095864675-3f4a97610218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "lapte",
+  translation: "milk",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "pisica",
+  translation: "Kat",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "bucatarie",
+  translation: "kitchen",
+  course_id: course.id,
+  )
+course_word.save
+
+
+
+
+course = Course.new(
+  category: "finance",
+  language: "german",
+  name: "German for Traders",
+  picture: 'https://images.unsplash.com/photo-1527866959252-deab85ef7d1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "lapte",
+  translation: "milk",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "pisica",
+  translation: "Kat",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "bucatarie",
+  translation: "kitchen",
+  course_id: course.id,
+  )
+course_word.save
+
+
+
+course = Course.new(
+  category: "finance",
+  language: "french",
+  name: "French for Traders",
+  picture: 'https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "lapte",
+  translation: "milk",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "pisica",
+  translation: "Kat",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "bucatarie",
+  translation: "kitchen",
+  course_id: course.id,
+  )
+course_word.save
+
+
+
+
+course = Course.new(
+  category: "finance",
+  language: "italian",
+  name: "Italian for Traders",
+  picture: 'https://images.unsplash.com/photo-1504197885-609741792ce7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "lapte",
+  translation: "milk",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "pisica",
+  translation: "Kat",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "bucatarie",
+  translation: "kitchen",
+  course_id: course.id,
+  )
+course_word.save
+
+
+
+
+
+course = Course.new(
+  category: "next 50",
+  language: "romanian",
+  name: "Your next 50 words in Romanian",
+  picture: 'https://images.unsplash.com/photo-1473864629323-4388dbd27a78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "lapte",
+  translation: "milk",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "pisica",
+  translation: "Kat",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "bucatarie",
+  translation: "kitchen",
+  course_id: course.id,
+  )
+course_word.save
+
+
+
+course = Course.new(
+  category: "next 50",
+  language: "polish",
+  name: "Your next 50 words in Polish",
+  picture: 'https://images.unsplash.com/photo-1535232843222-a40c29436fd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "lapte",
+  translation: "milk",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "pisica",
+  translation: "Kat",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "bucatarie",
+  translation: "kitchen",
+  course_id: course.id,
+  )
+course_word.save
+
+
+
+
+
+course = Course.new(
+  category: "law",
+  language: "spanish",
+  name: "Spanish for lawyers",
+  picture: 'https://images.unsplash.com/photo-1512753360435-329c4535a9a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "lapte",
+  translation: "milk",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "pisica",
+  translation: "Kat",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "bucatarie",
+  translation: "kitchen",
+  course_id: course.id,
+  )
+course_word.save
+
+
+
+course = Course.new(
+  category: "next 50",
+  language: "french",
+  name: "Your next 50 words in French",
+  picture: 'https://images.unsplash.com/photo-1504515303068-d953c9b6eacf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "lapte",
+  translation: "milk",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "pisica",
+  translation: "Kat",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "bucatarie",
+  translation: "kitchen",
+  course_id: course.id,
+  )
+course_word.save
+
+
+course = Course.new(
+  category: "next 100",
+  language: "french",
+  name: "Your next 100 words in French",
+  picture: 'https://images.unsplash.com/photo-1449265614232-03dfc33163a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "lapte",
+  translation: "milk",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "pisica",
+  translation: "Kat",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "bucatarie",
+  translation: "kitchen",
+  course_id: course.id,
+  )
+course_word.save
+
+
+
+
+course = Course.new(
+  category: "next 100",
+  language: "romanian",
+  name: "Your next 100 words in Romanian",
+  picture: 'https://images.unsplash.com/photo-1502528230654-e2161eb9f08a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "lapte",
+  translation: "milk",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "pisica",
+  translation: "Kat",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "bucatarie",
+  translation: "kitchen",
+  course_id: course.id,
+  )
+course_word.save
