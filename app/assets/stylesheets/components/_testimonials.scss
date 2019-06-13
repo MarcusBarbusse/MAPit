@@ -26,6 +26,7 @@
 .card-product {
   overflow: hidden;
   height: 120px;
+  width: 33%;
   background: #f2f5f9;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -41,12 +42,12 @@
   }
   h2 {
     color: 4c4c4c;
-    font-size: 16px;
+    font-size: 1.2vw;
     font-weight: bold;
     margin: 0;
   }
   p {
-    font-size: 12px;
+    font-size: 0.9vw;
     line-height: 1.4;
     opacity: .7;
     margin-bottom: 0;
