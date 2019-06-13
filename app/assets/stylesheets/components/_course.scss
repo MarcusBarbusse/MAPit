@@ -15,7 +15,8 @@
   // flex-wrap: wrap;
   // justify-content: space-between;
   display: grid;
-  grid-template-columns: 285px 285px 285px 285px;
+  // grid-template-columns: 285px 285px 285px 285px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   justify-content: space-between;
 }
@@ -27,10 +28,11 @@
   box-shadow: 0 0 30px rgba(0,0,0,0.3);
   border-radius: 5px;
   cursor: pointer;
-  width: 280px;
+  // width: 280px;
   > img {
-    height: 135px;
-    width: 280px;
+    height: 150px;
+    width: 100%;
+    // width: 280px;
     object-fit: cover;
     }
   h2 {
@@ -50,6 +52,7 @@
   flex-direction: column;
   position: relative;
   text-align: center;
+  height: 70px;
 }
 
 // .card-trip-infos:hover {
