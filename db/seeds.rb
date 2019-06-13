@@ -69,7 +69,7 @@ course_word.save
 
 course_word = CourseWord.new(
   word: "de leverancier",
-  translation: "the supllier",
+  translation: "the supplier",
   course_id: course.id,
   )
 course_word.save
@@ -143,7 +143,7 @@ course_word = CourseWord.new(
 course_word.save
 
 course_word = CourseWord.new(
-  word: "empeñar",
+  word: "empenar",
   translation: "to pledge",
   course_id: course.id,
   )
@@ -351,7 +351,7 @@ course_word.save
 
 course_word = CourseWord.new(
   word: "pisica",
-  translation: "Kat",
+  translation: "cat",
   course_id: course.id,
   )
 course_word.save
@@ -383,7 +383,7 @@ course_word.save
 
 course_word = CourseWord.new(
   word: "pisica",
-  translation: "Kat",
+  translation: "cat",
   course_id: course.id,
   )
 course_word.save
@@ -415,7 +415,7 @@ course_word.save
 
 course_word = CourseWord.new(
   word: "pisica",
-  translation: "Kat",
+  translation: "cat",
   course_id: course.id,
   )
 course_word.save
@@ -446,7 +446,7 @@ course_word.save
 
 course_word = CourseWord.new(
   word: "pisica",
-  translation: "Kat",
+  translation: "cat",
   course_id: course.id,
   )
 course_word.save
@@ -478,7 +478,7 @@ course_word.save
 
 course_word = CourseWord.new(
   word: "pisica",
-  translation: "Kat",
+  translation: "cat",
   course_id: course.id,
   )
 course_word.save
@@ -511,7 +511,7 @@ course_word.save
 
 course_word = CourseWord.new(
   word: "pisica",
-  translation: "Kat",
+  translation: "cat",
   course_id: course.id,
   )
 course_word.save
@@ -542,7 +542,7 @@ course_word.save
 
 course_word = CourseWord.new(
   word: "pisica",
-  translation: "Kat",
+  translation: "cat",
   course_id: course.id,
   )
 course_word.save
@@ -575,7 +575,7 @@ course_word.save
 
 course_word = CourseWord.new(
   word: "pisica",
-  translation: "Kat",
+  translation: "cat",
   course_id: course.id,
   )
 course_word.save
@@ -606,7 +606,7 @@ course_word.save
 
 course_word = CourseWord.new(
   word: "pisica",
-  translation: "Kat",
+  translation: "cat",
   course_id: course.id,
   )
 course_word.save
@@ -636,7 +636,7 @@ course_word.save
 
 course_word = CourseWord.new(
   word: "pisica",
-  translation: "Kat",
+  translation: "cat",
   course_id: course.id,
   )
 course_word.save
@@ -668,7 +668,7 @@ course_word.save
 
 course_word = CourseWord.new(
   word: "pisica",
-  translation: "Kat",
+  translation: "cat",
   course_id: course.id,
   )
 course_word.save
