@@ -1,6 +1,12 @@
 <div class="pagemap" style="background-color: rgb(182, 215, 240);">
+
   <div class="row themapcountenair">
-    <div class="col-xs-12 col-sm-5 d-flex">
+    <% percentage = current_user.mapped_percentage(@course.id) %>
+    <div class="progress progress-map">
+      <div class="progress-bar progress-bar-striped progress-bar-animated length" role="progressbar" aria-valuenow="<%= percentage %>%" aria-valuemin="0" aria-valuemax="100" style="width: <%= percentage %>%">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-5 d-flex" >
       <div class="col-xs-10 col-sm-5">
         <div class="image" data-photo-id="eatPhotoID">
           <div class="word-to-remember">
@@ -80,7 +86,7 @@
           </div>
         </div>
         <div class="col-xs-12 col-sm-7 d-flex">
-          <div class="col-xs-12 col-sm-12 big-div-box">
+          <div class="col-xs-12 col-sm-12 big-div-box" style="margin-top: 57px">
             <% @background_images.each_with_index do |image, index| %>
             <div id="map <%= index %>" class="themap maps d-none" style=" background-image : url(<%= cl_image_path(image.photo.url) %>);">
               <div class="row1">
@@ -140,21 +146,21 @@
               <%= f.button :submit, "Upload", class: "mapbutton" %>
               <% end %>
             </div>
-            
+
             <% end %>
-            <button id="nextWordButton" name="button" type="submit" class="mapbutton">
+            <button id="nextWordButton" name="button" type="submit" class="mapbutton orange">
               Next
             </button>
           </div>
-          
+
         </div>
-        <div class="button-container">
+        <div class="button-container" style="padding-left: 28px">
           <div class="buttons-for-map">
             <button name="button" type="submit" class="mapbutton">
               <%= link_to "Courses",  courses_path %>
             </button>
             <button name="button" type="submit" class="mapbutton">
-              <%= link_to "FlashCards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
+              <%= link_to "Flashcards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
             </button>
           </div>
         </div>
