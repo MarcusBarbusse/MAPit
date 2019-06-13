@@ -16,7 +16,13 @@
   <div class="progress-bar progress-bar-striped progress-bar-animated length" role="progressbar" aria-valuenow="<%= flashed_percentage %>%" aria-valuemin="0" aria-valuemax="100" style="width: <%= flashed_percentage %>%"> -->
 
     <h4>Congrats, You've done all your mapped flashcards!</h4>
+    <% if flashed_percentage < 100 %>
+      <button class="button"><%= link_to "Map Page", course_subscription_path(@subscription.course_id, @subscription.id)  %></button>
+      <button class="button"> <%= link_to "Courses", courses_path %></button>
+    <% else %>
       <button class="button"> <%= link_to "Courses",  courses_path %></button>
+    <% end %>
+
     </div>
     </div>
     <% else %>
