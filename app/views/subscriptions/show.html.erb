@@ -122,11 +122,14 @@
             </div>
             <div id="form <%= index %>" class=" maps d-none">
               <%= simple_form_for image, method: :patch do |f|%>
-              <%= f.input :photo, label: 'Edit background photo', input_html: { class: 'inputfile' } %>
-              <%= f.input :photo_cache, as: :hidden %>
+              <%= f.input :photo, label: false, input_html: { class: "d-none", id: "uploadInput-#{image.letter}" }%> 
+              <%= f.input :photo_cache,  as: :hidden %>
               <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
-              <%= f.button :submit, "Upload", class: "mapbutton" %>
+              <%= f.button :submit, "Upload", class: "mapbutton"  %> 
               <% end %>
+              <div id="uploadButton-<%= image.letter %>" data-letter="<%= image.letter %>" class='uploadButton'>
+                <button> Update Background Image</button>
+              </div>
             </div>
             
             <% end %>
@@ -134,7 +137,6 @@
               Next
             </button>
           </div>
-          
         </div>
         <div class="button-container">
           <div class="buttons-for-map">
@@ -174,3 +176,10 @@
 
 
 
+
+
+
+
+  <!-- , "Upload", class: "mapbutton" -->
+
+ <!-- label: "Edit background photo", input_html: { class: 'inputfile' } -->

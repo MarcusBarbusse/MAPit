@@ -15,11 +15,7 @@ class BackgroundImagesController < ApplicationController
 
   def update
     @background_image = current_user.background_images.find_by_letter(params[:background_image][:letter])
-    if @background_image
-      @background_image.update(background_img_params)
-    else
-      @background_image = current_user.background_images.create(background_img_params)
-    end
+    @background_image.update(background_img_params)
     authorize @background_image
     redirect_to request.referrer
   end
@@ -27,6 +23,6 @@ class BackgroundImagesController < ApplicationController
   private
 
   def background_img_params
-    params.require(:background_image).permit(:photo, :letter)
+    params.require(:background_image).permit(:photo, :letter, :photo_cache)
   end
 end
