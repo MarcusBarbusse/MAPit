@@ -140,7 +140,10 @@
             </div>
 
             <div id="form <%= index %>" class="maps d-none">
-              <div class="d-flex ">
+              <div class="d-flex align-items-center">
+            <button id="nextWordButton" name="button" type="submit" class="mapbutton orange">
+              Next
+            </button>
               <div id="uploadButton-<%= image.letter %>" data-letter="<%= image.letter %>" class='uploadButton'>
                 <button class="mapbutton"> Update background</button>
               </div>
@@ -150,13 +153,13 @@
               <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
               <%= f.button :submit, "Upload", class: "mapbutton"  %>
               <% end %>
+
               </div>
+
             </div>
 
             <% end %>
-            <button id="nextWordButton" name="button" type="submit" class="mapbutton orange">
-              Next
-            </button>
+
           </div>
 
         </div>
