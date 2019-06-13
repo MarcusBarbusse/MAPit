@@ -1,6 +1,6 @@
 function clickLetter() {
 
-const letters = document.querySelectorAll('.letter');
+  const letters = document.querySelectorAll('.letter');
   const backgroundImageForm = document.getElementById('subscription_word_background_image_id')
   if (letters && backgroundImageForm) {
     document.getElementById(`map 0`).classList.remove('d-none');
