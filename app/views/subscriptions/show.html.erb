@@ -86,7 +86,7 @@
           </div>
         </div>
         <div class="col-xs-12 col-sm-7 d-flex">
-          <div class="col-xs-12 col-sm-12 big-div-box" style="margin-top: 57px">
+          <div class="col-xs-12 col-sm-12 big-div-box">
             <% @background_images.each_with_index do |image, index| %>
             <div id="map-<%= index %>" class="themap maps d-none" style=" background-image : url(<%= cl_image_path(image.photo.url) %>);">
               <div class="row1">
@@ -139,16 +139,16 @@
               </div>
             </div>
             <div id="form-<%= index %>" class="maps d-none">
-              <div class="d-flex align-items-center">
-              <div id="uploadButton-<%= image.letter %>" data-letter="<%= image.letter %>" class='uploadButton'>
-                <button class="mapbutton"> Update background</button>
-              </div>
-              <%= simple_form_for image, method: :patch do |f|%>
-              <%= f.input :photo, label: false, input_html: { class: "d-none", id: "uploadInput-#{image.letter}" }%>
-              <%= f.input :photo_cache,  as: :hidden %>
-              <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
-              <%= f.button :submit, "Upload", class: "mapbutton"  %>
-              <% end %>
+              <div class="d-flex align-items-center" style="margin-left:0px">
+                <div id="uploadButton-<%= image.letter %>" data-letter="<%= image.letter %>" class='uploadButton'>
+                  <button class="mapbutton" style="margin-left:0px"> Update background</button>
+                </div>
+                <%= simple_form_for image, method: :patch do |f|%>
+                <%= f.input :photo, label: false, input_html: { class: "d-none", id: "uploadInput-#{image.letter}" }%>
+                <%= f.input :photo_cache,  as: :hidden %>
+                <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
+                <%= f.button :submit, "Upload", class: "mapbutton"  %>
+                <% end %>
 
               </div>
 
@@ -161,15 +161,16 @@
           </div>
 
         </div>
-        <div class="button-container" style="padding-left: 28px">
-          <div class="buttons-for-map">
-            <button name="button" type="submit" class="mapbutton">
-              <%= link_to "Courses",  courses_path %>
-            </button>
-            <button name="button" type="submit" class="mapbutton">
-              <%= link_to "Flashcards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
-            </button>
-          </div>
+
+      </div>
+      <div class="button-container" style="padding-left: 28px">
+        <div class="buttons-for-map">
+          <button name="button" type="submit" class="mapbutton">
+            <%= link_to "Courses",  courses_path %>
+          </button>
+          <button name="button" type="submit" class="mapbutton">
+            <%= link_to "Flashcards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
+          </button>
         </div>
       </div>
 
@@ -202,7 +203,6 @@
 
 
 
-
   <!-- , "Upload", class: "mapbutton" -->
 
- <!-- label: "Edit background photo", input_html: { class: 'inputfile' } -->
+  <!-- label: "Edit background photo", input_html: { class: 'inputfile' } -->

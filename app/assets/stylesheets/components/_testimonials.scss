@@ -1,15 +1,20 @@
 .everything-testimonials {
-  background: white;
+  background: #ecf5ff;
   width: 100%;
   padding: 8%;
   height: 100vh;
   h1 {
   text-align: center;
   color: $title;
-  font-size: 35px;
+  font-size: 2.5vw;
   font-weight:bold;
   padding: 10px;
+  font-family: 'Open Sans', sans-serif;
   }
+}
+
+.testimonials-icon {
+  height: 3.3vw;
 }
 
 .carousel {
@@ -25,9 +30,9 @@
 
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 16vh;
   width: 33%;
-  background: #f2f5f9;
+  background: #f7f9fc;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
@@ -37,12 +42,14 @@
   margin-right: 10px;
   img {
     height: 100%;
-    width: 120px;
+    width: 8vw;
     object-fit: cover;
+    border-radius: 10px;
+    margin: 0.2v
   }
   h2 {
     color: 4c4c4c;
-    font-size: 1.2vw;
+    font-size: 1.1vw;
     font-weight: bold;
     margin: 0;
   }

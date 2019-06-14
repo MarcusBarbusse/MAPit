@@ -1,47 +1,59 @@
 .explanation-icon {
-  font-size: 60px;
-  color: $button;
-  margin: auto;
-  background-color: white;
+  height: 5vw;
+  // font-size: 4vw;
+  // color: $button;
+  margin: 2vw;
+  // background-color: white;
   display: inline-block;
+  // text-shadow: 0.2vw 0.2vw 0.2vw #e2831c;
+
 }
 
 .container-explanations {
-  background: white;
-  width: 100%;
+  background: #ecf5ff;
   height: 100vh;
+  width: 100vw;
   position: relative;
-    padding: 8%;
+  padding: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   h4 {
     text-align: center;
-    font-size: 30px;
-    margin-top: 15px;
+    font-size: 2vw;
+    font-weight: bold;
+    // margin-top: 15px;
     color: $title;
+    font-family: 'Open Sans', sans-serif;
     }
    h1 {
     text-align: center;
     color: $title;
-    font-size: 35px;
+    font-size: 2.5vw;
     font-weight:bold;
-    padding: 10px;
+    // text-shadow: 0.2vw 0.2vw 0.2vw $title;
+    font-family: 'Open Sans', sans-serif;
   };
 }
 
 .explanation {
   text-align: center;
-  // padding-left: 60px;
-  // padding-right: 60px;
-  // padding-top: 10px;
   flex-grow: 10;
   p {
+  font-size: 1.1vw;
   opacity: .8;
   color: c4c4c4;
   };
 }
 
 .explanations-grid {
-  background-color: white;
+  // background-color: #ecf5ff;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
+  grid-gap: 4vw 8vw;
+  @media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  grid-template-columns: 1fr;
+  }
 }
+
