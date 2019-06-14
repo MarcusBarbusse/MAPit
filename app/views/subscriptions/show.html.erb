@@ -1,4 +1,4 @@
-<div class="pagemap" style="background-color: rgb(182, 215, 240);">
+<div class="pagemap">
 
   <div class="row themapcountenair">
     <% percentage = current_user.mapped_percentage(@subscription.id) %>
@@ -138,17 +138,17 @@
                 <div class="picture-dropzone div-map-box" data-dropzone data-x="4" data-y="8"></div>
               </div>
             </div>
-            <div id="form <%= index %>" class="maps d-none">
+            <div id="form-<%= index %>" class="maps d-none">
               <div class="d-flex align-items-center" style="margin-left:0px">
-              <div id="uploadButton-<%= image.letter %>" data-letter="<%= image.letter %>" class='uploadButton'>
-                <button class="mapbutton" style="margin-left:0px"> Update background</button>
-              </div>
-              <%= simple_form_for image, method: :patch do |f|%>
-              <%= f.input :photo, label: false, input_html: { class: "d-none", id: "uploadInput-#{image.letter}" }%>
-              <%= f.input :photo_cache,  as: :hidden %>
-              <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
-              <%= f.button :submit, "Upload", class: "mapbutton"  %>
-              <% end %>
+                <div id="uploadButton-<%= image.letter %>" data-letter="<%= image.letter %>" class='uploadButton'>
+                  <button class="mapbutton" style="margin-left:0px"> Update background</button>
+                </div>
+                <%= simple_form_for image, method: :patch do |f|%>
+                <%= f.input :photo, label: false, input_html: { class: "d-none", id: "uploadInput-#{image.letter}" }%>
+                <%= f.input :photo_cache,  as: :hidden %>
+                <%= f.input :letter, as: :hidden, :input_html => { :value => image.letter } %>
+                <%= f.button :submit, "Upload", class: "mapbutton"  %>
+                <% end %>
 
               </div>
 
@@ -163,16 +163,16 @@
         </div>
 
       </div>
-                <div class="button-container" style="padding-left: 28px">
-          <div class="buttons-for-map">
-            <button name="button" type="submit" class="mapbutton">
-              <%= link_to "Courses",  courses_path %>
-            </button>
-            <button name="button" type="submit" class="mapbutton">
-              <%= link_to "Flashcards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
-            </button>
-          </div>
+      <div class="button-container" style="padding-left: 28px">
+        <div class="buttons-for-map">
+          <button name="button" type="submit" class="mapbutton">
+            <%= link_to "Courses",  courses_path %>
+          </button>
+          <button name="button" type="submit" class="mapbutton">
+            <%= link_to "Flashcards", course_subscription_subscription_words_path(@course.id, @subscription.id)  %>
+          </button>
         </div>
+      </div>
 
       <div style="display: none;">
         <%= simple_form_for [@course, @subscription, @subscription_word] do |f| %>
@@ -205,4 +205,4 @@
 
   <!-- , "Upload", class: "mapbutton" -->
 
- <!-- label: "Edit background photo", input_html: { class: 'inputfile' } -->
+  <!-- label: "Edit background photo", input_html: { class: 'inputfile' } -->

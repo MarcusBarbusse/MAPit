@@ -1,4 +1,6 @@
-
+.colorization {
+  background: #6bb5f6;
+}
 .unflipped {
   transform: rotateY(0deg);
   transition: 0.5s;
@@ -30,7 +32,7 @@
 //design
 
 #pageflashcard {
-  background-color: rgb(182, 215, 240);
+  background: #6bb5f6;
   padding: 3% 6%;
   padding-bottom: 90px;
   height: 110vh;
@@ -134,7 +136,7 @@
     height: 125px;
     width: 125px;
   }
-   .div-box img {
+  .div-box img {
     height: 125px;
     width: 125px;
   }
