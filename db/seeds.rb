@@ -343,15 +343,15 @@ course = Course.new(
 course.save
 
 course_word = CourseWord.new(
-  word: "lapte",
-  translation: "milk",
+  word: "inel",
+  translation: "ring",
   course_id: course.id,
   )
 course_word.save
 
 course_word = CourseWord.new(
-  word: "inel",
-  translation: "ring",
+  word: "lapte",
+  translation: "milk",
   course_id: course.id,
   )
 course_word.save
