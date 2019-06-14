@@ -13,7 +13,7 @@ class SubscriptionsController < ApplicationController
     else
       @course_word = CourseWord.find(@words_id.first)
       @subscription_word = SubscriptionWord.new(course_word_id: @course_word.id)
-      @background_images = current_user.background_images
+      @background_images = current_user.background_images.order(:letter)
       @background_image = BackgroundImage.new
       authorize @subscription_word
      search_target
