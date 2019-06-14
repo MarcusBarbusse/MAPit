@@ -10,14 +10,14 @@
 }
 
 .navbar-coloured {
-  background-color: white;
+  background-color: $light;
   .navbar-nav a {
     color: #3b9ce2 !important;
   }
 }
 
 .navbar-lewagon-white {
-  background-color: white;
+  background-color: $light;
 }
 
 .navbar-lewagon .navbar-collapse {

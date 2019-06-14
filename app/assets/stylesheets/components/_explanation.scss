@@ -1,14 +1,16 @@
 .explanation-icon {
-  font-size: 4vw;
-  color: $button;
+  height: 5vw;
+  // font-size: 4vw;
+  // color: $button;
   margin: 2vw;
-  background-color: white;
+  // background-color: white;
   display: inline-block;
-  // margin-bottom: 5vw;
+  // text-shadow: 0.2vw 0.2vw 0.2vw #e2831c;
+
 }
 
 .container-explanations {
-  background: white;
+  background: #ecf5ff;
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -19,16 +21,18 @@
   h4 {
     text-align: center;
     font-size: 2vw;
-    font-weight: 500;
+    font-weight: bold;
     // margin-top: 15px;
     color: $title;
+    font-family: 'Open Sans', sans-serif;
     }
    h1 {
     text-align: center;
     color: $title;
     font-size: 2.5vw;
     font-weight:bold;
-  //   padding: 10px;
+    // text-shadow: 0.2vw 0.2vw 0.2vw $title;
+    font-family: 'Open Sans', sans-serif;
   };
 }
 
@@ -43,7 +47,7 @@
 }
 
 .explanations-grid {
-  background-color: white;
+  // background-color: #ecf5ff;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 4vw 8vw;
