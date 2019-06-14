@@ -1,26 +1,26 @@
 .footer {
-  background: #F4F4F4;
+  background: #6bb5f6;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
-  color: $title;
-  font-size: 12px;
-  .fa-heart {
-  color: $button;
+  color: white;
+  font-size: 1vw;
+    .fa-heart {
+    color: $button;
   }
 }
 
 .footer-links {
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
   a {
-  color: $title !important;
+  color: white !important;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
-  color: $button-hover;
+  // color: $button-hover;
     :hover {
     color: $button;
     }

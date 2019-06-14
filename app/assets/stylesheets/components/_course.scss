@@ -1,15 +1,25 @@
 .courses-page {
-  background-color: whitesmoke;
+  background-color: $light;;
   padding: 120px;
   h1 {
     color: $title;
-    font-size: 30px;
+    font-size: 2.7vw;
     font-weight: bold;
-    margin-top: 40px;
-    padding-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+  };
+  hr {
+  // margin-top: 3vw;
+  // margin-bottom: 3vw;
   }
 }
 
+.courses-icon {
+  height: 5vw;
+}
+.discicon {
+  height: 3.7vw;
+  // margin-top: 3vw;
+}
 .courses-container {
   // display: flex;
   // flex-wrap: wrap;
@@ -17,12 +27,11 @@
   display: grid;
   // grid-template-columns: 285px 285px 285px 285px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 3vw;
   justify-content: space-between;
 }
 
 .card-trip {
-  margin-top: 15px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 30px rgba(0,0,0,0.3);
@@ -34,6 +43,7 @@
     width: 100%;
     // width: 280px;
     object-fit: cover;
+    opacity: 0.7;
     }
   h2 {
     font-size: 15px;
@@ -46,6 +56,11 @@
     }
 }
 
+.card-trip
+  img:hover {
+    opacity: 1;
+}
+
 .card-trip-infos {
   padding: 16px;
   display: flex;
@@ -55,15 +70,11 @@
   height: 70px;
 }
 
-// .card-trip-infos:hover {
-//   box-shadow: 0 0 30px rgba(0,0,0,0.4);
-// }
-
 .popup {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  opacity: 0.7;
+  // opacity: 0.7;
   transition: all .3s ease-in-out;
   :hover button {
     display: inline-block;
@@ -73,7 +84,7 @@
 .popup:hover {
   transform: scale(1.03);
   transition: all .3s ease-in-out;
-  opacity: 1;
+  // opacity: 1;
 }
 
 .popup a {
@@ -93,7 +104,7 @@
   }
 }
 
-.highlight {
-  background: linear-gradient(180deg,rgba(255,255,255,0) 90%, $course_bar 20%);
-}
+// .highlight {
+//   background: linear-gradient(180deg,rgba(255,255,255,0) 90%, $course_bar 20%);
+// }
 
