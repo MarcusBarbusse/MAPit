@@ -44,9 +44,18 @@ class SubscriptionsController < ApplicationController
   private
 
   def search_target
+    # @image_target_results = []
+    # if params[:q1]
+    #   url = "https://pixabay.com/api/?key=#{ENV['PIXABAY_KEY']}&q=#{params[:q1]}&image_type=photo"
+    #   response1 = ::HTTParty.get(url)
+    #   @image_target_results = JSON.parse(response1.body)['hits'].first(3).map do |photo|
+    #     photo["webformatURL"]
+    #   end
+    # end
     @image_target_results = []
     if params[:q1]
-      url = "https://pixabay.com/api/?key=#{ENV['PIXABAY_KEY']}&q=#{params[:q1]}&image_type=photo"
+      #url = "https://api.serpwow.com/live/search?api_key=#{ENV['SERPWOW_KEY']}&q=#{params[:q1]}&image_type=photo"
+      url = "https://api.serpwow.com/live/search?api_key=#{ENV['SERPWOW_KEY']}&q=#{params[:q1]}"
       response1 = ::HTTParty.get(url)
       @image_target_results = JSON.parse(response1.body)['hits'].first(3).map do |photo|
         photo["webformatURL"]
@@ -55,16 +64,32 @@ class SubscriptionsController < ApplicationController
   end
 
   def search_mother
+    # @image_mother_results = []
+    # if params[:q2]
+    #   url = "https://pixabay.com/api/?key=#{ENV['PIXABAY_KEY']}&q=#{params[:q2]}&image_type=photo"
+    #   response2 = ::HTTParty.get(url)
+    #   @image_mother_results = JSON.parse(response2.body)['hits'].first(3).map do |photo|
+    #     photo["webformatURL"]
+    #   end
     @image_mother_results = []
     if params[:q2]
-      url = "https://pixabay.com/api/?key=#{ENV['PIXABAY_KEY']}&q=#{params[:q2]}&image_type=photo"
+      #url = "https://api.serpwow.com/live/search?api_key=#{ENV['SERPWOW_KEY']}&q=#{params[:q2]}"
+      url = "https://api.serpwow.com/live/search?api_key=#{ENV['SERPWOW_KEY']}&q=#{params[:q2]}&image_type=photo"
       response2 = ::HTTParty.get(url)
       @image_mother_results = JSON.parse(response2.body)['hits'].first(3).map do |photo|
         photo["webformatURL"]
       end
+    # else
+    #   params[:q2] = @course_word.translation
+    #   url = "https://pixabay.com/api/?key=#{ENV['PIXABAY_KEY']}&q=#{params[:q2]}&image_type=photo"
+    #   response2 = ::HTTParty.get(url)
+    #   @image_mother_results = JSON.parse(response2.body)['hits'].first(3).map do |photo|
+    #     photo["webformatURL"]
+    #   end
+    # end
     else
       params[:q2] = @course_word.translation
-      url = "https://pixabay.com/api/?key=#{ENV['PIXABAY_KEY']}&q=#{params[:q2]}&image_type=photo"
+      url = "https://api.serpwow.com/live/search?api_key=#{ENV['SERPWOW_KEY']}&q=#{params[:q2]}&image_type=photo"
       response2 = ::HTTParty.get(url)
       @image_mother_results = JSON.parse(response2.body)['hits'].first(3).map do |photo|
         photo["webformatURL"]

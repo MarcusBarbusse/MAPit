@@ -75,6 +75,75 @@ course_word = CourseWord.new(
 course_word.save
 
 
+course = Course.new(
+  category: "first 20",
+  language: "polish",
+  name: "Your first 20 words in Polish",
+  picture: 'https://images.unsplash.com/photo-1567544382773-895538f63c2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'
+  )
+course.save
+
+course_word = CourseWord.new(
+  word: "dobranoc",
+  translation: "good night",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "piekna",
+  translation: "beautifull",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "dziekuje",
+  translation: "merci",
+
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "dzien dobry",
+  translation: "hello",
+
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "do widzenia",
+  translation: "goodbye",
+
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "I would like",
+  translation: "Chce cie",
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "znowu",
+  translation: "again",
+
+  course_id: course.id,
+  )
+course_word.save
+
+course_word = CourseWord.new(
+  word: "zobaczyc",
+  translation: "to see",
+  course_id: course.id,
+  )
+course_word.save
+
+
 
 course = Course.new(
   category: "law",
